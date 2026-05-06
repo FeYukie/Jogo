@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3xjlccp41svc"]
 
-[ext_resource type="Script" path="res://bonecos/vitima.gd" id="1_720nk"]
+[ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_720nk"]
 [ext_resource type="Texture2D" uid="uid://cewkxnelhvfx0" path="res://tiles/char free/char free/paradal1.png" id="2_0vofd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
@@ -12,10 +12,6 @@ script = ExtResource("1_720nk")
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=74300959]
 
-[node name="Collision" type="CollisionShape2D" parent="." unique_id=779873815]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_j1h26")
-
 [node name="Texture" type="Sprite2D" parent="." unique_id=1038733724]
 position = Vector2(-2, -13)
 texture = ExtResource("2_0vofd")
@@ -25,3 +21,9 @@ visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Pressione C"
+
+[node name="ColisaoFisica" type="StaticBody2D" parent="." unique_id=1671230760]
+
+[node name="Collision" type="CollisionShape2D" parent="ColisaoFisica" unique_id=779873815]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_j1h26")
