@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dy78lsaucnwbk"]
+
+[ext_resource type="Script" uid="uid://ua5fa7g2a8gu" path="res://title_screen/coracao.gd" id="1_t3vwy"]
+[ext_resource type="Texture2D" uid="uid://5td31llscuqt" path="res://title_screen/gui-health.png" id="1_v8g36"]
+
+[node name="Coracao" type="Control" unique_id=2049455654]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t3vwy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1907193558]
+texture = ExtResource("1_v8g36")
+centered = false
+hframes = 7
+vframes = 2
+frame = 2

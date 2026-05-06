@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ol0nrr722w2r"]
+
+[ext_resource type="Script" uid="uid://03h10a5omar5" path="res://login/control.gd" id="1_gdhdh"]
+
+[node name="node" type="Node2D" unique_id=1944990468]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=169513351]
+
+[node name="Control" type="Control" parent="HTTPRequest" unique_id=1864982404]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gdhdh")
+
+[node name="ItemList" type="ItemList" parent="HTTPRequest/Control" unique_id=482976599]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 13.0
+offset_right = 304.0
+offset_bottom = 123.0
+
+[node name="Nome do Aluno" type="LineEdit" parent="HTTPRequest/Control" unique_id=1622278242]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 12.0
+offset_right = 131.5
+offset_bottom = 43.0
+
+[node name="Enviar Pontos" type="Button" parent="HTTPRequest/Control" unique_id=977347647]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 91.0
+offset_right = 131.0
+offset_bottom = 119.0
+
+[node name="Ver Ranking" type="Button" parent="HTTPRequest/Control" unique_id=1872355715]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 90.0
+offset_right = 90.0
+offset_bottom = 119.0
+
+[node name="Código da Sala" type="LineEdit" parent="HTTPRequest/Control" unique_id=114687900]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 47.0
+offset_right = 130.5
+offset_bottom = 78.0

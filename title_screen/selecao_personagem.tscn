@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://73ka26kpp806"]
+
+[ext_resource type="Script" uid="uid://dth3qtcn7axdm" path="res://title_screen/selecao_personagem.gd" id="1_3epah"]
+[ext_resource type="Texture2D" uid="uid://c63775c0hd5t5" path="res://tiles/jogador/menina.png" id="2_m45f1"]
+[ext_resource type="Texture2D" uid="uid://cpoxhdovcdblc" path="res://tiles/jogador/menino.png" id="3_yg0bk"]
+
+[node name="SelecaoPersonagem" type="Node2D" unique_id=15677400]
+script = ExtResource("1_3epah")
+
+[node name="Label" type="Label" parent="." unique_id=131114005]
+offset_left = 665.0
+offset_top = -10.0
+offset_right = 1320.0
+offset_bottom = 59.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Selecione seu personagem:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1131202712]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 281.0
+offset_top = 57.0
+offset_right = 1669.0
+offset_bottom = 1065.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="menina" type="Button" parent="HBoxContainer" unique_id=46959579]
+custom_minimum_size = Vector2(-100, -100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+icon = ExtResource("2_m45f1")
+
+[node name="menino" type="Button" parent="HBoxContainer" unique_id=110865753]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+icon = ExtResource("3_yg0bk")
+
+[connection signal="pressed" from="HBoxContainer/menina" to="." method="_on_botao_feminino_pressed"]
+[connection signal="pressed" from="HBoxContainer/menino" to="." method="_on_botao_masculino_pressed"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b385f41aw6g87"]
+
+[ext_resource type="Script" uid="uid://jvhprfuqiqaj" path="res://node_2d.gd" id="1_vbclh"]
+
+[node name="Node2D" type="CanvasLayer" unique_id=696962830]
+script = ExtResource("1_vbclh")
+
+[node name="dano" type="Button" parent="." unique_id=1293246015]
+anchors_preset = -1
+anchor_right = 0.002
+anchor_bottom = 0.007
+offset_left = 287.0
+offset_top = 162.0
+offset_right = 332.16
+offset_bottom = 185.44
+text = "Dano"
+
+[connection signal="pressed" from="dano" to="." method="_on_dano_pressed"]

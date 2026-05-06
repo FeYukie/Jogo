@@ -1,0 +1,87 @@
+import "res://dialogue/dialogue2.dialogue" as dialogue2
+
+~ start
+Você: Oi, gente.
+#do play_animation()
+Amigo: E aí! Quanto tempo, cara.
+Amiga: Como foram as férias? Deu pra descansar ou só ficou jogando?
+Amigo: A gente acabou de chegar também, estávamos botando a fofoca em dia, hehe... Inclusive, você viu aquela menina estranha ali no canto?
+Amiga: Difícil não ver, né? Ocupa o espaço de três pessoas.
+Amigo: Hahaha, acho que a escola vai ter que aumentar a porta da cantina esse ano.
+
+- "Pois é, ela é bem... grande."
+	Você: Pois é, ela é bem... grande. Chegou chegando mesmo.
+	do Vida.perder_vida()
+	Amigo: Até você concorda. Ela parece um mamute andando e o chão tremendo...
+	Amiga: Ha ha ha ha ha! Essa foi boa!
+	Amigo: Vamos lá ver o mamute mais de perto.
+- (Ficar quieto)
+	Você: Ah, sim...
+	do Vida.perder_vida()
+	Amiga: Relaxa... ninguém vai te levar para a direção se você zoar também.
+	Amigo: É só uma piada.
+	Amiga: Vamos dar as boas-vindas à novata.
+- "Não tem graça."
+	Você: Não tem graça. Que implicância, é o primeiro dia dela!
+	Amiga: Ih, virou advogado dela agora? Relaxa, a gente só tá brincando.
+	Amigo: É. Vamos lá falar com a novata.
+do sequencia_bullying()
+=> cena_2_trote
+
+~ cena_2_trote
+
+# Vocês se aproximam da aluna nova
+Amigo: E aí, grande! 
+Amiga: (segurando a risada) Nunca te vimos antes.
+Aluna Nova: Oi, tudo bem? Eu sou nova aqui.
+Amigo: Ah, claro... É bom se acostumar com essa escola logo.
+Amiga: É, inclusive, a gente tá cobrando uma taxa de entrada. Um lanche pra cada um, fechou?
+Aluna Nova: Como assim? É sério isso?
+Amigo: Relaxa, pelo seu tamanho a gente sabe que você tem estoque guardado aí.
+
+- (Ignorar)
+	Você: (Você olha para o chão, com um sorrisinho sem-graça. Tenta prestar atenção ao redor, se distrair dos risos maldosos de seus amigos.)
+	do Vida.perder_vida()
+	Amigo: Você tem até essa semana para nos pagar, hein! Vamos, vai começar a aula.
+- "É verdade, se quiser ficar aqui vai ter que pagar o pedágio."
+	Você: É verdade, se quiser ficar aqui vai ter que pagar o pedágio. Começou mal.
+	do Vida.perder_vida()
+	Amiga: Não é caro, não. É mais barato do que uma refeição sua, claro.
+	Amigo: Vamos deixar essa passar, coitada. O pior castigo para um gordo é deixar ele sem comer.
+- "Parem com isso, vocês estão passando do ponto."
+	Você: Parem com isso, vocês estão passando do ponto. Deixem ela em paz, tá?
+	Amigo: Nossa, você tinha que pesar mais o clima, né? Deixa esses dois aí, então.
+#do get_tree().get_first_node_in_group("player").verificar_final_de_jogo()
+do bully_sair()
+=> cena_3_conclusao
+
+~ cena_3_conclusao
+
+# Os amigos saem rindo, deixando a aluna sozinha
+Aluna Nova: (Sussurrando) Nossa, começamos bem...
+# A Aluna Nova baixa a cabeça, visivelmente triste
+
+- (Seguir os amigos sem olhar para trás)
+	# O jogador sai da área de conversa
+	Você: Me esperem! Estou indo.
+	do Vida.perder_vida()
+	#do vitima.voltar_ao_roaming()
+- Se desculpar por eles
+	Você: Oi... desculpa por eles. Eles são idiotas às vezes. Quer ajuda pra achar a sala?
+	Aluna Nova: Ah, tudo bem. Obrigada, de verdade.
+- É drama
+	Você: Para de drama, não aceita umas brincadeiras? Vai se acostumando ou já procura outra escola, esquisita.
+	do Vida.perder_vida()
+	Aluna Nova: ... Eu não fiz nada pra você. Por favor, me deixa sozinha.
+do get_tree().get_first_node_in_group("player").verificar_final_de_jogo()
+
+=> END
+#=> dialogue2/start
+
+
+#if not GameState.has_met_nathan
+	#set GameState.has_met_nathan = true
+	#Nathan: Hi, I'm Nathan.
+#else
+	#Nathan: Hello again.
+#Coco: Hi Nathan.

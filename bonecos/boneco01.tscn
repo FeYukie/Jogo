@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://xkirejhhbkk8"]
+
+[ext_resource type="Script" uid="uid://bjspc3arup0ol" path="res://bonecos/boneco_01.gd" id="1_xrr2l"]
+[ext_resource type="Texture2D" uid="uid://yi5gcrvfibas" path="res://tiles/char free/menina.png" id="2_xrr2l"]
+[ext_resource type="Texture2D" uid="uid://d0foblhnwmn73" path="res://tiles/jogador/spritesheet_o.png" id="3_xrr2l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf18c"]
+radius = 4.0
+height = 20.0
+
+[sub_resource type="Animation" id="Animation_dlp20"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xrr2l"]
+_data = {
+&"new_animation": SubResource("Animation_dlp20")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppnlk"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(668, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqrky"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(0, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16282"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(1336, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07fpq"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(2672, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07vtp"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(2004, 2004, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb0hr"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(2004, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wac4r"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(1336, 1002, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h871g"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(668, 2004, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tehqa"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(2004, 1002, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3kae"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(0, 2004, 668, 1002)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrr2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppnlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqrky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16282")
+}],
+"loop": true,
+"name": &"costas",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07fpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07vtp")
+}],
+"loop": true,
+"name": &"direita",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb0hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wac4r")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h871g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tehqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3kae")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 9.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1796086270]
+position = Vector2(202, 16)
+script = ExtResource("1_xrr2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1594056243]
+visible = false
+position = Vector2(-160, 4.999998)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_xrr2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620983464]
+scale = Vector2(0.11541069, 0.022065328)
+shape = SubResource("CapsuleShape2D_yf18c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1003487310]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_xrr2l")
+
+[node name="AvisoChat" type="Label" parent="." unique_id=185520804]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pressione C"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1933817662]
+scale = Vector2(0.075, 0.075)
+sprite_frames = SubResource("SpriteFrames_xrr2l")
+animation = &"costas"

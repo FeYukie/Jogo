@@ -1,0 +1,11 @@
+~ start
+Fase 2
+Nathan: Here are some choices.
+- First one
+	Você: vai ter uma animação diferente. snippet
+- Second one
+	Você: You picked the second one.
+- Start again => start
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END

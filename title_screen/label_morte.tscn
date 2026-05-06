@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://8b02ptlsbam2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n2lwr"]
+font_color = Color(0.96933573, 0.2557521, 0.21575607, 1)
+
+[node name="LabelMorte" type="Control" unique_id=76596968]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MensagemMorte" type="Label" parent="." unique_id=78748067 groups=["ui_morte"]]
+visible = false
+layout_mode = 0
+offset_left = 601.0
+offset_top = 450.0
+offset_right = 716.0
+offset_bottom = 473.0
+text = "Você tomou escolhas negativas"
+label_settings = SubResource("LabelSettings_n2lwr")
+horizontal_alignment = 1
+vertical_alignment = 1
