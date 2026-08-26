@@ -1,0 +1,96 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://lxii5dhnl1w2"]
+
+[ext_resource type="Texture2D" uid="uid://b0bll4avm1bcj" path="res://tiles/jogador/spritesheet_menina.png" id="1_t0lda"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0lda"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(666, 1000, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip3gl"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(1998, 0, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y4i3"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(1332, 1000, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5el6"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(0, 0, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8tde"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(666, 0, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrnt"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(1332, 0, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi3x1"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(0, 1000, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_topmu"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(1998, 1000, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j50g"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(0, 2000, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0ssa"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(666, 2000, 666, 1000)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0lda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip3gl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y4i3")
+}],
+"loop": true,
+"name": &"costas",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5el6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8tde")
+}],
+"loop": true,
+"name": &"direita",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi3x1")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_topmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j50g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0ssa")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 9.0
+}]

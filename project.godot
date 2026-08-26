@@ -18,9 +18,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://dipuch8hudr0v"
-DialogueManager="*uid://c3rodes2l3gxb"
+DialogueManager="uid://c3rodes2l3gxb"
 Vida="*uid://bjspc3arup0ol"
 Coracoes="*uid://bln2nfsm8vdxb"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://dialogue/balloon.tscn"
 
 [display]
 

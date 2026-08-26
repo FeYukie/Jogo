@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cirbkat7hhyix"]
+
+[ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_74x36"]
+[ext_resource type="SpriteFrames" uid="uid://cdsr3fv8pamdl" path="res://bonecos/anim_bully1.tres" id="2_q03y0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
+radius = 5.0
+height = 26.0
+
+[sub_resource type="GDScript" id="GDScript_74x36"]
+script/source = "extends Area2D
+@export var dialogo_recurso: DialogueResource = preload(\"res://dialogue/dialogue1.dialogue\")
+@export var dialogo_titulo: String = \"start\"
+func _on_body_entered(body):
+	if body.has_method(\"jogador\"):
+		body.pode_interagir = true
+		body.npc_proximo = self
+
+func _on_body_exited(body):
+	if body.has_method(\"jogador\"):
+		body.pode_interagir = false
+		body.npc_proximo = null
+		
+const BALAO_CENA = preload(\"res://personalizado.tscn\")
+
+func iniciar_dialogo():
+	var balao = BALAO_CENA.instantiate()
+	get_tree().current_scene.add_child(balao)
+	balao.start(dialogo_recurso, dialogo_titulo)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74x36"]
+size = Vector2(19.625, 50.25)
+
+[node name="vitima" type="CharacterBody2D" unique_id=1957441867]
+script = ExtResource("1_74x36")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=74300959]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=779873815]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_j1h26")
+
+[node name="Actionable" type="Area2D" parent="." unique_id=1836018293]
+script = SubResource("GDScript_74x36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" unique_id=1722440272]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_74x36")
+
+[node name="AvisoChat" type="Label" parent="." unique_id=13439119]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pressione C"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1158655805]
+position = Vector2(0, -21)
+sprite_frames = ExtResource("2_q03y0")
+animation = &"frente"
+
+[connection signal="body_entered" from="Actionable" to="." method="_on_actionable_body_entered"]
+[connection signal="body_exited" from="Actionable" to="." method="_on_actionable_body_exited"]
