@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cirbkat7hhyix"]
 
 [ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_74x36"]
-[ext_resource type="SpriteFrames" uid="uid://cdsr3fv8pamdl" path="res://bonecos/anim_bully1.tres" id="2_q03y0"]
+[ext_resource type="Texture2D" uid="uid://co10qgrnto8ta" path="res://tiles/jogador/spritesheet_Caua.png" id="2_q03y0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
 radius = 5.0
@@ -32,6 +32,42 @@ func iniciar_dialogo():
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74x36"]
 size = Vector2(19.625, 50.25)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw8py"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fbqu"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukanf"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjqdv"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7oqsc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw8py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fbqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukanf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjqdv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="vitima" type="CharacterBody2D" unique_id=1957441867]
 script = ExtResource("1_74x36")
 
@@ -56,8 +92,7 @@ text = "Pressione C"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1158655805]
 position = Vector2(0, -21)
-sprite_frames = ExtResource("2_q03y0")
-animation = &"frente"
+sprite_frames = SubResource("SpriteFrames_7oqsc")
 
 [connection signal="body_entered" from="Actionable" to="." method="_on_actionable_body_entered"]
 [connection signal="body_exited" from="Actionable" to="." method="_on_actionable_body_exited"]

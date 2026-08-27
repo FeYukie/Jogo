@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://b3xjlccp41svc"]
+
+[ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_720nk"]
+[ext_resource type="Texture2D" uid="uid://n52aydqdm5be" path="res://tiles/jogador/spritesheet_vitima.png" id="2_0vofd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
+radius = 5.0
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_720nk"]
+atlas = ExtResource("2_0vofd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4djr"]
+atlas = ExtResource("2_0vofd")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0w8e"]
+atlas = ExtResource("2_0vofd")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24n8i"]
+atlas = ExtResource("2_0vofd")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j6qr"]
+atlas = ExtResource("2_0vofd")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_120kt"]
+atlas = ExtResource("2_0vofd")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_862wb"]
+atlas = ExtResource("2_0vofd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2j0j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_720nk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4djr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0w8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24n8i")
+}],
+"loop": 1,
+"name": &"direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j6qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_120kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_862wb")
+}],
+"loop": 1,
+"name": &"esquerda",
+"speed": 5.0
+}]
+
+[node name="vitima" type="CharacterBody2D" unique_id=1957441867]
+script = ExtResource("1_720nk")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=74300959]
+
+[node name="AvisoChat" type="Label" parent="." unique_id=1109519249]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pressione C"
+
+[node name="ColisaoFisica" type="StaticBody2D" parent="." unique_id=1671230760]
+
+[node name="Collision" type="CollisionShape2D" parent="ColisaoFisica" unique_id=779873815]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_j1h26")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1705656383]
+sprite_frames = SubResource("SpriteFrames_x2j0j")

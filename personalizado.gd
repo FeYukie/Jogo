@@ -1,11 +1,11 @@
+extends Node
 
-## A basic dialogue balloon for use with Dialogue Manager.
-@onready var portrait: TextureRect = %Portrait # ou use o caminho $Caminho/Para/Portrait
+@onready var portrait: TextureRect = %Portrait
 
 # Caminho para as fotos dos personagens
 var portraits: Dictionary = {
-	"Bully": preload("res://tiles/jogador/menina.png"),
-	"Bully2": preload("res://tiles/jogador/menino.png"),
+	"Você": preload("res://tiles/jogador/menina.png"),
+	"Amigo": preload("res://tiles/jogador/menino.png")
 }
 
 ## The dialogue resource
@@ -144,7 +144,7 @@ func apply_dialogue_line() -> void:
 
 	responses_menu.hide()
 	responses_menu.responses = dialogue_line.responses
-
+	
 	# Show our balloon
 	balloon.show()
 	will_hide_balloon = false
@@ -171,7 +171,6 @@ func apply_dialogue_line() -> void:
 		is_waiting_for_input = true
 		balloon.focus_mode = Control.FOCUS_ALL
 		balloon.grab_focus()
-
 
 ## Go to the next line
 func next(next_id: String) -> void:

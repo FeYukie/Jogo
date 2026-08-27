@@ -20,6 +20,7 @@ func iniciar_dialogo():
 	var balao = BALAO_CENA.instantiate()
 	get_tree().current_scene.add_child(balao)
 	balao.start(dialogo_recurso, dialogo_titulo)
+	
 func _ao_terminar_dialogo(_resource):
 	is_chatting = false
 	is_roaming = true
