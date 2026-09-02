@@ -1,4 +1,4 @@
-extends Node
+extends CanvasLayer
 
 @onready var portrait: TextureRect = %Portrait
 
@@ -138,7 +138,12 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-
+	
+	if dialogue_line.character != "" and portraits.has(dialogue_line.character):
+		portrait.texture = portraits[dialogue_line.character]
+		portrait.visible = true
+	else:
+		portrait.visible = false
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
 
@@ -179,13 +184,7 @@ func next(next_id: String) -> void:
 	# Trecho original do script:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-
-	# --- ADICIONE ESTE BLOCO LOGO ABAIXO ---
-	if dialogue_line.character != "" and portraits.has(dialogue_line.character):
-		portrait.texture = portraits[dialogue_line.character]
-		portrait.visible = true
-	else:
-		portrait.visible = false
+	
 	# -------------------------------------
 #region Signals
 

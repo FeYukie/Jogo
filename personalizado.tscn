@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dokyrq2yg6ii0"]
 
-[ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_ptad0"]
+[ext_resource type="Script" uid="uid://c2uk65u33cjkv" path="res://personalizado.gd" id="1_e5naa"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_1ysdc"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_8m02l"]
 
@@ -101,7 +101,7 @@ _data = {
 
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=1434168376]
 layer = 100
-script = ExtResource("1_ptad0")
+script = ExtResource("1_e5naa")
 
 [node name="Balloon" type="Control" parent="." unique_id=359403728]
 unique_name_in_owner = true
@@ -135,6 +135,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Portrait" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1193503912]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 20)
 layout_mode = 2
 expand_mode = 1
