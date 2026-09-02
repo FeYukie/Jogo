@@ -134,6 +134,7 @@ offset_bottom = 23.0
 text = "Pressione C"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1933817662]
+position = Vector2(1, -9)
 scale = Vector2(0.075, 0.075)
 sprite_frames = SubResource("SpriteFrames_xrr2l")
 animation = &"costas"

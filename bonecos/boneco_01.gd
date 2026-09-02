@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var velocidade_maxima = 300.0
+@export var velocidade_maxima = 100.0
 @export var aceleracao = 1500.0
 @export var atrito = 1200.0
 @export var control_interacao: Control
@@ -41,14 +41,19 @@ func _ready():
 
 	#if Global.personagem_selecionado != null:
 		#sprite.texture = Global.personagem_selecionado
-		
+
 func _process(delta):
 	if pode_interagir and Input.is_action_just_pressed("chat"):
-		if npc_proximo:
+		if npc_proximo and not npc_proximo.is_chatting:
+			# Esconde a label do NPC na hora
+			if npc_proximo.has_node("AvisoChat"):
+				npc_proximo.get_node("AvisoChat").visible = false
+			
 			if control_interacao:
 				control_interacao.hide()
+				
 			iniciar_dialogo(npc_proximo)
-
+			
 func iniciar_dialogo(npc):
 	npc.iniciar_dialogo()
 	

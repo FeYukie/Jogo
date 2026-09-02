@@ -1,13 +1,18 @@
 extends CharacterBody2D
 
-const speed = 30
+const speed = 70
 var is_roaming = true
 var is_chatting = false
+var alvo: Vector2
+var andando := false
 
-# Carregue o recurso de diálogo aqui para facilitar o uso
+# Instanciação direta do balão personalizado
+const BALAO_CENA = preload("res://personalizado.tscn")
+
 @export var dialogo_recurso: DialogueResource = preload("res://dialogue/dialogue1.dialogue")
 @export var dialogo_titulo: String = "start"
-@onready var aviso_chat: Label = $AvisoChat # Pega a referência do texto
+
+@onready var aviso_chat: Label = $AvisoChat
 @onready var bully = $"../Bully"
 
 func iniciar_dialogo():
@@ -15,43 +20,67 @@ func iniciar_dialogo():
 		is_chatting = true
 		is_roaming = false
 		
-	# Validação
 	if dialogo_recurso == null:
 		push_error("Falha ao carregar o Resource de Diálogo. Verifique o caminho do arquivo.")
 		return
+	if aviso_chat:
+			aviso_chat.visible = false
+	# Instancia o balão na árvore
+	var balao_custom = BALAO_CENA.instantiate()
+	get_tree().current_scene.add_child(balao_custom)
+	
+	# Detecta o término pela árvore da cena quando o balão fechar/destruir
+	balao_custom.tree_exited.connect(_ao_terminar_dialogo, CONNECT_ONE_SHOT)
+	
+	# Inicia o diálogo passando os nós de contexto
+	balao_custom.start(dialogo_recurso, dialogo_titulo, [self, bully])
 
-		# Usa a função do singleton global do Dialogue Manager
-	DialogueManager.show_dialogue_balloon(dialogo_recurso, dialogo_titulo, [self, bully])
-		
-		# Opcional: Conectar sinal para saber quando o diálogo termina
-	DialogueManager.dialogue_ended.connect(_ao_terminar_dialogo, CONNECT_ONE_SHOT)
-
-func _ao_terminar_dialogo(_resource):
+func _ao_terminar_dialogo():
 	is_chatting = false
 	is_roaming = true
-	
-func fazer_bully_andar():
-	var tween = create_tween()
-	tween.tween_property(self, "position", Vector2(400, 300), 1.5)
+	if has_node("Actionable") and $Actionable.has_overlapping_bodies():
+		for body in $Actionable.get_overlapping_bodies():
+			if body.has_method("jogador") and aviso_chat:
+				aviso_chat.visible = true
+				break
+func ir_para(posicao: Vector2):
+	alvo = posicao
+	andando = true
 	$AnimatedSprite2D.play("frente")
-	
-	# O 'await' faz o Dialogue Manager pausar o texto até o movimento acabar
-	await tween.finished
+
+func _physics_process(_delta):
+	if not andando:
+		velocity = Vector2.ZERO
+		return
+
+	var direcao = global_position.direction_to(alvo)
+	velocity = direcao * speed
+	move_and_slide()
+
+	if global_position.distance_to(alvo) < 5 or (get_slide_collision_count() > 0 and velocity.length() < 1):
+		global_position = alvo if global_position.distance_to(alvo) < 5 else global_position
+		velocity = Vector2.ZERO
+		andando = false
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = 0
+
+func fazer_bully_andar():
+	ir_para(Vector2(400, 300))
+	while andando:
+		await get_tree().physics_frame
 	$AnimatedSprite2D.stop()
-	
-	# Quando o movimento acabar, ele para de animar
-	tween.finished.connect(func(): $Bully/AnimatedSprite2D.stop())
-# Sinais da Area2D (Actionable)
+
+# Sinais da Area2D
 func _on_actionable_body_entered(body: Node2D) -> void:
-	print("Colidiu com: ", body.name) # Isso vai aparecer no console lá embaixo
 	if body.has_method("jogador"):
 		body.pode_interagir = true
 		body.npc_proximo = self
-		print("Jogador detectado!")
-		aviso_chat.visible = true
+		if aviso_chat:
+			aviso_chat.visible = true
 
 func _on_actionable_body_exited(body: Node2D) -> void:
 	if body.has_method("jogador"):
 		body.pode_interagir = false
 		body.npc_proximo = null
-		aviso_chat.visible = false # Esconde o aviso quando o chat começa[cite: 2]
+		if aviso_chat:
+			aviso_chat.visible = false
