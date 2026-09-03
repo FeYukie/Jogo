@@ -1,11 +1,92 @@
 ~ start
-Fase 2
-Nathan: Here are some choices.
-- First one
-	Você: vai ter uma animação diferente. snippet
-- Second one
-	Você: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ cena1_apresentacao
+Professor: Atenção, turma! Silêncio, por favor.
+Professor: Hoje temos uma nova colega que está se transferindo para o nosso curso de Informática.
+Professor: Clara, por favor, levante-se e apresente-se brevemente para a sala.
+#do vitima_levantar()
+Vitima: [#timida] [shake]O-oi, pessoal... Meu nome é Clara... e eu gosto bastante de tecnologia...
+Amigo: [#rindo] Fala mais alto, novata! Ninguém aqui tem superaudição não!
+Bully: [#rindo] Ih, além de falar pra dentro, parece que vai desmaiar aí na frente!
+Vitima: [#triste] ...
+
+- Ficar quieto e não intervir
+	do Global.perder_vida("omissao")
+	Você: (...) 
+	Bully: Continua aí, oráculo do sussurro! [#rindo]
+- Entrar na onda e debochar junto
+	do Global.perder_vida("bullying")
+	Você: É sério, Clara, vai precisar de um microfone pra aula de laboratório! 
+	Vitima: ... [#triste]
+- Pedir para pararem
+	Você: Dá um tempo, pessoal! Deixa ela terminar de falar. 
+	Bully: Relaxa aí, fiscal da turma, só estamos descontraindo. [#ironico]
+	Vitima: Obrigada... 
+
+Professor: Chega de conversa paralela no fundo! Parem com as gracinhas e respeitem a colega de vocês. [#bravo]
+Professor: Seja bem-vinda, Clara. Pode se sentar. Vamos iniciar o conteúdo de hoje. 
+#do vitima_sentar()
 => END
+
+
+~ cena2_duvida
+Professor: ...e com essa sintaxe, encerramos a estrutura condicional principal do algoritmo. 
+Professor: Alguém ficou com alguma pergunta antes de começarmos a prática no terminal? 
+Vitima: Professor... com licença... [#timida]
+Vitima: (dúvida)? [#timida]
+Bully: Pff... sério isso? [#rindo]
+Amigo: Caramba, a garota não sabe nem o básico de lógica! Que pergunta idiota! [#rindo]
+Vitima: E-eu só queria ter certeza... [#triste]
+
+- Ignorar os comentários
+	Você: (...) 
+- Rir junto com seus amigos
+	do Global.perder_vida("bullying")
+	Você: Hahaha, boa sorte pra passar no semestre se essa for sua maior dúvida! 
+	Vitima: Desculpa... [#triste]
+- Defender a dúvida da Clara
+	Você: Para com isso. Muita gente confunde o escopo no começo. A dúvida faz todo sentido. 
+	Amigo: Tá bom, professor, não precisa se estressar. [#desdenho]
+	Vitima: Valeu... 
+
+Professor: Silêncio no fundo! A pergunta da Clara é muito válida e muita gente erra isso em código real. 
+Professor: Clara, quando a condição é falsa, o compilador pula todo aquele bloco interno, mantendo o estado das variáveis inalterado. Entendido? 
+Vitima: Entendi sim, professor. Obrigada! 
+=> END
+
+
+~ cena3_saida_materia
+Professor: Para o primeiro dia está bom. A aula de hoje está encerrada. Até a próxima aula
+#do bully_levantar()
+#do vitima_levantar()
+#do sequencia_bullying()
+Bully: Olha só o que temos aqui dando sopa na bancada... [#rindo]
+Vitima: Ei! Devolve o meu estojo e meu caderno, por favor!  [#bravo]
+Bully: Pega aí, garotinha do sussurro! Segura aí, cara! [#rindo]
+# O bully pro outro amigo
+Amigo: Opa, recebi! Ih, parece uma tartaruga tentando alcançar! [#rindo]
+Bully: Passa de volta! "Clara-muda" não pega nem sombra! [#rindo]
+Vitima: Parem! Isso não tem graça nenhuma! Me devolve! [#triste]
+
+- Pegar suas coisas e ir embora da sala
+	do Global.perder_vida("omissao")
+	Você: (Melhor não me meter... Isso não é problema meu.) 
+	# O jogador sai da sala e a vítima fica chorando
+	=> END
+- Entrar na brincadeira e chutar/jogar mais longe
+	do Global.perder_vida("bullying")
+	Você: Joga aqui pra mim! Caiu no chão, agora é de quem pegar! 
+	Vitima: Por que você tá fazendo isso comigo?! Eu nunca te fiz nada! [#chorando]
+	=> END
+- Intervir, pegar o material e devolver para a Clara
+	#do bully_parar_brincadeira()
+	Você: Já deu! Devolve isso agora. 
+	Você: Entra na frente e intercepta o caderno.
+	Bully: Qual é o seu problema? Estragou a diversão. [#bravo]
+	Você: Diversão é outra coisa. Deixa ela em paz. #[determinado]
+	Você: Aqui, Clara. Seu material tá inteiro. 
+	Vitima: Muito obrigada... Eu não sabia o que fazer... [#timida]
+#do vitima_sai()
+	=> END
+	
+	#NPC
+	
