@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c80b6ydxlpefi" path="res://title_screen/coracoes.tscn" id="7_sbsal"]
 [ext_resource type="PackedScene" uid="uid://ioaywlx4lxge" path="res://title_screen/pause_menu.tscn" id="8_jdjx4"]
 [ext_resource type="Texture2D" uid="uid://co10qgrnto8ta" path="res://title_screen/spritesheet_Caua.png" id="9_hy7as"]
-[ext_resource type="FontFile" uid="uid://cxn0kmpl00ccs" path="res://tiles/char free/VT323-Regular.ttf" id="9_l2na2"]
+[ext_resource type="Resource" uid="uid://j34n661562gy" path="res://dialogue/dialogue2.dialogue" id="9_l2na2"]
 [ext_resource type="PackedScene" uid="uid://b3xjlccp41svc" path="res://vitima.tscn" id="9_rkdku"]
 [ext_resource type="PackedScene" uid="uid://cirbkat7hhyix" path="res://bully.tscn" id="10_30mko"]
 [ext_resource type="SpriteFrames" uid="uid://cl4dvqtyu8ylp" path="res://anim_bully2.tres" id="12_041v0"]
@@ -90,28 +90,39 @@ func sequencia_bullying():
 	var alvo = vitima.global_position + Vector2(-10, -30)
 	var alvo2 = vitima.global_position + Vector2(10, -30)
 	
-	# Manda os bullys andarem
 	$Personagens/bully.ir_para(alvo)
 	$Personagens/bully3.ir_para(alvo2)
 	
 	# Espera ambos terminarem de andar
 	while $Personagens/bully.andando or $Personagens/bully3.andando:
 		await get_tree().physics_frame
+		
 func bully_sair():
 	var t3 = create_tween()
 	var t4 = create_tween()
-	var recuo1 = Vector2(0, -600) # Sobe 600 pixels
-	var recuo2 = Vector2(10, -600) 
+	var recuo1 = Vector2(0, 600) # Desce 600 pixels
+	var recuo2 = Vector2(10, 600) 
 	
-	$bully/AnimatedSprite2D.play(\"costas\")
-	$bully3/AnimatedSprite2D.play(\"costas\")
+	$bully/AnimatedSprite2D.play(\"frente\")
+	$bully3/AnimatedSprite2D.play(\"frente\")
 	
-	# IMPORTANTE: Use a posição atual de CADA BULLY como base
+	# posição atual de CADA BULLY como base
 	t3.tween_property($bully, \"global_position\", $bully.global_position + recuo1, 2.0)
 	t4.tween_property($bully3, \"global_position\", $bully3.global_position + recuo2, 2.0)
 	
 	await t3.finished
 	await t4.finished
+	
+#func vitima_sai():
+	
+#func vitima_levantar():
+
+#func vitima_sentar():
+	
+#func bully_levantar():
+	
+	
+#func bully_sentar():
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ro5h3"]
@@ -690,7 +701,7 @@ offset_bottom = 45.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.96862745)
 theme_override_font_sizes/font_size = 32
-text = "Fase 1"
+text = "Fase 2"
 
 [node name="perda" type="CanvasLayer" parent="." unique_id=1510582397]
 visible = false
@@ -718,6 +729,7 @@ y_sort_enabled = true
 
 [node name="bully" parent="Personagens" unique_id=716545204 instance=ExtResource("10_30mko")]
 position = Vector2(902, 316)
+dialogo_recurso = ExtResource("9_l2na2")
 
 [node name="Collision" parent="Personagens/bully" index="1" unique_id=779873815]
 visible = false
@@ -729,7 +741,6 @@ visible = false
 
 [node name="AvisoChat" parent="Personagens/bully" index="3" unique_id=13439119]
 texture_filter = 1
-theme_override_fonts/font = ExtResource("9_l2na2")
 theme_override_font_sizes/font_size = 11
 text = "[E] Falar"
 
@@ -738,6 +749,31 @@ position = Vector2(-4, -9)
 sprite_frames = SubResource("SpriteFrames_vw1yx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/bully" unique_id=1953416493]
+position = Vector2(-3, -12)
+shape = SubResource("CapsuleShape2D_bsbin")
+
+[node name="professor" parent="Personagens" unique_id=1957441867 instance=ExtResource("10_30mko")]
+position = Vector2(902, 316)
+dialogo_recurso = ExtResource("9_l2na2")
+
+[node name="Collision" parent="Personagens/professor" index="1" unique_id=779873815]
+visible = false
+position = Vector2(-4, -8)
+shape = SubResource("RectangleShape2D_rkdku")
+
+[node name="CollisionShape2D" parent="Personagens/professor/Actionable" parent_id_path=PackedInt32Array(1957441867, 1836018293) index="0" unique_id=1722440272]
+visible = false
+
+[node name="AvisoChat" parent="Personagens/professor" index="3" unique_id=13439119]
+texture_filter = 1
+theme_override_font_sizes/font_size = 11
+text = "[E] Falar"
+
+[node name="AnimatedSprite2D" parent="Personagens/professor" index="4" unique_id=1158655805]
+position = Vector2(-4, -9)
+sprite_frames = SubResource("SpriteFrames_vw1yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/professor" unique_id=1720877375]
 position = Vector2(-3, -12)
 shape = SubResource("CapsuleShape2D_bsbin")
 
@@ -759,7 +795,7 @@ position_smoothing_speed = 7.0
 position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_l2na2")
 
-[node name="vitima" parent="Personagens" unique_id=1957441867 instance=ExtResource("9_rkdku")]
+[node name="vitima" parent="Personagens" unique_id=1699081998 instance=ExtResource("9_rkdku")]
 position = Vector2(829, 434)
 
 [node name="bully3" parent="Personagens" unique_id=690321602 instance=ExtResource("10_30mko")]
@@ -774,17 +810,17 @@ shape = SubResource("CapsuleShape2D_ds570")
 
 [node name="AvisoChat" parent="Personagens/bully3" index="3" unique_id=13439119]
 texture_filter = 1
-theme_override_fonts/font = ExtResource("9_l2na2")
 theme_override_font_sizes/font_size = 13
 text = "[E] Falar"
 
 [node name="AnimatedSprite2D" parent="Personagens/bully3" index="4" unique_id=1158655805]
 position = Vector2(0, -22)
 sprite_frames = ExtResource("12_041v0")
-animation = &"costas"
+animation = &"frente"
 
 [editable path="bully1"]
 [editable path="bully2"]
 [editable path="Pause/pausa"]
 [editable path="Personagens/bully"]
+[editable path="Personagens/professor"]
 [editable path="Personagens/bully3"]
