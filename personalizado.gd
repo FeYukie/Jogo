@@ -4,8 +4,22 @@ extends CanvasLayer
 
 # Caminho para as fotos dos personagens
 var portraits: Dictionary = {
-	"Você": preload("res://tiles/jogador/menina.png"),
-	"Amigo": preload("res://tiles/jogador/menino.png")
+	"Bully": {
+		"padrao": preload("res://tiles/jogador/bully2.png"),
+		"bravo": preload("res://tiles/jogador/bully2 af.png"),
+		"rindo": preload("res://tiles/jogador/bully2 ri.png")
+	},
+	"Vitima": {
+		"padrao": preload("res://tiles/jogador/vitima.png"),
+		"triste": preload("res://tiles/jogador/vitima.png")
+	},
+	"Amigo": {
+		"padrao": preload("res://tiles/jogador/bully1.png"),
+		"rindo": preload("res://tiles/jogador/bully1 ri.png")
+	},
+	"Você": {
+		"padrao": preload("res://tiles/jogador/menina_retrato.png")
+	}
 }
 
 ## The dialogue resource
@@ -140,7 +154,18 @@ func apply_dialogue_line() -> void:
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	
 	if dialogue_line.character != "" and portraits.has(dialogue_line.character):
-		portrait.texture = portraits[dialogue_line.character]
+		var dados_personagem: Dictionary = portraits[dialogue_line.character]
+		var expressao: String = "padrao"
+		
+		# Procura se alguma das tags bate com as chaves do dicionário
+		if dialogue_line.tags.size() > 0:
+			for tag in dialogue_line.tags:
+				var tag_limpa = tag.strip_edges().to_lower().replace("[", "").replace("]", "")
+				if dados_personagem.has(tag_limpa):
+					expressao = tag_limpa
+					break
+		
+		portrait.texture = dados_personagem[expressao]
 		portrait.visible = true
 	else:
 		portrait.visible = false
