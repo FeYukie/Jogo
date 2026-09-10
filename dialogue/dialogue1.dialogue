@@ -1,4 +1,4 @@
-import "res://dialogue/dialogue2.dialogue" as dialogue2
+#import "res://dialogue/dialogue2.dialogue" as dialogue2
 
 ~ start
 Você: Oi, gente.

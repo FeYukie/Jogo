@@ -1,0 +1,16 @@
+~ start
+Amigo: Finalmente a aula acabou.
+Amiga: Aquela .
+Você: [[Hi|Hello|Howdy]], Vamos andar um pouco no parque.
+do andar()
+Estrangeiro: Finalmente a aula acabou.
+Amigo: Ha ha ha, aquele menino fala de um jeito estranho.
+Amiga: Volta para seu país.
+- First one
+	Você: You picked the first one.
+- Second one
+	Você: You picked the second one.
+- Start again => start
+- End the conversation => END
+Você: For more information see the online documentation.
+=> END
