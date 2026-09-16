@@ -30,7 +30,7 @@ func iniciar_dialogo():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74x36"]
-size = Vector2(26, 36.5625)
+size = Vector2(41, 33.28125)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dw8py"]
 atlas = ExtResource("2_q03y0")

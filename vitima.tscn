@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b3xjlccp41svc"]
 
 [ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_720nk"]
-[ext_resource type="Texture2D" uid="uid://n52aydqdm5be" path="res://tiles/jogador/spritesheet_vitima.png" id="2_0vofd"]
+[ext_resource type="Texture2D" uid="uid://bork7ipq7bwwr" path="res://tiles/jogador/spritesheet_vitima.png" id="2_0vofd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
 radius = 5.0
-height = 26.0
+height = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_720nk"]
 atlas = ExtResource("2_0vofd")
@@ -41,7 +41,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_720nk")
 }],
-"loop": 1,
+"loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -55,7 +55,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_24n8i")
 }],
-"loop": 1,
+"loop": true,
 "name": &"direita",
 "speed": 5.0
 }, {
@@ -69,10 +69,14 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_862wb")
 }],
-"loop": 1,
+"loop": true,
 "name": &"esquerda",
 "speed": 5.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6pfx"]
+radius = 6.0
+height = 20.0
 
 [node name="vitima" type="CharacterBody2D" unique_id=1957441867]
 script = ExtResource("1_720nk")
@@ -93,3 +97,6 @@ shape = SubResource("CapsuleShape2D_j1h26")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1705656383]
 sprite_frames = SubResource("SpriteFrames_x2j0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1191103303]
+shape = SubResource("CapsuleShape2D_h6pfx")
