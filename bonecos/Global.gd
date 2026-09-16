@@ -1,6 +1,7 @@
 extends Node
-var personagem_selecionado : SpriteFrames
-
+var personagem_selecionado : SpriteFrames 
+var genero_jogador: String = "menino" # "menino" ou "menina"
+var nome_jogador: String = "Davi"
 var vidas: int = 3
 
 func perder_vida(motivo: String = "") -> void:
