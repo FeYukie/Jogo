@@ -7,13 +7,13 @@ Amigo: E aí! Quanto tempo, cara.
 Amiga: Como foram as férias? Deu pra descansar ou só ficou jogando?
 Amigo: A gente acabou de chegar também, estávamos botando a fofoca em dia, hehe... Inclusive, você viu aquela menina estranha ali no canto?
 Amiga: Difícil não ver, né? Ocupa o espaço de três pessoas.
-Amigo: Hahaha, acho que a escola vai ter que aumentar a porta da cantina esse ano.
+Amigo: Hahaha, acho que a escola vai ter que aumentar a porta da cantina esse ano.[#rindo]
 
 - "Pois é, ela é bem... grande."
 	Você: Pois é, ela é bem... grande. Chegou chegando mesmo.
 	do Vida.perder_vida()
 	Amigo: Até você concorda. Ela parece um mamute andando e o chão tremendo...
-	Amiga: Ha ha ha ha ha! Essa foi boa!
+	Amiga: Ha ha ha ha ha! Essa foi boa![#rindo]
 	Amigo: Vamos lá ver o mamute mais de perto.
 - (Ficar quieto)
 	Você: Ah, sim...
@@ -23,7 +23,7 @@ Amigo: Hahaha, acho que a escola vai ter que aumentar a porta da cantina esse an
 	Amiga: Vamos dar as boas-vindas à novata.
 - "Não tem graça."
 	Você: Não tem graça. Que implicância, é o primeiro dia dela!
-	Amiga: Ih, virou advogado dela agora? Relaxa, a gente só tá brincando.
+	Amiga: Ih, virou advogado dela agora? Relaxa, a gente só tá brincando.[#bravo]
 	Amigo: É. Vamos lá falar com a novata.
 do sequencia_bullying()
 => cena_2_trote
@@ -32,7 +32,7 @@ do sequencia_bullying()
 
 # Vocês se aproximam da aluna nova
 Amigo: E aí, grande! 
-Amiga: (segurando a risada) Nunca te vimos antes.
+Amiga: (segurando a risada) Nunca te vimos antes.[#rindo]
 Aluna Nova: Oi, tudo bem? Eu sou nova aqui.
 Amigo: Ah, claro... É bom se acostumar com essa escola logo.
 Amiga: É, inclusive, a gente tá cobrando uma taxa de entrada. Um lanche pra cada um, fechou?
