@@ -2,10 +2,14 @@ extends Node2D
 
 func _on_botao_masculino_pressed() -> void:
 	Global.personagem_selecionado = preload("res://bonecos/anim_menino.tres")
+	Global.genero_jogador = "menino"
+	Global.nome_jogador = "Davi" 
 	ir_para_o_jogo()
-
+	
 func _on_botao_feminino_pressed() -> void:
 	Global.personagem_selecionado = preload("res://bonecos/anim_menina.tres")
+	Global.genero_jogador = "menina"
+	Global.nome_jogador = "Rafaela" 
 	ir_para_o_jogo()
 
 func ir_para_o_jogo():
