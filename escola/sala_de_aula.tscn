@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://wp6jtn4r2pqj"]
 
 [ext_resource type="Texture2D" uid="uid://uc5iegqq8rc8" path="res://patio/terrain/assets/idfk.png" id="1_g8tdk"]
-[ext_resource type="Texture2D" uid="uid://bu3cjgyalvq5j" path="res://patio/terrain/assets/Classroom_A2.png" id="2_v2ot3"]
-[ext_resource type="Texture2D" uid="uid://d4bmj63vn8bj6" path="res://patio/terrain/assets/Classroom_B.png" id="3_rynpk"]
-[ext_resource type="Texture2D" uid="uid://do2goenidonqa" path="res://patio/terrain/assets/carteira.png" id="4_gv82f"]
+[ext_resource type="Texture2D" uid="uid://bu3cjgyalvq5j" path="res://escola/terrain/assets/Classroom_A2.png" id="2_v2ot3"]
+[ext_resource type="Texture2D" uid="uid://d4bmj63vn8bj6" path="res://escola/terrain/assets/Classroom_B.png" id="3_rynpk"]
+[ext_resource type="Texture2D" uid="uid://do2goenidonqa" path="res://escola/terrain/assets/carteira.png" id="4_gv82f"]
 [ext_resource type="PackedScene" uid="uid://xkirejhhbkk8" path="res://bonecos/boneco01.tscn" id="5_lcaw0"]
 [ext_resource type="PackedScene" uid="uid://8b02ptlsbam2" path="res://title_screen/label_morte.tscn" id="6_hy7as"]
 [ext_resource type="PackedScene" uid="uid://c80b6ydxlpefi" path="res://title_screen/coracoes.tscn" id="7_sbsal"]
@@ -85,8 +85,64 @@ sources/2 = SubResource("TileSetAtlasSource_gv82f")
 
 [sub_resource type="GDScript" id="GDScript_eq3w0"]
 script/source = "extends Node2D
+
+@onready var vitima: CharacterBody2D = $Personagens/vitima
+@onready var sprite = $Personagens/vitima/AnimatedSprite2D
+@onready var prof: CharacterBody2D = $Personagens/professor
+
+func _ready() -> void:
+	configurar_posicoes_iniciais()
+
+func configurar_posicoes_iniciais() -> void:
+	if has_node(\"vitima\"):
+		$Personagens/vitima/AnimatedSprite2D.play(\"sentado\")
+		$Personagens/vitima/Collision.disabled = true
+		
+func vitima_levantar():
+	sprite.play(\"direita\")
+	sprite.flip_h = false # true se a saída da carteira for para a esquerda
+
+	# 2. Cria o Tween para mover a vítima
+	var tween = create_tween()
+	
+	# Passo A: Dá um passo para o lado (sai de trás da mesa)
+	# Altere o valor (ex: +16 ou -16 pixels) dependendo do tamanho do seu tile
+	var pos_lado = vitima.position + Vector2(24, 0)
+	tween.tween_property(vitima, \"position\", pos_lado, 0.6)
+	tween.tween_callback(func():
+		sprite.play(\"costas\")
+	)
+	
+	#var pos_frente = pos_lado + Vector2(0, 24)
+	#tween.tween_property(vitima, \"position\", pos_frente, 0.7)
+	# Calcula a altura exata para ela parar logo abaixo do professor
+	var pos_prof = Vector2(pos_lado.x, prof.position.y)
+	
+	# O tempo (ex: 2.0 segundos) ajusta a velocidade do trajeto
+	tween.tween_property(vitima, \"position\", pos_prof, 2.0)
+	var offset_x: float = -28.0 
+	
+	tween.tween_callback(func():
+		sprite.play(\"walk_lado\")
+		sprite.flip_h = (offset_x < 0) # ajusta o lado para onde ela anda
+	)
+	var pos_final_lado = prof.position + Vector2(offset_x, 0)
+	tween.tween_property(vitima, \"position\", pos_final_lado, 0.8)
+	# Passo C: Quando terminar de andar, para na pose de espera
+	tween.tween_callback(func():
+		sprite.play(\"default\")
+	)
+	#var pos_altura_prof = Vector2(pos_corredor.x, prof.position.y)
+	#tween.tween_property(vitima, \"position\", pos_altura_prof, 1.8)
+	
+	# 3. Vira de lado e caminha até ficar ao lado do professor
+	# (-28 pixels coloca ela à esquerda do professor; mude para +28 se for à direita)
+	
+	# Espera o movimento terminar antes de devolver o controle para o diálogo
+	await tween.finished
+	
 func sequencia_bullying():
-	var vitima = $Personagens/vitima
+	#var vitima = $Personagens/vitima
 	
 	# Posições próximas da vítima
 	var alvo = vitima.global_position + Vector2(-10, -30)
@@ -117,7 +173,7 @@ func bully_sair():
 	
 #func vitima_sai():
 	
-#func vitima_levantar():
+
 
 #func vitima_sentar():
 	
@@ -493,7 +549,7 @@ height = 24.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l2na2"]
 radius = 5.0
-height = 14.0
+height = 10.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ds570"]
 radius = 5.0
@@ -526,6 +582,7 @@ tile_map_data = PackedByteArray("AAAmABUAAgAJAAQAAAAmABYAAgAJAAUAAAAnABUAAgAKAAQ
 tile_set = SubResource("TileSet_eq3w0")
 
 [node name="cadeiras da sala" type="TileMapLayer" parent="Corredor/carteiras" unique_id=1395147283]
+z_index = 1
 tile_map_data = PackedByteArray("AAAmABUAAAANAAgAAAAmABYAAAANAAkAAAAnABUAAAAOAAgAAAAnABYAAAAOAAkAAAAqABUAAAANAAgAAAAqABYAAAANAAkAAAArABUAAAAOAAgAAAArABYAAAAOAAkAAAAuABUAAAANAAgAAAAuABYAAAANAAkAAAAvABUAAAAOAAgAAAAvABYAAAAOAAkAAAAmABcAAAANAAgAAAAmABgAAAANAAkAAAAnABcAAAAOAAgAAAAnABgAAAAOAAkAAAAqABcAAAANAAgAAAAqABgAAAANAAkAAAArABcAAAAOAAgAAAArABgAAAAOAAkAAAAuABcAAAANAAgAAAAuABgAAAANAAkAAAAvABcAAAAOAAgAAAAvABgAAAAOAAkAAAAqABkAAAANAAgAAAAqABoAAAANAAkAAAArABkAAAAOAAgAAAArABoAAAAOAAkAAAAmABkAAAANAAgAAAAmABoAAAANAAkAAAAnABkAAAAOAAgAAAAnABoAAAAOAAkAAAAxABkAAAANAAgAAAAxABoAAAANAAkAAAAyABkAAAAOAAgAAAAyABoAAAAOAAkAAAA1ABkAAAANAAgAAAA1ABoAAAANAAkAAAA2ABkAAAAOAAgAAAA2ABoAAAAOAAkAAAA5ABcAAAANAAgAAAA5ABgAAAANAAkAAAA6ABcAAAAOAAgAAAA6ABgAAAAOAAkAAAA1ABcAAAANAAgAAAA1ABgAAAANAAkAAAA2ABcAAAAOAAgAAAA2ABgAAAAOAAkAAAAxABcAAAANAAgAAAAxABgAAAANAAkAAAAyABcAAAAOAAgAAAAyABgAAAAOAAkAAAAxABUAAAANAAgAAAAxABYAAAANAAkAAAAyABUAAAAOAAgAAAAyABYAAAAOAAkAAAA1ABUAAAANAAgAAAA1ABYAAAANAAkAAAA2ABUAAAAOAAgAAAA2ABYAAAAOAAkAAAA5ABUAAAANAAgAAAA5ABYAAAANAAkAAAA6ABUAAAAOAAgAAAA6ABYAAAAOAAkAAAA=")
 tile_set = SubResource("TileSet_yf5fn")
 
@@ -741,6 +798,7 @@ y_sort_enabled = true
 position = Vector2(7, 18)
 
 [node name="bully" parent="Personagens" unique_id=716545204 instance=ExtResource("10_30mko")]
+z_index = 2
 position = Vector2(946, 399)
 dialogo_recurso = ExtResource("9_l2na2")
 
@@ -783,7 +841,7 @@ position = Vector2(908, 293)
 script = ExtResource("11_ds570")
 dialogo_recurso = ExtResource("9_l2na2")
 
-[node name="Animation" type="AnimationPlayer" parent="Personagens/professor" unique_id=74300959]
+[node name="Animation" type="AnimationPlayer" parent="Personagens/professor" unique_id=2069361681]
 
 [node name="Collision" type="CollisionShape2D" parent="Personagens/professor" unique_id=291006381]
 visible = false
@@ -836,13 +894,14 @@ drag_right_margin = 0.09
 drag_bottom_margin = 0.11
 
 [node name="Collision" type="CollisionShape2D" parent="Personagens/jogador" unique_id=211717548]
-position = Vector2(0, -9)
+position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_l2na2")
 
 [node name="vitima" parent="Personagens" unique_id=1699081998 instance=ExtResource("9_rkdku")]
-position = Vector2(883, 328)
+position = Vector2(857, 342)
 
 [node name="bully3" parent="Personagens" unique_id=690321602 instance=ExtResource("10_30mko")]
+z_index = 2
 position = Vector2(922, 401)
 dialogo_recurso = ExtResource("9_l2na2")
 
