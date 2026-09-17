@@ -7,6 +7,10 @@
 radius = 5.0
 height = 12.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnkqt"]
+atlas = ExtResource("2_0vofd")
+region = Rect2(0, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_720nk"]
 atlas = ExtResource("2_0vofd")
 region = Rect2(0, 0, 32, 32)
@@ -35,8 +39,20 @@ region = Rect2(32, 64, 32, 32)
 atlas = ExtResource("2_0vofd")
 region = Rect2(64, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6pfx"]
+atlas = ExtResource("2_0vofd")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_x2j0j"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnkqt")
+}],
+"loop": true,
+"name": &"costas",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_720nk")
@@ -72,6 +88,14 @@ animations = [{
 "loop": true,
 "name": &"esquerda",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6pfx")
+}],
+"loop": true,
+"name": &"sentado",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6pfx"]
@@ -92,11 +116,15 @@ text = "Pressione C"
 [node name="ColisaoFisica" type="StaticBody2D" parent="." unique_id=1671230760]
 
 [node name="Collision" type="CollisionShape2D" parent="ColisaoFisica" unique_id=779873815]
+position = Vector2(0, -7)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_j1h26")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1705656383]
+position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_x2j0j")
+animation = &"sentado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1191103303]
+position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_h6pfx")
