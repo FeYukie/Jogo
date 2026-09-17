@@ -5,11 +5,12 @@ if Global.genero_jogador == "menino"
 else
 	Amiga: [#rindo]Olha só quem chegou atrasada!
 Amigo: [#rindo]A gorda conseguiu chegar na sala antes de você!
-Professor: Bom, acho que todos já chegaram. Atenção, turma! Silêncio, por favor.
-Professor: Hoje temos uma nova colega que está se transferindo para o nosso curso de Informática.
-Professor: Carolina, por favor, levante-se e apresente-se brevemente para a sala.
-#do Aluna Nova_levantar()
-Aluna Nova: [#timida] [shake]O-oi, pessoal... Meu nome é Carolina... e eu gosto bastante de tecnologia...
+Professor: Bom, como a maioria já chegou, irei começar. 
+Professor: Atenção, turma! Silêncio, por favor.
+Professor: Hoje temos uma nova colega que está se transferindo para a nossa sala.
+Professor: Carolina, por favor, levante-se e apresente-se brevemente para a turma.
+do vitima_levantar()
+Aluna Nova: [#timida] [shake]O-oi, pessoal... Meu nome é Carolina... vim do Colégio São José...
 Amigo: [#rindo] Fala mais alto, novata! Ninguém aqui tem superaudição não!
 Amiga: [#rindo] Ih, além de falar pra dentro, parece que vai desmaiar aí na frente!
 Aluna Nova: [#triste] ...
@@ -17,10 +18,10 @@ Aluna Nova: [#triste] ...
 - Ficar quieto e não intervir
 	do Global.perder_vida("omissao")
 	Você: (...) 
-	Amiga: Continua aí, oráculo do sussurro! [#rindo]
+	Amiga: Continua aí, vamos fazer leitura labial! [#rindo]
 - Entrar na onda e debochar junto
 	do Global.perder_vida("bullying")
-	Você: É sério, Carolina, vai precisar de um microfone pra aula de laboratório! 
+	Você: É sério, Carolina, vai precisar de um microfone pras aulas! 
 	Aluna Nova: ... [#triste]
 - Pedir para pararem
 	Você: Dá um tempo, pessoal! Deixa ela terminar de falar. 
