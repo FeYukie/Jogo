@@ -12,7 +12,14 @@ func sequencia_bullying():
 	# Espera ambos terminarem de andar
 	while $Personagens/bully.andando or $Personagens/bully3.andando:
 		await get_tree().physics_frame
-		
+
+func _ready() -> void:
+	configurar_posicoes_iniciais()
+
+func configurar_posicoes_iniciais() -> void:
+	if has_node("vitima"):
+		$Personagens/vitima/AnimatedSprite2D.play("default")
+		$Personagens/vitima/Collision.disabled = true
 func bully_sair():
 	var t3 = create_tween()
 	var t4 = create_tween()
