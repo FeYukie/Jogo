@@ -1,9 +1,9 @@
-[gd_scene format=4 uid="uid://wp6jtn4r2pqj"]
+[gd_scene format=4 uid="uid://bpe2x0g6bl32x"]
 
-[ext_resource type="Texture2D" uid="uid://uc5iegqq8rc8" path="res://terrain/assets/idfk.png" id="1_g8tdk"]
-[ext_resource type="Texture2D" uid="uid://bu3cjgyalvq5j" path="res://terrain/assets/Classroom_A2.png" id="2_v2ot3"]
-[ext_resource type="Texture2D" uid="uid://d4bmj63vn8bj6" path="res://terrain/assets/Classroom_B.png" id="3_rynpk"]
-[ext_resource type="Texture2D" uid="uid://do2goenidonqa" path="res://terrain/assets/carteira.png" id="4_gv82f"]
+[ext_resource type="Texture2D" uid="uid://uc5iegqq8rc8" path="res://patio/terrain/assets/idfk.png" id="1_g8tdk"]
+[ext_resource type="Texture2D" uid="uid://bu3cjgyalvq5j" path="res://patio/terrain/assets/Classroom_A2.png" id="2_v2ot3"]
+[ext_resource type="Texture2D" uid="uid://d4bmj63vn8bj6" path="res://patio/terrain/assets/Classroom_B.png" id="3_rynpk"]
+[ext_resource type="Texture2D" uid="uid://do2goenidonqa" path="res://patio/terrain/assets/carteira.png" id="4_gv82f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v2ot3"]
 texture = ExtResource("1_g8tdk")
