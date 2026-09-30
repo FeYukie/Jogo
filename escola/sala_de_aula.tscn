@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://wp6jtn4r2pqj"]
 
 [ext_resource type="Texture2D" uid="uid://uc5iegqq8rc8" path="res://patio/terrain/assets/idfk.png" id="1_g8tdk"]
-[ext_resource type="Texture2D" uid="uid://bu3cjgyalvq5j" path="res://escola/terrain/assets/Classroom_A2.png" id="2_v2ot3"]
-[ext_resource type="Texture2D" uid="uid://d4bmj63vn8bj6" path="res://escola/terrain/assets/Classroom_B.png" id="3_rynpk"]
-[ext_resource type="Texture2D" uid="uid://do2goenidonqa" path="res://escola/terrain/assets/carteira.png" id="4_gv82f"]
+[ext_resource type="Texture2D" uid="uid://bu3cjgyalvq5j" path="res://patio/terrain/assets/Classroom_A2.png" id="2_v2ot3"]
+[ext_resource type="Texture2D" uid="uid://d4bmj63vn8bj6" path="res://patio/terrain/assets/Classroom_B.png" id="3_rynpk"]
+[ext_resource type="Texture2D" uid="uid://do2goenidonqa" path="res://patio/terrain/assets/carteira.png" id="4_gv82f"]
 [ext_resource type="PackedScene" uid="uid://xkirejhhbkk8" path="res://bonecos/boneco01.tscn" id="5_lcaw0"]
 [ext_resource type="PackedScene" uid="uid://8b02ptlsbam2" path="res://title_screen/label_morte.tscn" id="6_hy7as"]
 [ext_resource type="PackedScene" uid="uid://c80b6ydxlpefi" path="res://title_screen/coracoes.tscn" id="7_sbsal"]
@@ -15,6 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://k613bjntp8n2" path="res://tiles/jogador/professor (2).png" id="11_bsbin"]
 [ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="11_ds570"]
 [ext_resource type="SpriteFrames" uid="uid://cl4dvqtyu8ylp" path="res://anim_bully2.tres" id="12_041v0"]
+[ext_resource type="Texture2D" uid="uid://d32fogxjr65v2" path="res://tiles/jogador/spritesheet_professora-removebg-preview.png" id="16_m3c7e"]
+[ext_resource type="Texture2D" uid="uid://biv0g4gkqy83u" path="res://tiles/jogador/npc3.png" id="17_30tnh"]
+[ext_resource type="Texture2D" uid="uid://ry4hpr6dryby" path="res://tiles/jogador/npc4.png" id="18_pny6t"]
+[ext_resource type="Texture2D" uid="uid://bs41c1sil5w8l" path="res://tiles/jogador/npc5.png" id="19_rmir4"]
+[ext_resource type="Texture2D" uid="uid://cod1swl6nfl40" path="res://tiles/jogador/npc6.png" id="20_6vmtx"]
+[ext_resource type="Texture2D" uid="uid://b5pyhjqnw5rt1" path="res://tiles/jogador/npc7.png" id="21_5q534"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v2ot3"]
 texture = ExtResource("1_g8tdk")
@@ -91,6 +97,7 @@ script/source = "extends Node2D
 @onready var prof: CharacterBody2D = $Personagens/professor
 
 func _ready() -> void:
+	await get_tree().physics_frame
 	configurar_posicoes_iniciais()
 
 func configurar_posicoes_iniciais() -> void:
@@ -105,7 +112,6 @@ func vitima_levantar():
 	# 2. Cria o Tween para mover a vítima
 	var tween = create_tween()
 	
-	# Passo A: Dá um passo para o lado (sai de trás da mesa)
 	# Altere o valor (ex: +16 ou -16 pixels) dependendo do tamanho do seu tile
 	var pos_lado = vitima.position + Vector2(24, 0)
 	tween.tween_property(vitima, \"position\", pos_lado, 0.6)
@@ -540,8 +546,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsbin"]
-radius = 3.0
-height = 14.0
+radius = 0.3999939
+height = 1.7600021
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yabhf"]
 radius = 6.0
@@ -798,9 +804,9 @@ y_sort_enabled = true
 position = Vector2(7, 18)
 
 [node name="bully" parent="Personagens" unique_id=716545204 instance=ExtResource("10_30mko")]
-z_index = 2
-position = Vector2(946, 399)
+position = Vector2(940, 410)
 dialogo_recurso = ExtResource("9_l2na2")
+metadata/_edit_group_ = true
 
 [node name="Collision" parent="Personagens/bully" index="1" unique_id=779873815]
 visible = false
@@ -900,9 +906,11 @@ shape = SubResource("CapsuleShape2D_l2na2")
 [node name="vitima" parent="Personagens" unique_id=1699081998 instance=ExtResource("9_rkdku")]
 position = Vector2(857, 342)
 
+[node name="AnimatedSprite2D" parent="Personagens/vitima" index="3" unique_id=1705656383]
+animation = &"sentado"
+
 [node name="bully3" parent="Personagens" unique_id=690321602 instance=ExtResource("10_30mko")]
-z_index = 2
-position = Vector2(922, 401)
+position = Vector2(917, 410)
 dialogo_recurso = ExtResource("9_l2na2")
 
 [node name="Collision" parent="Personagens/bully3" index="1" unique_id=779873815]
@@ -932,8 +940,74 @@ animation = &"frente"
 position = Vector2(1, -14)
 shape = SubResource("CapsuleShape2D_85nff")
 
+[node name="professora" type="CharacterBody2D" parent="Personagens" unique_id=427848729]
+texture_filter = 1
+position = Vector2(656, 298)
+script = ExtResource("11_ds570")
+dialogo_recurso = ExtResource("9_l2na2")
+metadata/_edit_group_ = true
+
+[node name="Animation" type="AnimationPlayer" parent="Personagens/professora" unique_id=1226204898]
+
+[node name="Collision" type="CollisionShape2D" parent="Personagens/professora" unique_id=80055503]
+visible = false
+position = Vector2(-4, -8)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_rkdku")
+
+[node name="AvisoChat" type="Label" parent="Personagens/professora" unique_id=328878234]
+visible = false
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "[E] Falar"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Personagens/professora" unique_id=1384933923]
+visible = false
+position = Vector2(-4, -9)
+sprite_frames = SubResource("SpriteFrames_vw1yx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Personagens/professora" unique_id=744003393]
+position = Vector2(-3.0517578e-05, -21)
+scale = Vector2(0.12653168, 0.122864634)
+texture = ExtResource("16_m3c7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/professora/Sprite2D" unique_id=528222502]
+position = Vector2(-15.806317, 16.277987)
+scale = Vector2(12.5, 12.5)
+shape = SubResource("CapsuleShape2D_bsbin")
+
+[node name="leitora" type="Sprite2D" parent="Personagens" unique_id=1251187091]
+position = Vector2(1002, 409)
+texture = ExtResource("17_30tnh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/leitora" unique_id=122974976]
+position = Vector2(1.0000181, 1)
+scale = Vector2(12.5, 12.5)
+shape = SubResource("CapsuleShape2D_bsbin")
+
+[node name="aluna1" type="Sprite2D" parent="Personagens" unique_id=1236054596]
+position = Vector2(745, 359)
+texture = ExtResource("18_pny6t")
+
+[node name="aluno1" type="Sprite2D" parent="Personagens" unique_id=439920068]
+position = Vector2(793, 359)
+texture = ExtResource("19_rmir4")
+
+[node name="aluna" type="Sprite2D" parent="Personagens" unique_id=1560136355]
+position = Vector2(680, 328)
+texture = ExtResource("20_6vmtx")
+
+[node name="aluna2" type="Sprite2D" parent="Personagens" unique_id=1844640315]
+position = Vector2(680, 360)
+texture = ExtResource("21_5q534")
+
 [editable path="bully1"]
 [editable path="bully2"]
 [editable path="Pause/pausa"]
 [editable path="Personagens/bully"]
+[editable path="Personagens/vitima"]
 [editable path="Personagens/bully3"]
