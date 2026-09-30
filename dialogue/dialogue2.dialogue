@@ -1,77 +1,77 @@
 ~ start
 ~ cena1_apresentacao
 if Global.genero_jogador == "menino"
-	Amiga: [#rindo]Olha só quem chegou atrasado! 
+	Nicole: [#rindo]Olha só quem chegou atrasado! 
 else
-	Amiga: [#rindo]Olha só quem chegou atrasada!
-Amigo: [#rindo]A gorda conseguiu chegar na sala antes de você!
+	Nicole: [#rindo]Olha só quem chegou atrasada!
+Cauã: [#rindo]A gorda conseguiu chegar na sala antes de você!
 Professor: Bom, como a maioria já chegou, irei começar. 
 Professor: Atenção, turma! Silêncio, por favor.
 Professor: Hoje temos uma nova colega que está se transferindo para a nossa sala.
 Professor: Carolina, por favor, levante-se e apresente-se brevemente para a turma.
 do vitima_levantar()
-Aluna Nova: [#timida] [shake]O-oi, pessoal... Meu nome é Carolina... vim do Colégio São José...
-Amigo: [#rindo] Fala mais alto, novata! Ninguém aqui tem superaudição não!
-Amiga: [#rindo] Ih, além de falar pra dentro, parece que vai desmaiar aí na frente!
-Aluna Nova: [#triste] ...
+Carolina: [#timida] [shake]O-oi, pessoal... Meu nome é Carolina... vim do Colégio São José...
+Cauã: [#rindo] Fala mais alto, novata! Ninguém aqui tem superaudição não!
+Nicole: [#rindo] Ih, além de falar pra dentro, parece que vai desmaiar aí na frente!
+Carolina: [#triste] ...
 
 - Ficar quieto e não intervir
 	do Global.perder_vida("omissao")
 	Você: (...) 
-	Amiga: Continua aí, vamos fazer leitura labial! [#rindo]
+	Nicole: Continua aí, vamos fazer leitura labial! [#rindo]
 - Entrar na onda e debochar junto
 	do Global.perder_vida("bullying")
 	Você: É sério, Carolina, vai precisar de um microfone pras aulas! 
-	Aluna Nova: ... [#triste]
+	Carolina: ... [#triste]
 - Pedir para pararem
 	Você: Dá um tempo, pessoal! Deixa ela terminar de falar. 
-	Amiga: Relaxa aí, fiscal da turma, só estamos descontraindo. [#bravo]
-	Aluna Nova: Obrigada... 
+	Nicole: Relaxa aí, fiscal da turma, só estamos descontraindo. [#bravo]
+	Carolina: Obrigada... 
 
 Professor: Chega de conversa paralela no fundo! Parem com as gracinhas e respeitem a colega de vocês. [#bravo]
 Professor: Seja bem-vinda, Carolina. Pode se sentar. Vamos iniciar o conteúdo de hoje. 
-#do Aluna Nova_sentar()
+#do Carolina_sentar()
 => END
 
 
 ~ cena2_duvida
 Professor: ...e com essa sintaxe, encerramos a estrutura condicional principal do algoritmo. 
 Professor: Alguém ficou com alguma pergunta antes de começarmos a prática no terminal? 
-Aluna Nova: Professor... com licença... [#timida]
-Aluna Nova: (dúvida)? [#timida]
-Amiga: Pff... sério isso? [#rindo]
-Amigo: Caramba, a garota não sabe nem o básico de lógica! Que pergunta idiota! [#rindo]
-Aluna Nova: E-eu só queria ter certeza... [#triste]
+Carolina: Professor... com licença... [#timida]
+Carolina: (dúvida)? [#timida]
+Nicole: Pff... sério isso? [#rindo]
+Cauã: Caramba, a garota não sabe nem o básico de lógica! Que pergunta idiota! [#rindo]
+Carolina: E-eu só queria ter certeza... [#triste]
 
 - Ignorar os comentários
 	Você: (...) 
-- Rir junto com seus amigos
+- Rir junto com seus Cauãs
 	do Global.perder_vida("bullying")
 	Você: Hahaha, boa sorte pra passar no semestre se essa for sua maior dúvida! 
-	Aluna Nova: Desculpa... [#triste]
+	Carolina: Desculpa... [#triste]
 - Defender a dúvida da Carolina
 	Você: Para com isso. Muita gente confunde o escopo no começo. A dúvida faz todo sentido. 
-	Amigo: Tá bom, professor, não precisa se estressar. [#desdenho]
-	Aluna Nova: Valeu... 
+	Cauã: Tá bom, professor, não precisa se estressar. [#desdenho]
+	Carolina: Valeu... 
 
 Professor: Silêncio no fundo! A pergunta da Carolina é muito válida e muita gente erra isso em código real. 
 Professor: Carolina, quando a condição é falsa, o compilador pula todo aquele bloco interno, mantendo o estado das variáveis inalterado. Entendido? 
-Aluna Nova: Entendi sim, professor. Obrigada! 
+Carolina: Entendi sim, professor. Obrigada! 
 => END
 
 
 ~ cena3_saida_materia
 Professor: Para o primeiro dia está bom. A aula de hoje está encerrada. Até a próxima aula
-#do Amiga_levantar()
-#do Aluna Nova_levantar()
+#do Nicole_levantar()
+#do Carolina_levantar()
 #do sequencia_bullying()
-Amiga: Olha só o que temos aqui dando sopa na bancada... [#rindo]
-Aluna Nova: Ei! Devolve o meu estojo e meu caderno, por favor!  [#bravo]
-Amiga: Pega aí, garotinha do sussurro! Segura aí, cara! [#rindo]
-# O Amiga pro outro amigo
-Amigo: Opa, recebi! Ih, parece uma tartaruga tentando alcançar! [#rindo]
-Amiga: Passa de volta! "Carolina-muda" não pega nem sombra! [#rindo]
-Aluna Nova: Parem! Isso não tem graça nenhuma! Me devolve! [#triste]
+Nicole: Olha só o que temos aqui dando sopa na bancada... [#rindo]
+Carolina: Ei! Devolve o meu estojo e meu caderno, por favor!  [#bravo]
+Nicole: Pega aí, garotinha do sussurro! Segura aí, cara! [#rindo]
+# O Nicole pro outro Cauã
+Cauã: Opa, recebi! Ih, parece uma tartaruga tentando alcançar! [#rindo]
+Nicole: Passa de volta! "Carolina-muda" não pega nem sombra! [#rindo]
+Carolina: Parem! Isso não tem graça nenhuma! Me devolve! [#triste]
 
 - Pegar suas coisas e ir embora da sala
 	do Global.perder_vida("omissao")
@@ -81,17 +81,17 @@ Aluna Nova: Parem! Isso não tem graça nenhuma! Me devolve! [#triste]
 - Entrar na brincadeira e chutar/jogar mais longe
 	do Global.perder_vida("bullying")
 	Você: Joga aqui pra mim! Caiu no chão, agora é de quem pegar! 
-	Aluna Nova: Por que você tá fazendo isso comigo?! Eu nunca te fiz nada! [#chorando]
+	Carolina: Por que você tá fazendo isso comigo?! Eu nunca te fiz nada! [#chorando]
 	=> END
 - Intervir, pegar o material e devolver para a Carolina
-	#do Amiga_parar_brincadeira()
+	#do Nicole_parar_brincadeira()
 	Você: Já deu! Devolve isso agora. 
 	Você: Entra na frente e intercepta o caderno.
-	Amiga: Qual é o seu problema? Estragou a diversão. [#bravo]
+	Nicole: Qual é o seu problema? Estragou a diversão. [#bravo]
 	Você: Diversão é outra coisa. Deixa ela em paz. #[determinado]
 	Você: Aqui, Carolina. Seu material tá inteiro. 
-	Aluna Nova: Muito obrigada... Eu não sabia o que fazer... [#timida]
-#do Aluna Nova_sai()
+	Carolina: Muito obrigada... Eu não sabia o que fazer... [#timida]
+#do Carolina_sai()
 	=> END
 	
 	#NPC

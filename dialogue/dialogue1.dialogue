@@ -3,65 +3,65 @@
 ~ start
 Você: Oi, gente.
 #do play_animation()
-Amigo: E aí! Quanto tempo, cara.
-Amiga: Como foram as férias? Deu pra descansar ou só ficou jogando?
-Amigo: A gente acabou de chegar também, estávamos botando a fofoca em dia, hehe... Inclusive, você viu aquela menina estranha ali no canto?
-Amiga: Difícil não ver, né? Ocupa o espaço de três pessoas.
-Amigo: Hahaha, acho que a escola vai ter que aumentar a porta da cantina esse ano.[#rindo]
+Cauã: E aí! Quanto tempo, cara.
+Nicole: Como foram as férias? Deu pra descansar ou só ficou jogando?
+Cauã: A gente acabou de chegar também, estávamos botando a fofoca em dia, hehe... Inclusive, você viu aquela menina estranha ali no canto?
+Nicole: Difícil não ver, né? Ocupa o espaço de três pessoas.
+Cauã: Hahaha, acho que a escola vai ter que aumentar a porta da cantina esse ano.[#rindo]
 
 - "Pois é, ela é bem... grande."
 	Você: Pois é, ela é bem... grande. Chegou chegando mesmo.
 	do Vida.perder_vida()
-	Amigo: Até você concorda. Ela parece um mamute andando e o chão tremendo...
-	Amiga: Ha ha ha ha ha! Essa foi boa![#rindo]
-	Amigo: Vamos lá ver o mamute mais de perto.
+	Cauã: Até você concorda. Ela parece um mamute andando e o chão tremendo...
+	Nicole: Ha ha ha ha ha! Essa foi boa![#rindo]
+	Cauã: Vamos lá ver o mamute mais de perto.
 - (Ficar quieto)
 	Você: Ah, sim...
 	do Vida.perder_vida()
-	Amiga: Relaxa... ninguém vai te levar para a direção se você zoar também.
-	Amigo: É só uma piada.
-	Amiga: Vamos dar as boas-vindas à novata.
+	Nicole: Relaxa... ninguém vai te levar para a direção se você zoar também.
+	Cauã: É só uma piada.
+	Nicole: Vamos dar as boas-vindas à novata.
 - "Não tem graça."
 	Você: Não tem graça. Que implicância, é o primeiro dia dela!
-	Amiga: Ih, virou advogado dela agora? Relaxa, a gente só tá brincando.[#bravo]
-	Amigo: É. Vamos lá falar com a novata.
+	Nicole: Ih, virou advogado dela agora? Relaxa, a gente só tá brincando.[#bravo]
+	Cauã: É. Vamos lá falar com a novata.
 do sequencia_bullying()
 => cena_2_trote
 
 ~ cena_2_trote
 
 # Vocês se aproximam da aluna nova
-Amigo: E aí, grande! 
-Amiga: (segurando a risada) Nunca te vimos antes.[#rindo]
+Cauã: E aí, grande! 
+Nicole: (segurando a risada) Nunca te vimos antes.[#rindo]
 Aluna Nova: Oi, tudo bem? Eu sou nova aqui.
-Amigo: Ah, claro... É bom se acostumar com essa escola logo.
-Amiga: É, inclusive, a gente tá cobrando uma taxa de entrada. Um lanche pra cada um, fechou?
+Cauã: Ah, claro... É bom se acostumar com essa escola logo.
+Nicole: É, inclusive, a gente tá cobrando uma taxa de entrada. Um lanche pra cada um, fechou?
 Aluna Nova: Como assim? É sério isso?
-Amigo: Relaxa, pelo seu tamanho a gente sabe que você tem estoque guardado aí.
+Cauã: Relaxa, pelo seu tamanho a gente sabe que você tem estoque guardado aí.
 
 - (Ignorar)
-	Você: (Você olha para o chão, com um sorrisinho sem-graça. Tenta prestar atenção ao redor, se distrair dos risos maldosos de seus amigos.)
+	Você: (Você olha para o chão, com um sorrisinho sem-graça. Tenta prestar atenção ao redor, se distrair dos risos maldosos de seus Cauãs.)
 	do Vida.perder_vida()
-	Amigo: Você tem até essa semana para nos pagar, hein! Vamos, vai começar a aula.
+	Cauã: Você tem até essa semana para nos pagar, hein! Vamos, vai começar a aula.
 - "É verdade, se quiser ficar aqui vai ter que pagar o pedágio."
 	Você: É verdade, se quiser ficar aqui vai ter que pagar o pedágio. Começou mal.
 	do Vida.perder_vida()
-	Amiga: Não é caro, não. É mais barato do que uma refeição sua, claro.
-	Amigo: Vamos deixar essa passar, coitada. O pior castigo para um gordo é deixar ele sem comer.
+	Nicole: Não é caro, não. É mais barato do que uma refeição sua, claro.
+	Cauã: Vamos deixar essa passar, coitada. O pior castigo para um gordo é deixar ele sem comer.
 - "Parem com isso, vocês estão passando do ponto."
 	Você: Parem com isso, vocês estão passando do ponto. Deixem ela em paz, tá?
-	Amigo: Nossa, você tinha que pesar mais o clima, né? Deixa esses dois aí, então.
+	Cauã: Nossa, você tinha que pesar mais o clima, né? Deixa esses dois aí, então.
 #do get_tree().get_first_node_in_group("player").verificar_final_de_jogo()
 do bully_sair()
 => cena_3_conclusao
 
 ~ cena_3_conclusao
 
-# Os amigos saem rindo, deixando a aluna sozinha
+# Os Cauãs saem rindo, deixando a aluna sozinha
 Aluna Nova: (Sussurrando) Nossa, começamos bem...
 # A Aluna Nova baixa a cabeça, visivelmente triste
 
-- (Seguir os amigos sem olhar para trás)
+- (Seguir os Cauãs sem olhar para trás)
 	# O jogador sai da área de conversa
 	Você: Me esperem! Estou indo.
 	do Vida.perder_vida()
