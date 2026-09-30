@@ -4,16 +4,16 @@ extends CanvasLayer
 
 # Caminho para as fotos dos personagens
 var portraits: Dictionary = {
-	"Amiga": {
+	"Nicole": {
 		"padrao": preload("res://tiles/jogador/bully2.png"),
 		"bravo": preload("res://tiles/jogador/bully2 af.png"),
 		"rindo": preload("res://tiles/jogador/bully2 ri.png")
 	},
-	"Aluna Nova": {
+	"Carolina": {
 		"padrao": preload("res://tiles/jogador/vitima.png"),
 		"triste": preload("res://tiles/jogador/vitima.png")
 	},
-	"Amigo": {
+	"Cauã": {
 		"padrao": preload("res://tiles/jogador/bully1.png"),
 		"rindo": preload("res://tiles/jogador/bully1 ri.png")
 	},

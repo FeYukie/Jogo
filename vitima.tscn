@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_720nk"]
 [ext_resource type="Texture2D" uid="uid://bork7ipq7bwwr" path="res://tiles/jogador/spritesheet_vitima.png" id="2_0vofd"]
+[ext_resource type="Texture2D" uid="uid://gr5glyfi4fti" path="res://tiles/jogador/spritesheet_vitima1.png" id="3_mnkqt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
 radius = 5.0
@@ -11,8 +12,20 @@ height = 12.0
 atlas = ExtResource("2_0vofd")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_720nk"]
-atlas = ExtResource("2_0vofd")
+[sub_resource type="AtlasTexture" id="AtlasTexture_cimpy"]
+atlas = ExtResource("3_mnkqt")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oinid"]
+atlas = ExtResource("3_mnkqt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17nnk"]
+atlas = ExtResource("3_mnkqt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofbvp"]
+atlas = ExtResource("3_mnkqt")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4djr"]
@@ -39,15 +52,40 @@ region = Rect2(32, 64, 32, 32)
 atlas = ExtResource("2_0vofd")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h6pfx"]
-atlas = ExtResource("2_0vofd")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7pw1"]
+atlas = ExtResource("3_mnkqt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpbva"]
+atlas = ExtResource("3_mnkqt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkpe6"]
+atlas = ExtResource("3_mnkqt")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8r0l"]
+atlas = ExtResource("3_mnkqt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t282r"]
+atlas = ExtResource("3_mnkqt")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x2j0j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mnkqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cimpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oinid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17nnk")
 }],
 "loop": true,
 "name": &"costas",
@@ -55,7 +93,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_720nk")
+"texture": SubResource("AtlasTexture_ofbvp")
 }],
 "loop": true,
 "name": &"default",
@@ -91,7 +129,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h6pfx")
+"texture": SubResource("AtlasTexture_e7pw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpbva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkpe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8r0l")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t282r")
 }],
 "loop": true,
 "name": &"sentado",
@@ -99,7 +154,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6pfx"]
-radius = 6.0
+radius = 5.0
 height = 20.0
 
 [node name="vitima" type="CharacterBody2D" unique_id=1957441867]
