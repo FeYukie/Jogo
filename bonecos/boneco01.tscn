@@ -16,6 +16,10 @@ _data = {
 &"new_animation": SubResource("Animation_dlp20")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrr2l"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(0, 0, 668, 1002)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppnlk"]
 atlas = ExtResource("3_xrr2l")
 region = Rect2(668, 0, 668, 1002)
@@ -27,6 +31,10 @@ region = Rect2(0, 0, 668, 1002)
 [sub_resource type="AtlasTexture" id="AtlasTexture_16282"]
 atlas = ExtResource("3_xrr2l")
 region = Rect2(1336, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elpr4"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(0, 0, 668, 1002)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07fpq"]
 atlas = ExtResource("3_xrr2l")
@@ -44,6 +52,10 @@ region = Rect2(2004, 0, 668, 1002)
 atlas = ExtResource("3_xrr2l")
 region = Rect2(1336, 1002, 668, 1002)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_of38l"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(2004, 1002, 668, 1002)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_h871g"]
 atlas = ExtResource("3_xrr2l")
 region = Rect2(668, 2004, 668, 1002)
@@ -56,9 +68,16 @@ region = Rect2(2004, 1002, 668, 1002)
 atlas = ExtResource("3_xrr2l")
 region = Rect2(0, 2004, 668, 1002)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j42x0"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(2004, 1002, 668, 1002)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrr2l"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrr2l")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ppnlk")
 }, {
@@ -67,6 +86,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_16282")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elpr4")
 }],
 "loop": true,
 "name": &"costas",
@@ -96,6 +118,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_of38l")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_h871g")
 }, {
 "duration": 1.0,
@@ -103,6 +128,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u3kae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j42x0")
 }],
 "loop": true,
 "name": &"frente",
@@ -137,4 +165,4 @@ text = "Pressione C"
 position = Vector2(1, -9)
 scale = Vector2(0.075, 0.075)
 sprite_frames = SubResource("SpriteFrames_xrr2l")
-animation = &"costas"
+animation = &"frente"

@@ -121,7 +121,7 @@ func perder_vida():
 		
 func verificar_final_de_jogo():
 	await get_tree().create_timer(3.0, true).timeout
-	get_tree().change_scene_to_file("res://title_screen/title_screen.tscn")
+	get_tree().change_scene_to_file("res://escola/sala_de_aula.tscn")
 
 		# Aqui você chamaria a sua cena de label_morte.tscn que vimos nos arquivos
 		#get_tree().change_scene_to_file("res://title_screen/label_morte.tscn")

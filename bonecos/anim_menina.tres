@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://b0bll4avm1bcj" path="res://tiles/jogador/spritesheet_menina.png" id="1_t0lda"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_iioiu"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(1998, 0, 666, 1000)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_t0lda"]
 atlas = ExtResource("1_t0lda")
 region = Rect2(666, 1000, 666, 1000)
@@ -13,6 +17,10 @@ region = Rect2(1998, 0, 666, 1000)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5y4i3"]
 atlas = ExtResource("1_t0lda")
 region = Rect2(1332, 1000, 666, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3disc"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(1998, 0, 666, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r5el6"]
 atlas = ExtResource("1_t0lda")
@@ -30,6 +38,10 @@ region = Rect2(1332, 0, 666, 1000)
 atlas = ExtResource("1_t0lda")
 region = Rect2(0, 1000, 666, 1000)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o2si"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(0, 2000, 666, 1000)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_topmu"]
 atlas = ExtResource("1_t0lda")
 region = Rect2(1998, 1000, 666, 1000)
@@ -42,9 +54,16 @@ region = Rect2(0, 2000, 666, 1000)
 atlas = ExtResource("1_t0lda")
 region = Rect2(666, 2000, 666, 1000)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_il75j"]
+atlas = ExtResource("1_t0lda")
+region = Rect2(0, 2000, 666, 1000)
+
 [resource]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iioiu")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t0lda")
 }, {
@@ -53,6 +72,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5y4i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3disc")
 }],
 "loop": true,
 "name": &"costas",
@@ -82,6 +104,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4o2si")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_topmu")
 }, {
 "duration": 1.0,
@@ -89,6 +114,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e0ssa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il75j")
 }],
 "loop": true,
 "name": &"frente",
