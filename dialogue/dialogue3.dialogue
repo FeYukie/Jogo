@@ -1,16 +1,102 @@
-~ start
-Amigo: Finalmente a aula acabou.
-Amiga: Aquela .
-Você: [[Hi|Hello|Howdy]], Vamos andar um pouco no parque.
-do andar()
-Estrangeiro: Finalmente a aula acabou.
-Amigo: Ha ha ha, aquele menino fala de um jeito estranho.
-Amiga: Volta para seu país.
-- First one
-	Você: You picked the first one.
-- Second one
-	Você: You picked the second one.
-- Start again => start
-- End the conversation => END
-Você: For more information see the online documentation.
+~ inicio_parque
+Nicole: O parque está calmo hoje...
+{{Global.nome_jogador}}: Olha ali o Enoque.
+{{Global.nome_jogador}}: Ih, os mesmos de sempre já estão indo em direção a ele... melhor eu ficar por perto.
+=> situacao_1
+
+~ situacao_1
+Enoque: Epa, estava só a descansar aqui à sombra, apanhar um ar fresco...
+Cauã: Olha lá, começou a falar enrolado de novo. Já faz meses que você estuda com a gente e continua forçando esse sotaque esquisito?
+Nicole: É verdade, custa falar que nem a gente? Fica aí pagando de diferente na escola e no parque.
+Enoque: Vocês estão sempre a implicar... O português de Angola tem o seu ritmo, madié. Não estou a fingir nada, é a minha forma de falar.
+
+{{Global.nome_jogador}}: (Eles estão zombando do sotaque e das palavras do Enoque...)
+
+- Ficar calado para não arrumar confusão
+	{{Global.nome_jogador}}: (Acho melhor eu não me meter agora...)
+	do Global.perder_vida("omissao")
+	Cauã: Viu? Até os outros acham ridículo. Ninguém entende o que você fala.
+	Enoque: ...
+	=> situacao_2
+
+- Explicar que a língua portuguesa tem muitas variações legítimas
+	{{Global.nome_jogador}}: Deixem de ser ignorantes! O português não pertence só a um país ou estado.
+	{{Global.nome_jogador}}: Em Angola e em vários países africanos também se fala português, cada um com sua riqueza cultural e sotaque.
+	Nicole: Ah, pronto, chegou o defensor dos excluídos...
+	Enoque: Obrigado, {{Global.nome_jogador}}... Esse pessoal acha que só o jeito deles existe no mundo.
+	=> situacao_2
+
+~ situacao_2
+Cauã: E olha só para essa camisa e esse padrão aí no casaco... vieste direto do Carnaval para o parque?
+Nicole: Hahaha, que roupa cheia de cor e desenho geométrico esquisito! Toda a gente na escola veste roupas normais e tu vens para aqui parecer um papagaio.
+Lukeni: Não é fantasia nenhuma, madié! Isto é tecido Samakaka, tem bué de história e significado tradicional na minha terra!
+Cauã: Pois aqui ninguém usa essas coisas berrantes. Não sabes vestir-te de forma comum para não passares vergonha em público?
+Lukeni: Eu tenho orgulho na minha banga e nas minhas raízes. Vergonha deviam ter vocês de ter preconceito com o estilo dos outros!
+
+{{Global.nome_jogador}}: (Eles estão a ridicularizar as roupas e a herança cultural do Lukeni...)
+
+- Ficar calado para não chamar a atenção dos bullies
+	{{Global.nome_jogador}}: (Melhor não me envolver... as roupas dele chamam mesmo a atenção...)
+	do Global.perder_vida("omissao")
+	Nicole: Vês? Toda a gente nota o quão ridículo isso é. Guarda mas é isso no armário.
+	Lukeni: ... Não sabem respeitar a beleza das culturas alheias.
+	=> situacao_3
+
+- Defender a liberdade de expressão cultural e confrontar os bullies
+	{{Global.nome_jogador}}: Deixem de ser preconceituosos! Ninguém é obrigado a vestir-se de forma monótona só para agradar a vocês.
+	{{Global.nome_jogador}}: As estampas e padrões africanos, como o Samakaka, são expressões artísticas históricas e têm um valor cultural incrível.
+	Lukeni: Falaste bonito, kamba! Eles acham que ter estilo e cor é defeito.
+	Cauã: Ah, pronto, virou o fiscal de moda agora... Vamos mas é mudar de assunto.
+	=> situacao_3
+
+- Valorizar a culinária e repudiar a xenofobia alimentar
+	{{Global.nome_jogador}}: Ridículo é vocês terem nojo de algo só porque não conhecem.
+	{{Global.nome_jogador}}: A culinária brasileira inteira é influenciada pela cultura africana. O que a mãe dele fez deve estar ótimo!
+	Enoque: É verdade pura, kamba! Eles falam sem nem saber das origens da própria terra.
+	Cauã: Tá, tá, não precisa dar sermão gastronômico também não...
+	=> situacao_3
+
+# -------------------------------------------------------------
+# SITUAÇÃO 3: Exclusão social e estereótipos
+# -------------------------------------------------------------
+~ situacao_3
+Nicole: Quer saber? A gente ia chamar uma galera pra jogar bola na quadra do parque, mas você não vai não.
+Cauã: É, você fica aí com seus costumes de fora, não se mistura com a nossa turma da escola.
+Enoque: Mas eu também faço parte da escola! E adoro futebol, jogo com bué de gana. Por que estão sempre a me colocar de fora?
+Cauã: Porque você não combina com o nosso estilo, simples assim.
+
+{{Global.nome_jogador}}: (Estão excluindo o Enoque do convívio no parque abertamente...)
+
+- Ficar quieto e deixar ele ser expulso
+	{{Global.nome_jogador}}: (Não é da minha conta se eles não querem jogar com ele...)
+	do Global.perder_vida("Permitir exclusão social de colega")
+	Cauã: Vamos embora, Pedro. Deixa ele aí isolado com os cadernos e a marmita dele.
+	do bullies_sairem()
+	=> final_negativo
+
+- Intervir com firmeza, propor um jogo inclusivo e expulsar os bullies da conversa
+	{{Global.nome_jogador}}: A quadra do parque é pública e o Enoque joga tanto quanto qualquer um!
+	{{Global.nome_jogador}}: Quem não sabe conviver em grupo e agir com respeito são vocês. Se não quiserem jogar com ele, quem tem que sair da quadra são vocês!
+	Nicole: Ah, quer saber? O clima já ficou chato mesmo... Vamos dar uma volta em outro canto.
+	Cauã: É, cansei desse papo. Vamos.
+	do bullies_sairem()
+	=> final_positivo
+
+# -------------------------------------------------------------
+# FINAIS DA FASE
+# -------------------------------------------------------------
+~ final_negativo
+Enoque: O silêncio dói bué, {{Global.nome_jogador}}... Eu só queria poder estar no parque e na escola como qualquer jovem.
+Enoque: Às vezes parece que por ter vindo de Angola, algumas pessoas nunca vão me enxergar como colega de verdade.
+{{Global.nome_jogador}}: (Eu podia ter feito a diferença... Preciso repensar minhas atitudes.)
+do concluir_fase_3()
+=> END
+
+~ final_positivo
+Enoque: Epa, foste um verdadeiro kamba agora, {{Global.nome_jogador}}! Tiveste bué de coragem para falar com eles daquela forma.
+{{Global.nome_jogador}}: Não tinha como ficar calado, Enoque. O que eles fizeram é preconceito puro. Ninguém merece ser tratado assim.
+Enoque: É isso mesmo. Eu tenho muito orgulho da minha terra, da minha fala e da minha banga. Não vou baixar a cabeça só porque eles não entendem a diversidade.
+{{Global.nome_jogador}}: E quando você trouxer esse prato que sua mãe faz de novo, me avisa! Quero experimentar qualquer hora.
+Enoque: Com certeza! Qualquer dia convido-te para um bom matabicho ou para almoçar lá em casa. Vamos até à quadra agora, bora bater uma bola!
+do concluir_fase_3()
 => END

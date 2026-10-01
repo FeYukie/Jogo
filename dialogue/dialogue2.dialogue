@@ -6,6 +6,8 @@ else
 	Nicole: [#rindo]Olha só quem chegou atrasada!
 Cauã: [#rindo]A gorda conseguiu chegar na sala antes de você!
 Professor: Bom, como a maioria já chegou, irei começar. 
+Professor: Todos, sentem-se, por favor.
+do bully_sentar()
 Professor: Atenção, turma! Silêncio, por favor.
 Professor: Hoje temos uma nova colega que está se transferindo para a nossa sala.
 Professor: Carolina, por favor, levante-se e apresente-se brevemente para a turma.
@@ -17,24 +19,26 @@ Carolina: [#triste] ...
 
 - Ficar quieto e não intervir
 	do Global.perder_vida("omissao")
-	Você: (...) 
+	{{Global.nome_jogador}}: (...) 
 	Nicole: Continua aí, vamos fazer leitura labial! [#rindo]
 - Entrar na onda e debochar junto
 	do Global.perder_vida("bullying")
-	Você: É sério, Carolina, vai precisar de um microfone pras aulas! 
+	{{Global.nome_jogador}}: É sério, Carolina, vai precisar de um microfone pras aulas! 
 	Carolina: ... [#triste]
 - Pedir para pararem
-	Você: Dá um tempo, pessoal! Deixa ela terminar de falar. 
+	{{Global.nome_jogador}}: Dá um tempo, pessoal! Deixa ela terminar de falar. 
 	Nicole: Relaxa aí, fiscal da turma, só estamos descontraindo. [#bravo]
 	Carolina: Obrigada... 
 
 Professor: Chega de conversa paralela no fundo! Parem com as gracinhas e respeitem a colega de vocês. [#bravo]
 Professor: Seja bem-vinda, Carolina. Pode se sentar. Vamos iniciar o conteúdo de hoje. 
-#do Carolina_sentar()
-=> END
+#do vitima_sentar()
+=> cena2_duvida
 
 
 ~ cena2_duvida
+do Transicao.fade_out(1.0)
+do Transicao.fade_in(1.0)
 Professor: ...e com essa sintaxe, encerramos a estrutura condicional principal do algoritmo. 
 Professor: Alguém ficou com alguma pergunta antes de começarmos a prática no terminal? 
 Carolina: Professor... com licença... [#timida]
@@ -44,13 +48,13 @@ Cauã: Caramba, a garota não sabe nem o básico de lógica! Que pergunta idiota
 Carolina: E-eu só queria ter certeza... [#triste]
 
 - Ignorar os comentários
-	Você: (...) 
-- Rir junto com seus Cauãs
+	{{Global.nome_jogador}}: (...) 
+- Rir junto com seus amigos
 	do Global.perder_vida("bullying")
-	Você: Hahaha, boa sorte pra passar no semestre se essa for sua maior dúvida! 
+	{{Global.nome_jogador}}: Hahaha, boa sorte pra passar no semestre se essa for sua maior dúvida! 
 	Carolina: Desculpa... [#triste]
 - Defender a dúvida da Carolina
-	Você: Para com isso. Muita gente confunde o escopo no começo. A dúvida faz todo sentido. 
+	{{Global.nome_jogador}}: Para com isso. Muita gente confunde o escopo no começo. A dúvida faz todo sentido. 
 	Cauã: Tá bom, professor, não precisa se estressar. [#desdenho]
 	Carolina: Valeu... 
 
@@ -75,21 +79,21 @@ Carolina: Parem! Isso não tem graça nenhuma! Me devolve! [#triste]
 
 - Pegar suas coisas e ir embora da sala
 	do Global.perder_vida("omissao")
-	Você: (Melhor não me meter... Isso não é problema meu.) 
+	{{Global.nome_jogador}}: (Melhor não me meter... Isso não é problema meu.) 
 	# O jogador sai da sala e a vítima fica chorando
 	=> END
 - Entrar na brincadeira e chutar/jogar mais longe
 	do Global.perder_vida("bullying")
-	Você: Joga aqui pra mim! Caiu no chão, agora é de quem pegar! 
+	{{Global.nome_jogador}}: Joga aqui pra mim! Caiu no chão, agora é de quem pegar! 
 	Carolina: Por que você tá fazendo isso comigo?! Eu nunca te fiz nada! [#chorando]
 	=> END
 - Intervir, pegar o material e devolver para a Carolina
 	#do Nicole_parar_brincadeira()
-	Você: Já deu! Devolve isso agora. 
-	Você: Entra na frente e intercepta o caderno.
+	{{Global.nome_jogador}}: Já deu! Devolve isso agora. 
+	{{Global.nome_jogador}}: Entra na frente e intercepta o caderno.
 	Nicole: Qual é o seu problema? Estragou a diversão. [#bravo]
-	Você: Diversão é outra coisa. Deixa ela em paz. #[determinado]
-	Você: Aqui, Carolina. Seu material tá inteiro. 
+	{{Global.nome_jogador}}: Diversão é outra coisa. Deixa ela em paz. #[determinado]
+	{{Global.nome_jogador}}: Aqui, Carolina. Seu material tá inteiro. 
 	Carolina: Muito obrigada... Eu não sabia o que fazer... [#timida]
 #do Carolina_sai()
 	=> END
