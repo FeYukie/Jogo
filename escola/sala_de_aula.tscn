@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://wp6jtn4r2pqj"]
 
-[ext_resource type="Texture2D" uid="uid://uc5iegqq8rc8" path="res://patio/terrain/assets/idfk.png" id="1_g8tdk"]
-[ext_resource type="Texture2D" uid="uid://bu3cjgyalvq5j" path="res://patio/terrain/assets/Classroom_A2.png" id="2_v2ot3"]
-[ext_resource type="Texture2D" uid="uid://d4bmj63vn8bj6" path="res://patio/terrain/assets/Classroom_B.png" id="3_rynpk"]
-[ext_resource type="Texture2D" uid="uid://do2goenidonqa" path="res://patio/terrain/assets/carteira.png" id="4_gv82f"]
+[ext_resource type="Texture2D" uid="uid://uc5iegqq8rc8" path="res://escola/terrain/assets/idfk.png" id="1_g8tdk"]
+[ext_resource type="Texture2D" uid="uid://bu3cjgyalvq5j" path="res://escola/terrain/assets/Classroom_A2.png" id="2_v2ot3"]
+[ext_resource type="Texture2D" uid="uid://d4bmj63vn8bj6" path="res://escola/terrain/assets/Classroom_B.png" id="3_rynpk"]
+[ext_resource type="Texture2D" uid="uid://do2goenidonqa" path="res://escola/terrain/assets/carteira.png" id="4_gv82f"]
 [ext_resource type="PackedScene" uid="uid://xkirejhhbkk8" path="res://bonecos/boneco01.tscn" id="5_lcaw0"]
 [ext_resource type="PackedScene" uid="uid://8b02ptlsbam2" path="res://title_screen/label_morte.tscn" id="6_hy7as"]
 [ext_resource type="PackedScene" uid="uid://c80b6ydxlpefi" path="res://title_screen/coracoes.tscn" id="7_sbsal"]
@@ -129,7 +129,7 @@ func vitima_levantar():
 	var offset_x: float = -28.0 
 	
 	tween.tween_callback(func():
-		sprite.play(\"walk_lado\")
+		#sprite.play(\"walk_lado\")
 		sprite.flip_h = (offset_x < 0) # ajusta o lado para onde ela anda
 	)
 	var pos_final_lado = prof.position + Vector2(offset_x, 0)
@@ -146,6 +146,8 @@ func vitima_levantar():
 	
 	# Espera o movimento terminar antes de devolver o controle para o diálogo
 	await tween.finished
+	
+#func vitima_sentar():
 	
 func sequencia_bullying():
 	#var vitima = $Personagens/vitima
@@ -164,8 +166,8 @@ func sequencia_bullying():
 func bully_sair():
 	var t3 = create_tween()
 	var t4 = create_tween()
-	var recuo1 = Vector2(0, 600) # Desce 600 pixels
-	var recuo2 = Vector2(10, 600) 
+	var recuo1 = Vector2(0, -5) # Sobe 5 pixels
+	var recuo2 = Vector2(10, -5) 
 	
 	$bully/AnimatedSprite2D.play(\"frente\")
 	$bully3/AnimatedSprite2D.play(\"frente\")
@@ -181,12 +183,34 @@ func bully_sair():
 	
 
 
-#func vitima_sentar():
-	
 #func bully_levantar():
 	
+func bully_sentar():
+	var t3 = create_tween()
+	var t4 = create_tween()
 	
-#func bully_sentar():
+	# Posições exatas dos assentos
+	var pos_cadeira_bully1 = Vector2(864, 425) 
+	var pos_cadeira_bully2 = Vector2(930, 390.0)
+	
+	# 1. Mudam para a animação de subir
+	$Personagens/bully/AnimatedSprite2D.play(\"esquerda\")
+	$Personagens/bully3/AnimatedSprite2D.play(\"costas\")
+	
+	# 2. Deslocam-se em paralelo até aos respetivos assentos em 2 segundos
+	t3.tween_property($Personagens/bully, \"global_position\", pos_cadeira_bully1, 2.0)
+	t4.tween_property($Personagens/bully3, \"global_position\", pos_cadeira_bully2, 2.0)
+	
+	# Espera os dois chegarem aos seus lugares
+	await t3.finished
+	#await t4.finished
+	
+	# 3. Desativa as colisões e coloca ambos sentados
+	#$bully/Collision.disabled = true
+	$Personagens/bully/AnimatedSprite2D.play(\"sentado\")
+	
+	#$bully3/Collision.disabled = true
+	$Personagens/bully3/AnimatedSprite2D.play(\"sentado\")
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ro5h3"]
@@ -509,45 +533,128 @@ size = Vector2(28, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkdku"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3c7e"]
+atlas = ExtResource("9_hy7as")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30tnh"]
+atlas = ExtResource("9_hy7as")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pny6t"]
+atlas = ExtResource("9_hy7as")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmir4"]
+atlas = ExtResource("9_hy7as")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbsal"]
 atlas = ExtResource("9_hy7as")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jdjx4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vmtx"]
 atlas = ExtResource("9_hy7as")
-region = Rect2(96, 32, 32, 32)
+region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rkdku"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q534"]
+atlas = ExtResource("9_hy7as")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n568u"]
+atlas = ExtResource("9_hy7as")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ux4jv"]
+atlas = ExtResource("9_hy7as")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxelb"]
 atlas = ExtResource("9_hy7as")
 region = Rect2(96, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_30mko"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqcdo"]
+atlas = ExtResource("9_hy7as")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72dsm"]
 atlas = ExtResource("9_hy7as")
 region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfppp"]
+atlas = ExtResource("9_hy7as")
+region = Rect2(192, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vw1yx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_m3c7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30tnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pny6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmir4")
+}],
+"loop": true,
+"name": &"costas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sbsal")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jdjx4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rkdku")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_30mko")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vmtx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q534")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n568u")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ux4jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxelb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqcdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72dsm")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfppp")
+}],
+"loop": true,
+"name": &"sentado",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsbin"]
-radius = 0.3999939
-height = 1.7600021
+radius = 0.6399994
+height = 2.4000015
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yabhf"]
 radius = 6.0
@@ -804,7 +911,7 @@ y_sort_enabled = true
 position = Vector2(7, 18)
 
 [node name="bully" parent="Personagens" unique_id=716545204 instance=ExtResource("10_30mko")]
-position = Vector2(940, 410)
+position = Vector2(936, 409)
 dialogo_recurso = ExtResource("9_l2na2")
 metadata/_edit_group_ = true
 
@@ -831,6 +938,7 @@ text = "[E] Falar"
 [node name="AnimatedSprite2D" parent="Personagens/bully" index="4" unique_id=1158655805]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_vw1yx")
+animation = &"default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/bully" unique_id=1953416493]
 visible = false
@@ -906,12 +1014,10 @@ shape = SubResource("CapsuleShape2D_l2na2")
 [node name="vitima" parent="Personagens" unique_id=1699081998 instance=ExtResource("9_rkdku")]
 position = Vector2(857, 342)
 
-[node name="AnimatedSprite2D" parent="Personagens/vitima" index="3" unique_id=1705656383]
-animation = &"sentado"
-
 [node name="bully3" parent="Personagens" unique_id=690321602 instance=ExtResource("10_30mko")]
-position = Vector2(917, 410)
+position = Vector2(906, 409)
 dialogo_recurso = ExtResource("9_l2na2")
+metadata/_edit_group_ = true
 
 [node name="Collision" parent="Personagens/bully3" index="1" unique_id=779873815]
 visible = false
@@ -934,10 +1040,10 @@ text = "[E] Falar"
 [node name="AnimatedSprite2D" parent="Personagens/bully3" index="4" unique_id=1158655805]
 position = Vector2(0, -13)
 sprite_frames = ExtResource("12_041v0")
-animation = &"frente"
+animation = &"default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/bully3" unique_id=1565853113]
-position = Vector2(1, -14)
+position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_85nff")
 
 [node name="professora" type="CharacterBody2D" parent="Personagens" unique_id=427848729]
