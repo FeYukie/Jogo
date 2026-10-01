@@ -20,8 +20,11 @@ var portraits: Dictionary = {
 	"Professor": {
 		"padrao": preload("res://tiles/jogador/professor_retrato.png")
 	},
-	"Você": {
+	"Rafaela": {
 		"padrao": preload("res://tiles/jogador/menina_retrato.png")
+	},
+	"Davi": {
+		"padrao": preload("res://tiles/jogador/menino_retrato.png")
 	}
 }
 

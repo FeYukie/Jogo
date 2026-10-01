@@ -32,6 +32,22 @@ func iniciar_dialogo():
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74x36"]
 size = Vector2(41, 33.28125)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds0xd"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrywf"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi80r"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s1cv"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dw8py"]
 atlas = ExtResource("2_q03y0")
 region = Rect2(0, 0, 32, 32)
@@ -48,8 +64,41 @@ region = Rect2(96, 96, 32, 32)
 atlas = ExtResource("2_q03y0")
 region = Rect2(96, 64, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p8cm"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsstk"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfvua"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu47e"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(192, 96, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7oqsc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds0xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrywf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi80r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s1cv")
+}],
+"loop": true,
+"name": &"costas",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dw8py")
@@ -65,6 +114,28 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p8cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsstk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfvua")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu47e")
+}],
+"loop": true,
+"name": &"sentado",
 "speed": 5.0
 }]
 
@@ -94,6 +165,7 @@ text = "Pressione C"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1158655805]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_7oqsc")
+animation = &"esquerda"
 
 [connection signal="body_entered" from="Actionable" to="." method="_on_actionable_body_entered"]
 [connection signal="body_exited" from="Actionable" to="." method="_on_actionable_body_exited"]

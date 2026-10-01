@@ -21,6 +21,7 @@ Global="*uid://dipuch8hudr0v"
 DialogueManager="*uid://c3rodes2l3gxb"
 Vida="*uid://bjspc3arup0ol"
 Coracoes="*uid://bln2nfsm8vdxb"
+Transicao="*uid://cpd0e46xooh7g"
 
 [dialogue_manager]
 
@@ -73,7 +74,7 @@ chat={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue1.dialogue", "res://dialogue/dialogue2.dialogue", "res://dialogue/dialogue3.dialogue", "res://dialogue3.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue1.dialogue", "res://dialogue/dialogue2.dialogue", "res://dialogue/dialogue3.dialogue")
 
 [physics]
 

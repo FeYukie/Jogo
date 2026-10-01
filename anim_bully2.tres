@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ws1hxsw4iesx" path="res://tiles/Characters/TPF_Character_2a.png" id="1_apwmd"]
 [ext_resource type="Texture2D" uid="uid://cup433pejsto7" path="res://spritesheet_bully2.png" id="1_xaynv"]
+[ext_resource type="Texture2D" uid="uid://b2j7j184hibcq" path="res://tiles/jogador/spritesheet_bully2 - recorte.png" id="3_gab80"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gab80"]
 atlas = ExtResource("1_xaynv")
@@ -14,6 +15,10 @@ region = Rect2(64, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6qcxw"]
 atlas = ExtResource("1_xaynv")
 region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfhwq"]
+atlas = ExtResource("1_xaynv")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c2l1t"]
 atlas = ExtResource("1_apwmd")
@@ -63,6 +68,10 @@ region = Rect2(32, 32, 32, 32)
 atlas = ExtResource("1_xaynv")
 region = Rect2(0, 96, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_722vr"]
+atlas = ExtResource("3_gab80")
+region = Rect2(0, 0, 30, 25)
+
 [resource]
 animations = [{
 "frames": [{
@@ -78,6 +87,14 @@ animations = [{
 "loop": true,
 "name": &"costas",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfhwq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -133,5 +150,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"risada",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_722vr")
+}],
+"loop": true,
+"name": &"sentado",
 "speed": 5.0
 }]
