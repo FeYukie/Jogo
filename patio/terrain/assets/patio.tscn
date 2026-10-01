@@ -3029,7 +3029,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fdpci"]
 radius = 6.0
-height = 20.0
+height = 18.666687
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lgyy"]
 radius = 2.0
@@ -3211,9 +3211,10 @@ text = "[E] Falar"
 [node name="AnimatedSprite2D" parent="Personagens/bully" index="4" unique_id=1158655805]
 position = Vector2(-4, -9)
 sprite_frames = SubResource("SpriteFrames_ekvvx")
+animation = &"default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/bully" unique_id=1403672016]
-position = Vector2(-3.3333333, -10)
+position = Vector2(-4, -8.666667)
 shape = SubResource("CapsuleShape2D_fdpci")
 
 [node name="professor" parent="Personagens" unique_id=965959326 instance=ExtResource("13_q3gyk")]
@@ -3238,6 +3239,7 @@ text = "[E] Falar"
 visible = false
 position = Vector2(-40, -25)
 sprite_frames = SubResource("SpriteFrames_ekvvx")
+animation = &"default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/professor" unique_id=1318445314]
 visible = false
@@ -3264,8 +3266,14 @@ position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_7lgyy")
 
 [node name="vitima" parent="Personagens" unique_id=1643487620 instance=ExtResource("17_b5eao")]
-position = Vector2(853, 479)
+position = Vector2(854, 522)
 scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" parent="Personagens/vitima" index="3" unique_id=1705656383]
+animation = &"default"
+
+[node name="CollisionShape2D" parent="Personagens/vitima" index="4" unique_id=1191103303]
+position = Vector2(0, -12.666667)
 
 [node name="bully3" parent="Personagens" unique_id=1741550638 instance=ExtResource("13_q3gyk")]
 position = Vector2(870, 450)
@@ -3297,4 +3305,5 @@ shape = SubResource("CapsuleShape2D_yuaea")
 [editable path="Pause/pausa"]
 [editable path="Personagens/bully"]
 [editable path="Personagens/professor"]
+[editable path="Personagens/vitima"]
 [editable path="Personagens/bully3"]

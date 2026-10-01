@@ -23,15 +23,15 @@ func configurar_posicoes_iniciais() -> void:
 func bully_sair():
 	var t3 = create_tween()
 	var t4 = create_tween()
-	var recuo1 = Vector2(0, 600) # Desce 600 pixels
-	var recuo2 = Vector2(10, 600) 
+	var recuo1 = Vector2(0, -5) # Sobe 5 pixels
+	var recuo2 = Vector2(10, -5) 
 	
-	$bully/AnimatedSprite2D.play("frente")
-	$bully3/AnimatedSprite2D.play("frente")
+	$Personagens/bully/AnimatedSprite2D.play("costas")
+	$Personagens/bully3/AnimatedSprite2D.play("costas")
 	
 	# posição atual de CADA BULLY como base
-	t3.tween_property($bully, "global_position", $bully.global_position + recuo1, 2.0)
-	t4.tween_property($bully3, "global_position", $bully3.global_position + recuo2, 2.0)
+	t3.tween_property($Personagens/bully, "global_position", $Personagens/bully.global_position + recuo1, 2.0)
+	t4.tween_property($Personagens/bully3, "global_position", $Personagens/bully3.global_position + recuo2, 2.0)
 	
 	await t3.finished
 	await t4.finished
