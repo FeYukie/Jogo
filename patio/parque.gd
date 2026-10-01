@@ -1,6 +1,6 @@
 extends Node2D
 func sequencia_bullying():
-	var vitima = $Personagens/vitima
+	var vitima = $Personagens/vitima2
 	
 	# Posições próximas da vítima
 	var alvo = vitima.global_position + Vector2(-10, -30)
@@ -19,12 +19,12 @@ func bully_sair():
 	var recuo1 = Vector2(0, 600) # Desce 600 pixels
 	var recuo2 = Vector2(10, 600) 
 	
-	$bully/AnimatedSprite2D.play("frente")
-	$bully3/AnimatedSprite2D.play("frente")
+	$Personagens/bully/AnimatedSprite2D.play("frente")
+	$Personagens/bully3/AnimatedSprite2D.play("frente")
 	
 	# posição atual de CADA BULLY como base
-	t3.tween_property($bully, "global_position", $bully.global_position + recuo1, 2.0)
-	t4.tween_property($bully3, "global_position", $bully3.global_position + recuo2, 2.0)
+	t3.tween_property($Personagens/bully, "global_position", $Personagens/bully.global_position + recuo1, 2.0)
+	t4.tween_property($Personagens/bully3, "global_position", $Personagens/bully3.global_position + recuo2, 2.0)
 	
 	await t3.finished
 	await t4.finished
@@ -32,7 +32,7 @@ func bully_sair():
 func andar():
 	var vitima2 = $Personagens/vitima
 	$Personagens/bully.play("frente")
-	$bully3/AnimatedSprite2D.play("frente")
+	$Personagens/bully3/AnimatedSprite2D.play("frente")
 	
 	# Posições próximas da vítima
 	var ate = vitima2.global_position + Vector2(-10, -30)

@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://bdr5oglnb5oeu"]
 
-[ext_resource type="Texture2D" uid="uid://bu2nr8vkgdk14" path="res://patio/terrain/assets/itensparaoparque.png" id="1_twp7m"]
-[ext_resource type="Texture2D" uid="uid://oxyf5r4vvqg0" path="res://patio/terrain/assets/mato.png" id="2_q1t2t"]
+[ext_resource type="Texture2D" uid="uid://bu2nr8vkgdk14" path="res://escola/terrain/assets/itensparaoparque.png" id="1_twp7m"]
+[ext_resource type="Texture2D" uid="uid://oxyf5r4vvqg0" path="res://escola/terrain/assets/mato.png" id="2_q1t2t"]
 [ext_resource type="Script" uid="uid://bc3tddugu0sob" path="res://patio/parque.gd" id="3_gy5ud"]
 [ext_resource type="Texture2D" uid="uid://c35r4tl2dih6o" path="res://patio/terrain/assets/d40f2c6b-a2fd-4166-9b3c-5cf7c087d06a.png" id="3_llocs"]
 [ext_resource type="Texture2D" uid="uid://haws4e3iskdf" path="res://patio/terrain/assets/matos.png" id="3_q1t2t"]
-[ext_resource type="Texture2D" uid="uid://c1ayddne7kn6c" path="res://patio/terrain/assets/1785338841853.png" id="4_llocs"]
+[ext_resource type="Texture2D" uid="uid://c1ayddne7kn6c" path="res://escola/terrain/assets/1785338841853.png" id="4_llocs"]
 [ext_resource type="PackedScene" uid="uid://8b02ptlsbam2" path="res://title_screen/label_morte.tscn" id="6_0x0xl"]
 [ext_resource type="PackedScene" uid="uid://c80b6ydxlpefi" path="res://title_screen/coracoes.tscn" id="7_gy5ud"]
 [ext_resource type="PackedScene" uid="uid://ioaywlx4lxge" path="res://title_screen/pause_menu.tscn" id="8_sb8d4"]
@@ -1146,15 +1146,19 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66rnh"]
 radius = 6.0
-height = 24.0
+height = 18.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hgphl"]
 radius = 2.0
-height = 14.0
+height = 12.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ih4m"]
 radius = 5.0
 height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb1vy"]
+radius = 5.0
+height = 18.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
 radius = 5.0
@@ -1311,7 +1315,10 @@ visible = false
 position = Vector2(-4, -8)
 shape = SubResource("RectangleShape2D_3s3xt")
 
-[node name="CollisionShape2D" parent="Personagens/bully/Actionable" parent_id_path=PackedInt32Array(1957441867, 1836018293) index="0" unique_id=1722440272]
+[node name="Actionable" parent="Personagens/bully" index="2" unique_id=1836018293]
+position = Vector2(-9, -336)
+
+[node name="CollisionShape2D" parent="Personagens/bully/Actionable" index="0" unique_id=1722440272]
 visible = false
 
 [node name="AvisoChat" parent="Personagens/bully" index="3" unique_id=13439119]
@@ -1324,7 +1331,7 @@ position = Vector2(-9, -348)
 sprite_frames = SubResource("SpriteFrames_uxk0d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/bully" unique_id=2078267019]
-position = Vector2(-8, -348)
+position = Vector2(-8, -346)
 shape = SubResource("CapsuleShape2D_66rnh")
 
 [node name="professor" parent="Personagens" unique_id=466479621 instance=ExtResource("9_cb1vy")]
@@ -1357,7 +1364,7 @@ shape = SubResource("CapsuleShape2D_66rnh")
 
 [node name="jogador" parent="Personagens" unique_id=1796086270 instance=ExtResource("12_gmyeq")]
 y_sort_enabled = true
-position = Vector2(915, 116)
+position = Vector2(916, 118)
 
 [node name="Camera2D" type="Camera2D" parent="Personagens/jogador" unique_id=1383240531]
 position = Vector2(0, -11)
@@ -1370,7 +1377,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Collision" type="CollisionShape2D" parent="Personagens/jogador" unique_id=1479783236]
-position = Vector2(0, -8)
+position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_hgphl")
 
 [node name="bully3" parent="Personagens" unique_id=1009396480 instance=ExtResource("9_cb1vy")]
@@ -1392,6 +1399,10 @@ text = "[E] Falar"
 position = Vector2(1, -349)
 sprite_frames = ExtResource("14_f6jmu")
 animation = &"frente"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/bully3" unique_id=1326918060]
+position = Vector2(2, -346)
+shape = SubResource("CapsuleShape2D_cb1vy")
 
 [node name="vitima2" type="CharacterBody2D" parent="Personagens" unique_id=1263416103]
 position = Vector2(386, 124)
