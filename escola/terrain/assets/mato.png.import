@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://oxyf5r4vvqg0"
-path="res://.godot/imported/mato.png-5b5d0ff06f319ba17445f1d7d924b067.ctex"
+path="res://.godot/imported/mato.png-8e0ac7895d5fc4aa837c91a0bd68f8fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/escola/terrain/assets/mato.png"
-dest_files=["res://.godot/imported/mato.png-5b5d0ff06f319ba17445f1d7d924b067.ctex"]
+source_file="res://escola/terrain/assets/mato.png"
+dest_files=["res://.godot/imported/mato.png-8e0ac7895d5fc4aa837c91a0bd68f8fe.ctex"]
 
 [params]
 

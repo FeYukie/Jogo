@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu2nr8vkgdk14"
-path="res://.godot/imported/itensparaoparque.png-533b57139c9cf8662e24c9ebeab34a2c.ctex"
+path="res://.godot/imported/itensparaoparque.png-217013d1dff2399bab2a66e75ab0588d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/escola/terrain/assets/itensparaoparque.png"
-dest_files=["res://.godot/imported/itensparaoparque.png-533b57139c9cf8662e24c9ebeab34a2c.ctex"]
+source_file="res://escola/terrain/assets/itensparaoparque.png"
+dest_files=["res://.godot/imported/itensparaoparque.png-217013d1dff2399bab2a66e75ab0588d.ctex"]
 
 [params]
 

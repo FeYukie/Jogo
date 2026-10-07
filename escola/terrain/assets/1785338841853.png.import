@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1ayddne7kn6c"
-path="res://.godot/imported/1785338841853.png-372a2bb83fe5f25486b31529c2cd3471.ctex"
+path="res://.godot/imported/1785338841853.png-f715a2067be31e9b75c72f2bfa8a698f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/escola/terrain/assets/1785338841853.png"
-dest_files=["res://.godot/imported/1785338841853.png-372a2bb83fe5f25486b31529c2cd3471.ctex"]
+source_file="res://escola/terrain/assets/1785338841853.png"
+dest_files=["res://.godot/imported/1785338841853.png-f715a2067be31e9b75c72f2bfa8a698f.ctex"]
 
 [params]
 

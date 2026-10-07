@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://do2goenidonqa"
-path="res://.godot/imported/carteira.png-9d6904f9c3f96a7789f568aab7b48acb.ctex"
+path="res://.godot/imported/carteira.png-b913115ac611484a0336a7443fd2a3a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/escola/terrain/assets/carteira.png"
-dest_files=["res://.godot/imported/carteira.png-9d6904f9c3f96a7789f568aab7b48acb.ctex"]
+source_file="res://escola/terrain/assets/carteira.png"
+dest_files=["res://.godot/imported/carteira.png-b913115ac611484a0336a7443fd2a3a1.ctex"]
 
 [params]
 

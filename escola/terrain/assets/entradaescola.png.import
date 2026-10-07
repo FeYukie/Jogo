@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tb71sikh6csb"
-path="res://.godot/imported/entradaescola.png-70a62e28704ce3ea014c4949a0ec6f7d.ctex"
+path="res://.godot/imported/entradaescola.png-400e72080e431737b0ed3d1091679f8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/escola/terrain/assets/entradaescola.png"
-dest_files=["res://.godot/imported/entradaescola.png-70a62e28704ce3ea014c4949a0ec6f7d.ctex"]
+source_file="res://escola/terrain/assets/entradaescola.png"
+dest_files=["res://.godot/imported/entradaescola.png-400e72080e431737b0ed3d1091679f8c.ctex"]
 
 [params]
 
