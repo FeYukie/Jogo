@@ -12,7 +12,7 @@ const BALAO_CENA = preload("res://personalizado.tscn")
 @export var dialogo_recurso: DialogueResource = preload("res://dialogue/dialogue1.dialogue")
 @export var dialogo_titulo: String = "start"
 
-@onready var aviso_chat: Label = $AvisoChat
+@onready var aviso_chat: Control = $Actionable/Control
 @onready var bully = $"../Bully"
 
 func iniciar_dialogo():
