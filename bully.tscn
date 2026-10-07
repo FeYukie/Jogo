@@ -32,6 +32,21 @@ func iniciar_dialogo():
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74x36"]
 size = Vector2(41, 33.28125)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds0xd"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.24985072, 0.24985075, 0.24985066, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ds0xd"]
 atlas = ExtResource("2_q03y0")
 region = Rect2(128, 0, 32, 32)
@@ -156,11 +171,29 @@ script = SubResource("GDScript_74x36")
 position = Vector2(0, -14.28125)
 shape = SubResource("RectangleShape2D_74x36")
 
-[node name="AvisoChat" type="Label" parent="." unique_id=13439119]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Pressione C"
+[node name="Control" type="Control" parent="Actionable" unique_id=613734701]
+z_index = 200
+layout_mode = 3
+anchors_preset = 0
+offset_left = -9.0
+offset_top = -75.0
+offset_right = 28.0
+offset_bottom = -40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Actionable/Control" unique_id=293701752]
+z_index = 200
+texture_filter = 1
+layout_mode = 0
+offset_left = -3.0
+offset_top = 28.0
+offset_right = 23.0
+offset_bottom = 42.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ds0xd")
+
+[node name="AvisoChat" type="Label" parent="Actionable/Control/PanelContainer" unique_id=13439119]
+layout_mode = 2
+theme_override_font_sizes/font_size = 5
+text = "[E] Falar"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1158655805]
 position = Vector2(0, -16)
