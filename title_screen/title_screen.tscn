@@ -4,16 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://b6qso68hy6irp" path="res://title_screen/tela-inicial.png" id="2_dxpbd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dq6q"]
-bg_color = Color(0.003921569, 0.16470589, 0.27450982, 1)
+bg_color = Color(0.6550641, 0.16209814, 0.0792846, 0.827451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbjqi"]
-bg_color = Color(0.0027461962, 0.13421696, 0.22877899, 1)
+bg_color = Color(0.560709, 0.13138002, 0.05976396, 0.827451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m3ch"]
-bg_color = Color(0.005753935, 0.1641435, 0.27476805, 1)
+bg_color = Color(0.654902, 0.16078432, 0.078431375, 0.827451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk0fn"]
-bg_color = Color(0.003921569, 0.13333334, 0.22745098, 1)
+bg_color = Color(0.56078434, 0.13333334, 0.05882353, 0.827451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="TitleScreen" type="Control" unique_id=252690810]
 process_mode = 3
@@ -61,7 +77,7 @@ layout_mode = 2
 
 [node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1262008163]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_2dq6q")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vbjqi")
 text = "JOGAR"
@@ -74,7 +90,7 @@ text = "FAZER LOGIN"
 
 [node name="start_btn3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=239352972]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0m3ch")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fk0fn")
 text = "SAIR DO JOGO"
