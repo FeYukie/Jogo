@@ -2,11 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_720nk"]
 [ext_resource type="Texture2D" uid="uid://bork7ipq7bwwr" path="res://tiles/jogador/spritesheet_vitima.png" id="2_0vofd"]
+[ext_resource type="Texture2D" uid="uid://vygrhshvvmu8" path="res://tiles/jogador/spritesheet_vitima1 (1).png" id="2_cimpy"]
 [ext_resource type="Texture2D" uid="uid://gr5glyfi4fti" path="res://tiles/jogador/spritesheet_vitima1.png" id="3_mnkqt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
 radius = 5.0
 height = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yk50"]
+atlas = ExtResource("2_cimpy")
+region = Rect2(224, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnkqt"]
 atlas = ExtResource("2_0vofd")
@@ -74,6 +79,14 @@ region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x2j0j"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yk50")
+}],
+"loop": true,
+"name": &"conversa",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mnkqt")
@@ -178,7 +191,7 @@ shape = SubResource("CapsuleShape2D_j1h26")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1705656383]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_x2j0j")
-animation = &"sentado"
+animation = &"conversa"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1191103303]
 position = Vector2(0, -12)

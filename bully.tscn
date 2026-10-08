@@ -63,6 +63,18 @@ region = Rect2(128, 32, 32, 32)
 atlas = ExtResource("2_q03y0")
 region = Rect2(128, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p8cm"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsstk"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfvua"]
+atlas = ExtResource("2_q03y0")
+region = Rect2(160, 64, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dw8py"]
 atlas = ExtResource("2_q03y0")
 region = Rect2(0, 0, 32, 32)
@@ -78,18 +90,6 @@ region = Rect2(96, 96, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjqdv"]
 atlas = ExtResource("2_q03y0")
 region = Rect2(96, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2p8cm"]
-atlas = ExtResource("2_q03y0")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rsstk"]
-atlas = ExtResource("2_q03y0")
-region = Rect2(160, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfvua"]
-atlas = ExtResource("2_q03y0")
-region = Rect2(160, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bu47e"]
 atlas = ExtResource("2_q03y0")
@@ -116,6 +116,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2p8cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsstk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfvua")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dw8py")
 }, {
 "duration": 1.0,
@@ -128,21 +142,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_sjqdv")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2p8cm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rsstk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cfvua")
-}],
-"loop": true,
-"name": &"esquerda",
+"name": &"frente",
 "speed": 5.0
 }, {
 "frames": [{
