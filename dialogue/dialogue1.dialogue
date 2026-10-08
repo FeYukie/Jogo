@@ -73,7 +73,10 @@ Carolina: (Sussurrando) Nossa, começamos bem...
 	{{Global.nome_jogador}}: Para de drama, não aceita umas brincadeiras? Vai se acostumando ou já procura outra escola, esquisita.
 	do Vida.perder_vida()
 	Carolina: ... Eu não fiz nada pra você. Por favor, me deixa sozinha.
+do Transicao.fade_out(1.0)
+
 do get_tree().get_first_node_in_group("player").verificar_final_de_jogo()
+do Transicao.fade_in(1.0)
 
 => END
 #=> dialogue2/start
