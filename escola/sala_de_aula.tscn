@@ -164,20 +164,20 @@ func sequencia_bullying():
 		await get_tree().physics_frame
 		
 func bully_sair():
+	$Personagens/bully/AnimatedSprite2D.play(\"frente\")
+	$Personagens/bully3/AnimatedSprite2D.play(\"frente\")
+
+	# 2. Cria o Tween para movê-los
 	var t3 = create_tween()
 	var t4 = create_tween()
-	var recuo1 = Vector2(0, -5) # Sobe 5 pixels
-	var recuo2 = Vector2(10, -5) 
 	
-	$bully/AnimatedSprite2D.play(\"frente\")
-	$bully3/AnimatedSprite2D.play(\"frente\")
+	var recuo1 = Vector2(120, 400) # desce 5 pixels
+	var recuo2 = Vector2(120, 395) 
 	
-	# posição atual de CADA BULLY como base
-	t3.tween_property($bully, \"global_position\", $bully.global_position + recuo1, 2.0)
-	t4.tween_property($bully3, \"global_position\", $bully3.global_position + recuo2, 2.0)
-	
-	await t3.finished
-	await t4.finished
+	#tween.tween_property(vitima, \"position\", pos_lado, 0.6)
+	#tween.tween_callback(func():
+	$Personagens/bully/AnimatedSprite2D.play(\"esquerda\")
+	$Personagens/bully3/AnimatedSprite2D.play(\"esquerda\")
 	
 #func vitima_sai():
 	
