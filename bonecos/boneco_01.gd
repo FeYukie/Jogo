@@ -117,11 +117,15 @@ func perder_vida():
 	print("Você perdeu uma vida por sua escolha social. Vidas restantes: ", vida_atual)
 	if vida_atual <= 1:
 		falhou_na_missao = true
-		print("O jogador cometeu muitos erros, mas vamos concluir a cena.")
+		get_tree().change_scene_to_file("res://escola/cutscene3_ruim.tscn")
 		
 func verificar_final_de_jogo():
-	await get_tree().create_timer(3.0, true).timeout
-	get_tree().change_scene_to_file("res://escola/sala_de_aula.tscn")
+	#await get_tree().create_timer(3.0, true).timeout
+	if vida_atual<=1:
+	#if omissao > 1:
+		get_tree().change_scene_to_file("res://escola/cutscene3_ruim.tscn")
+	else:
+		get_tree().change_scene_to_file("res://escola/sala_de_aula.tscn")
 
 		# Aqui você chamaria a sua cena de label_morte.tscn que vimos nos arquivos
 		#get_tree().change_scene_to_file("res://title_screen/label_morte.tscn")

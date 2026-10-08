@@ -24,7 +24,7 @@ func iniciar_dialogo():
 		push_error("Falha ao carregar o Resource de Diálogo. Verifique o caminho do arquivo.")
 		return
 	if aviso_chat:
-			aviso_chat.visible = false
+		aviso_chat.visible = false
 	# Instancia o balão na árvore
 	var balao_custom = BALAO_CENA.instantiate()
 	get_tree().current_scene.add_child(balao_custom)
@@ -46,7 +46,7 @@ func _ao_terminar_dialogo():
 func ir_para(posicao: Vector2):
 	alvo = posicao
 	andando = true
-	$AnimatedSprite2D.play("frente")
+	$AnimatedSprite2D.play("esquerda")
 
 func _physics_process(_delta):
 	if not andando:
