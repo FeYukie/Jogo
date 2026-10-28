@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://c80b6ydxlpefi"]
+
+[ext_resource type="Script" uid="uid://bw1wpk3atcvmk" path="res://title_screen/coracoes.gd" id="1_r1lu8"]
+[ext_resource type="Texture2D" uid="uid://5td31llscuqt" path="res://title_screen/gui-health.png" id="2_40feo"]
+[ext_resource type="Script" uid="uid://darrahjcuowem" path="res://title_screen/h_flow_container.gd" id="3_40feo"]
+[ext_resource type="PackedScene" uid="uid://dy78lsaucnwbk" path="res://title_screen/coracoes_gui.tscn" id="3_pc2pq"]
+
+[node name="Coracoes" type="CanvasLayer" unique_id=640989552 groups=["gui_vida"]]
+script = ExtResource("1_r1lu8")
+
+[node name="Control" type="Control" parent="." unique_id=1816742418 groups=["gui_vida"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=431987232]
+position = Vector2(1584, 48)
+scale = Vector2(5, 5.373)
+texture = ExtResource("2_40feo")
+region_enabled = true
+region_rect = Rect2(29, 0, 34, 10)
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Control" unique_id=549718532]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -649.0
+offset_top = 22.0
+offset_right = -579.0
+offset_bottom = 62.0
+grow_horizontal = 0
+scale = Vector2(5, 5.502)
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 2
+alignment = 1
+script = ExtResource("3_40feo")
+
+[node name="Coracao" parent="Control/HFlowContainer" unique_id=2049455654 instance=ExtResource("3_pc2pq")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Coracao2" parent="Control/HFlowContainer" unique_id=1736333125 instance=ExtResource("3_pc2pq")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Coracao3" parent="Control/HFlowContainer" unique_id=50846941 instance=ExtResource("3_pc2pq")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="vazio" type="Sprite2D" parent="Control/HFlowContainer" unique_id=279076435]
+position = Vector2(-235.4, -15.085423)
+scale = Vector2(0.20000002, 0.18175212)
+texture = ExtResource("2_40feo")
+hframes = 7
+vframes = 2
+
+[node name="cheio" type="Sprite2D" parent="Control/HFlowContainer" unique_id=1222693600]
+position = Vector2(-224.2, -12.5408945)
+scale = Vector2(0.20000002, 0.18175212)
+texture = ExtResource("2_40feo")
+hframes = 7
+vframes = 2
+frame = 2

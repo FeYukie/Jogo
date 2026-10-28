@@ -11,15 +11,19 @@ func _ready():
 		update_hp(player.hp, player.max_hp)
 	# Conecta o sinal do script global a esta interface
 	Vida.vida_alterada.connect(_atualizar_coracoes)
+	print("HFlowContainer | Vida.vida_atual = ", Vida.vida_atual)
+	print("HFlowContainer | Vida.hp = ", Vida.hp)
+	print("HFlowContainer | Vida.max_hp = ", Vida.max_hp)
+
 	_atualizar_coracoes(Vida.vida_atual)
 	# Adiciona o nó ao grupo para o Boneco.gd encontrá-lo via get_first_node_in_group
 	
 func _atualizar_coracoes(valor):
 	# Lógica simples: esconde os corações baseada na vida atual
 	var coracoes = get_children()
-	for i in range(coracoes.size()):
+	#for i in range(coracoes.size()):
 		# Se o índice for menor que a vida, mostra o coração, senão esconde
-		coracoes[i].visible = i < valor
+		#coracoes[i].visible = i < valor
 
 func update_hp(hp_atual: int, max_hp: int):
 	var lista_coracoes = get_children()

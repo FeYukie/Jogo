@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bogw40gcqrwo0"]
+
+[ext_resource type="Script" uid="uid://byyoanq8nqeb0" path="res://title_screen/confirmacao.gd" id="1_tk6xt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xkod"]
+bg_color = Color(0.011764706, 0.11372549, 0.18431373, 0.87058824)
+
+[node name="Confirmaçao" type="Control" unique_id=1888442213]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tk6xt")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=699666673]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.5
+offset_top = -118.5
+offset_right = 225.5
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225.5, 118.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4xkod")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1345984024]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=865553618]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=535573743]
+layout_mode = 2
+
+[node name="sim" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=837819037]
+layout_mode = 2
+text = "Sim"
+
+[node name="não" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1154631191]
+layout_mode = 2
+text = "Não"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/sim" to="." method="_on_sim_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/não" to="." method="_on_não_pressed"]

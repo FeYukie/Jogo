@@ -1,10 +1,33 @@
 [gd_scene format=3 uid="uid://cdixkx6bkogfs"]
 
 [ext_resource type="Script" uid="uid://dtb6b15fsek68" path="res://title_screen/title_screen.gd" id="1_dxpbd"]
-[ext_resource type="Texture2D" uid="uid://b6qso68hy6irp" path="res://title_screen/tela-inicial.png" id="2_dxpbd"]
+[ext_resource type="Texture2D" uid="uid://d3ca1bpx25sfb" path="res://title_screen/Quest Life_ Pôr do Sol na Escola.png" id="2_0m3ch"]
+[ext_resource type="Texture2D" uid="uid://dwvlccwgdlbhp" path="res://title_screen/fase1.png" id="3_2dq6q"]
+[ext_resource type="Texture2D" uid="uid://cufia1bco1rxm" path="res://title_screen/fase2.png" id="4_0m3ch"]
+[ext_resource type="Texture2D" uid="uid://dta7dg8n1isep" path="res://title_screen/fase3.png" id="5_fk0fn"]
+[ext_resource type="Texture2D" uid="uid://dx6hk1vnncomv" path="res://title_screen/setas.png" id="6_fh6ay"]
+[ext_resource type="Texture2D" uid="uid://y1bjkfg2wyr4" path="res://title_screen/wasd.png" id="7_jabur"]
+[ext_resource type="Texture2D" uid="uid://dfj8j8gwcsuta" path="res://title_screen/espaco.png" id="8_uiiip"]
+[ext_resource type="Texture2D" uid="uid://c43nl85pynjoi" path="res://title_screen/esc.png" id="9_p7x7j"]
+[ext_resource type="Texture2D" uid="uid://ccghtr0aip73b" path="res://title_screen/e.png" id="10_4h7y4"]
+[ext_resource type="AudioStream" uid="uid://bf1butqp3cp8x" path="res://escola/terrain/assets/button-press.ogg" id="11_jabur"]
+[ext_resource type="AudioStream" uid="uid://cq50slgc35r0r" path="res://title_screen/14 HoliznaCC0 - Whatever.ogg" id="12_uiiip"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dq6q"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 bg_color = Color(0.6550641, 0.16209814, 0.0792846, 0.827451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxpbd"]
+bg_color = Color(0.5411765, 0.1254902, 0.05490196, 0.827451)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -17,8 +40,38 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m3ch"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jabur"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 bg_color = Color(0.654902, 0.16078432, 0.078431375, 0.827451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiiip"]
+bg_color = Color(0.56078434, 0.13333334, 0.05882353, 0.827451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m3ch"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.654902, 0.16078432, 0.078431375, 0.827451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqrgu"]
+bg_color = Color(0.54089165, 0.12531972, 0.055993527, 0.827451)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -30,6 +83,46 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv0o7"]
+bg_color = Color(0.4458025, 0.19292936, 0.31996098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.59607846)
+shadow_size = 8
+shadow_offset = Vector2(3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oos5"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3eqcd"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="TitleScreen" type="Control" unique_id=252690810]
 process_mode = 3
@@ -50,50 +143,333 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="bg" type="TextureRect" parent="MarginContainer" unique_id=1830253399]
 layout_mode = 2
-texture = ExtResource("2_dxpbd")
+texture = ExtResource("2_0m3ch")
 expand_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1148777660]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=100770163]
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=450257665]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Control" unique_id=100770163]
 custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-size_flags_horizontal = 0
+layout_mode = 0
+offset_left = -160.0
+offset_top = 440.0
+offset_right = 146.0
+offset_bottom = 809.0
+pivot_offset = Vector2(125, 95)
+size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 13
 
-[node name="title" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=843145999]
+[node name="title" type="TextureRect" parent="MarginContainer/HBoxContainer/Control/VBoxContainer" unique_id=843145999]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=601890069]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Control/VBoxContainer" unique_id=601890069]
 layout_mode = 2
 
-[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1262008163]
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/Control/VBoxContainer" unique_id=1262008163]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_2dq6q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dxpbd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vbjqi")
 text = "JOGAR"
 
-[node name="start_btn2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=434275408]
-visible = false
+[node name="fases" type="Button" parent="MarginContainer/HBoxContainer/Control/VBoxContainer" unique_id=1157980322]
 layout_mode = 2
-mouse_filter = 2
-text = "FAZER LOGIN"
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_2dq6q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dxpbd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vbjqi")
+text = "FASES"
 
-[node name="start_btn3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=239352972]
+[node name="controles" type="Button" parent="MarginContainer/HBoxContainer/Control/VBoxContainer" unique_id=213811481]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_2dq6q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dxpbd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vbjqi")
+text = "CONTROLES"
+
+[node name="config" type="Button" parent="MarginContainer/HBoxContainer/Control/VBoxContainer" unique_id=434275408]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_jabur")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uiiip")
+text = "  CONFIGURAÇÕES  "
+
+[node name="sair" type="Button" parent="MarginContainer/HBoxContainer/Control/VBoxContainer" unique_id=239352972]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_0m3ch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oqrgu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fk0fn")
 text = "SAIR DO JOGO"
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn3" to="." method="_on_start_btn_3_pressed"]
+[node name="Menu_fases" type="Control" parent="." unique_id=1323918128]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Menu_fases" unique_id=455484875]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -636.5
+offset_top = -495.25
+offset_right = 636.5
+offset_bottom = 495.25
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(639, 357.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv0o7")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Menu_fases/PanelContainer" unique_id=2060631157]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_fases/PanelContainer/VBoxContainer4" unique_id=1049879260]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="Label1" type="Label" parent="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer" unique_id=215389779]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.98039216)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Fase 1 (escola)"
+
+[node name="Fase1" type="Button" parent="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer" unique_id=471805799]
+layout_mode = 2
+icon = ExtResource("3_2dq6q")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Menu_fases/PanelContainer/VBoxContainer4" unique_id=905633089]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer2" unique_id=1556700418]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Fase 2 (parque)"
+
+[node name="Fase2" type="Button" parent="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer2" unique_id=1312373327]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("4_0m3ch")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Menu_fases/PanelContainer/VBoxContainer4" unique_id=722953036]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer3" unique_id=24609153]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Fase 3 (sala de aula)"
+
+[node name="Fase3" type="Button" parent="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer3" unique_id=707643493]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("5_fk0fn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu_fases/PanelContainer/VBoxContainer4" unique_id=2062732258]
+layout_mode = 2
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="fechar" type="Button" parent="Menu_fases/PanelContainer/VBoxContainer4/HBoxContainer" unique_id=150653758]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1oos5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3eqcd")
+text = "Fechar"
+
+[node name="Menu_controles" type="Control" parent="." unique_id=1181253418]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Menu_controles" unique_id=2032114134]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.7599
+offset_top = -216.25
+offset_right = 305.7599
+offset_bottom = 216.25
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(639, 357.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv0o7")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu_controles/PanelContainer" unique_id=479701728]
+layout_mode = 2
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxPrincipal" type="VBoxContainer" parent="Menu_controles/PanelContainer/MarginContainer" unique_id=1798086171]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="HBox" type="HBoxContainer" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal" unique_id=1486089662]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 26
+
+[node name="VBoxEsquerda" type="VBoxContainer" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox" unique_id=1240295939]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Mover" type="Label" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxEsquerda" unique_id=1549453992]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Mover"
+
+[node name="Setas" type="TextureRect" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxEsquerda" unique_id=1470143070]
+layout_mode = 2
+texture = ExtResource("6_fh6ay")
+
+[node name="WASD" type="TextureRect" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxEsquerda" unique_id=727625107]
+layout_mode = 2
+texture = ExtResource("7_jabur")
+
+[node name="VBoxDireita" type="VBoxContainer" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox" unique_id=275328551]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 27
+
+[node name="VBoxEspaco" type="VBoxContainer" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita" unique_id=1668866605]
+layout_mode = 2
+
+[node name="Avancar" type="Label" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita/VBoxEspaco" unique_id=1537699858]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Avançar"
+
+[node name="Espaço" type="TextureRect" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita/VBoxEspaco" unique_id=159992297]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_uiiip")
+stretch_mode = 2
+
+[node name="HBoxBaixo" type="HBoxContainer" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita" unique_id=402090370]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBoxEsc" type="VBoxContainer" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita/HBoxBaixo" unique_id=688894616]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 6
+
+[node name="Pausar" type="Label" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita/HBoxBaixo/VBoxEsc" unique_id=1117280633]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Pausar"
+vertical_alignment = 2
+
+[node name="Fase2" type="TextureRect" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita/HBoxBaixo/VBoxEsc" unique_id=1408033746]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("9_p7x7j")
+stretch_mode = 2
+
+[node name="Control" type="Control" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita/HBoxBaixo/VBoxEsc" unique_id=1907652317]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxE" type="VBoxContainer" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita/HBoxBaixo" unique_id=1441172210]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="Falar" type="Label" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita/HBoxBaixo/VBoxE" unique_id=6672641]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Falar"
+
+[node name="Fase3" type="TextureRect" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/HBox/VBoxDireita/HBoxBaixo/VBoxE" unique_id=1512910232]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_4h7y4")
+stretch_mode = 2
+
+[node name="fechar" type="Button" parent="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal" unique_id=77671423]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1oos5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3eqcd")
+text = "Fechar"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=793237645]
+stream = ExtResource("11_jabur")
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=622187639]
+stream = ExtResource("12_uiiip")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Control/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Control/VBoxContainer/fases" to="." method="_on_fases_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Control/VBoxContainer/controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Control/VBoxContainer/config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Control/VBoxContainer/sair" to="." method="_on_start_btn_3_pressed"]
+[connection signal="pressed" from="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer/Fase1" to="." method="_on_fase_1_pressed"]
+[connection signal="pressed" from="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer2/Fase2" to="." method="_on_fase_2_pressed"]
+[connection signal="pressed" from="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer3/Fase3" to="." method="_on_fase_3_pressed"]
+[connection signal="pressed" from="Menu_fases/PanelContainer/VBoxContainer4/HBoxContainer/fechar" to="." method="_on_fechar_pressed"]
+[connection signal="pressed" from="Menu_controles/PanelContainer/MarginContainer/VBoxPrincipal/fechar" to="." method="_on_fechar_pressed"]

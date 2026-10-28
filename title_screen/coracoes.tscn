@@ -16,7 +16,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="Control" unique_id=1273009081]
+layout_mode = 0
+offset_left = 1501.0
+offset_top = 16.0
+offset_right = 1659.0
+offset_bottom = 95.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 50
+text = "VIDAS"
+
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=431987232]
+visible = false
 position = Vector2(1584, 48)
 scale = Vector2(5, 5.373)
 texture = ExtResource("2_40feo")

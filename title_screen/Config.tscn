@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://qf4ow1y4hk4y"]
+
+[ext_resource type="Script" uid="uid://xqlatp5qxwj6" path="res://title_screen/config.gd" id="1_b1mf5"]
+[ext_resource type="AudioStream" uid="uid://bf1butqp3cp8x" path="res://escola/terrain/assets/button-press.ogg" id="2_tb3cm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tb3cm"]
+content_margin_top = 60.0
+content_margin_bottom = 60.0
+bg_color = Color(0.44705883, 0.19215687, 0.32156864, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 8
+shadow_offset = Vector2(3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1mf5"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4omdb"]
+bg_color = Color(0.25882354, 0.25882354, 0.25882354, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Config" type="Control" unique_id=1181903921]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b1mf5")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=547262576]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.8645
+offset_top = -197.0
+offset_right = 278.8645
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(184.5, 96)
+theme_override_styles/panel = SubResource("StyleBoxFlat_tb3cm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=732281828]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Titulo" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1405746026]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Configurações"
+horizontal_alignment = 1
+
+[node name="HBoxVolume" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1762023867]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxVolume" unique_id=1517287105]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Efeitos"
+
+[node name="HSliderVolume" type="HSlider" parent="PanelContainer/VBoxContainer/HBoxVolume" unique_id=746086604]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HBoxMusica" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=466396376]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxMusica" unique_id=72938670]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Música"
+
+[node name="HSliderMusica" type="HSlider" parent="PanelContainer/VBoxContainer/HBoxMusica" unique_id=1053512865]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HBoxTela" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2095361668]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxTela" unique_id=1845358013]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Tela Cheia"
+
+[node name="CheckBox" type="CheckBox" parent="PanelContainer/VBoxContainer/HBoxTela" unique_id=730511451]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1079259833]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b1mf5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4omdb")
+text = "Fechar"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1365593387]
+stream = ExtResource("2_tb3cm")
+bus = &"Efeitos"
+
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/HBoxVolume/HSliderVolume" to="." method="_on_h_slider_volume_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/HBoxMusica/HSliderMusica" to="." method="_on_h_slider_musica_value_changed"]
+[connection signal="toggled" from="PanelContainer/VBoxContainer/HBoxTela/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
