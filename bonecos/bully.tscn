@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cirbkat7hhyix"]
 
 [ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="1_74x36"]
-[ext_resource type="SpriteFrames" uid="uid://cdsr3fv8pamdl" path="res://bonecos/anim_bully1.tres" id="2_q03y0"]
+[ext_resource type="SpriteFrames" uid="uid://cdsr3fv8pamdl" path="res://anim_bully1.tres" id="2_q03y0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
 radius = 5.0
@@ -17,6 +17,7 @@ func _on_body_entered(body):
 	if body.has_method(\"jogador\"):
 		body.pode_interagir = true
 		body.npc_proximo = self
+		print(\"encontrado\")
 
 func _on_body_exited(body):
 	if body.has_method(\"jogador\"):

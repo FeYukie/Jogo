@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 70
+const speed = 60
 var is_roaming = true
 var is_chatting = false
 var alvo: Vector2
@@ -13,7 +13,7 @@ const BALAO_CENA = preload("res://personalizado.tscn")
 @export var dialogo_titulo: String = "start"
 
 @onready var aviso_chat: Control = $Actionable/Control
-@onready var bully = $"../Bully"
+@onready var bully = $Personagens/bully
 
 func iniciar_dialogo():
 	if not is_chatting:
@@ -36,6 +36,7 @@ func iniciar_dialogo():
 	balao_custom.start(dialogo_recurso, dialogo_titulo, [self, bully])
 
 func _ao_terminar_dialogo():
+	
 	is_chatting = false
 	is_roaming = true
 	if has_node("Actionable") and $Actionable.has_overlapping_bodies():
@@ -57,13 +58,19 @@ func _physics_process(_delta):
 	velocity = direcao * speed
 	move_and_slide()
 
-	if global_position.distance_to(alvo) < 5 or (get_slide_collision_count() > 0 and velocity.length() < 1):
-		global_position = alvo if global_position.distance_to(alvo) < 5 else global_position
+	# Aumentamos a margem para 8px e verificamos se ele colidiu/parou de se mover
+	var distancia = global_position.distance_to(alvo)
+	if distancia < 6.0 or (get_slide_collision_count() > 0 and get_real_velocity().length() < 1.0):
+		global_position = alvo if distancia < 6.0 else global_position
+		
 		velocity = Vector2.ZERO
 		andando = false
 		$AnimatedSprite2D.stop()
 		$AnimatedSprite2D.frame = 0
 
+	#if distancia < 8.0 or get_real_velocity().length() < 1.0:
+		
+		
 func fazer_bully_andar():
 	ir_para(Vector2(400, 300))
 	while andando:
@@ -75,8 +82,11 @@ func _on_actionable_body_entered(body: Node2D) -> void:
 	if body.has_method("jogador"):
 		body.pode_interagir = true
 		body.npc_proximo = self
-		if aviso_chat:
+
+		if aviso_chat and not is_chatting:
 			aviso_chat.visible = true
+			print("exibindo")
+
 
 func _on_actionable_body_exited(body: Node2D) -> void:
 	if body.has_method("jogador"):

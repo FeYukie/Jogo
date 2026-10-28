@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bjspc3arup0ol" path="res://bonecos/boneco_01.gd" id="1_xrr2l"]
 [ext_resource type="Texture2D" uid="uid://yi5gcrvfibas" path="res://tiles/char free/menina.png" id="2_xrr2l"]
+[ext_resource type="Texture2D" uid="uid://n1tman7mbky8" path="res://tiles/jogador/menino_costas.png" id="3_ppnlk"]
 [ext_resource type="Texture2D" uid="uid://d0foblhnwmn73" path="res://tiles/jogador/spritesheet_o.png" id="3_xrr2l"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf18c"]
-radius = 4.0
-height = 20.0
+[ext_resource type="Texture2D" uid="uid://b31517gsbebso" path="res://tiles/jogador/spritesheet_o-culpa.png" id="4_tqrky"]
+[ext_resource type="Texture2D" uid="uid://bwxrs5abtpwjh" path="res://tiles/jogador/spritesheet_sentados.png" id="5_16282"]
 
 [sub_resource type="Animation" id="Animation_dlp20"]
 resource_name = "new_animation"
@@ -35,6 +34,14 @@ region = Rect2(1336, 0, 668, 1002)
 [sub_resource type="AtlasTexture" id="AtlasTexture_elpr4"]
 atlas = ExtResource("3_xrr2l")
 region = Rect2(0, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg1wc"]
+atlas = ExtResource("4_tqrky")
+region = Rect2(2046, 1024, 682, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8guwv"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(2004, 1002, 668, 1002)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07fpq"]
 atlas = ExtResource("3_xrr2l")
@@ -72,6 +79,22 @@ region = Rect2(0, 2004, 668, 1002)
 atlas = ExtResource("3_xrr2l")
 region = Rect2(2004, 1002, 668, 1002)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbu3b"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(2672, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07cv3"]
+atlas = ExtResource("3_xrr2l")
+region = Rect2(2505, 2004, 835, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o86m5"]
+atlas = ExtResource("5_16282")
+region = Rect2(2672, 2004, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqvq0"]
+atlas = ExtResource("3_ppnlk")
+region = Rect2(0, 0, 689, 362)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrr2l"]
 animations = [{
 "frames": [{
@@ -93,6 +116,22 @@ animations = [{
 "loop": true,
 "name": &"costas",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg1wc")
+}],
+"loop": true,
+"name": &"culpa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8guwv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -135,10 +174,44 @@ animations = [{
 "loop": true,
 "name": &"frente",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbu3b")
+}],
+"loop": true,
+"name": &"lado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07cv3")
+}],
+"loop": true,
+"name": &"sentado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o86m5")
+}],
+"loop": true,
+"name": &"sentado-lado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqvq0")
+}],
+"loop": true,
+"name": &"virado",
+"speed": 5.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1796086270]
 position = Vector2(202, 16)
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_xrr2l")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1594056243]
@@ -146,10 +219,6 @@ visible = false
 position = Vector2(-160, 4.999998)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_xrr2l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620983464]
-scale = Vector2(0.11541069, 0.022065328)
-shape = SubResource("CapsuleShape2D_yf18c")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1003487310]
 root_node = NodePath("../Sprite2D")
@@ -162,7 +231,6 @@ offset_bottom = 23.0
 text = "Pressione C"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1933817662]
-position = Vector2(1, -9)
+position = Vector2(-1, -4)
 scale = Vector2(0.075, 0.075)
 sprite_frames = SubResource("SpriteFrames_xrr2l")
-animation = &"frente"
