@@ -1,0 +1,560 @@
+[gd_scene format=3 uid="uid://dhfgm5uqw36hj"]
+
+[ext_resource type="Script" uid="uid://ckwsrcoexqp17" path="res://escola/cutscene_1_bullying.gd" id="1_elqpv"]
+[ext_resource type="Texture2D" uid="uid://dew8w7mq1chte" path="res://escola/Entrada da Escola em Pixel Art.png" id="1_mm548"]
+[ext_resource type="PackedScene" uid="uid://cirbkat7hhyix" path="res://bully.tscn" id="3_is2qo"]
+[ext_resource type="Texture2D" uid="uid://co10qgrnto8ta" path="res://title_screen/spritesheet_Caua.png" id="4_vb7hh"]
+[ext_resource type="Script" uid="uid://biju4tfewuta1" path="res://escola/camera_2d.gd" id="5_elqpv"]
+[ext_resource type="SpriteFrames" uid="uid://cl4dvqtyu8ylp" path="res://anim_bully2.tres" id="6_x6jjf"]
+[ext_resource type="Texture2D" uid="uid://cawl0yrv8n1rc" path="res://tiles/jogador/bully (2) spritesheet.png" id="6_xmsjl"]
+[ext_resource type="PackedScene" uid="uid://b3xjlccp41svc" path="res://vitima.tscn" id="7_cgviw"]
+[ext_resource type="PackedScene" uid="uid://xkirejhhbkk8" path="res://bonecos/boneco01.tscn" id="8_xmsjl"]
+[ext_resource type="StyleBox" uid="uid://c2pd84bm3ctkw" path="res://title_screen/new_style_box_flat.tres" id="10_x6jjf"]
+[ext_resource type="StyleBox" uid="uid://c16tklxax28ga" path="res://title_screen/press.tres" id="11_cgviw"]
+[ext_resource type="StyleBox" uid="uid://dont7y46iikxo" path="res://title_screen/hover.tres" id="12_xmsjl"]
+[ext_resource type="Texture2D" uid="uid://bcsslwoc50744" path="res://tiles/jogador/npcs.png" id="13_w8xxi"]
+[ext_resource type="Texture2D" uid="uid://bltturtejq634" path="res://tiles/jogador/npc1.png" id="14_k8gp0"]
+[ext_resource type="Texture2D" uid="uid://c05ugkg0dx0up" path="res://tiles/jogador/npcs_cutscene.png" id="14_w8xxi"]
+[ext_resource type="AudioStream" uid="uid://bf1butqp3cp8x" path="res://escola/terrain/assets/button-press.ogg" id="16_w8xxi"]
+[ext_resource type="AudioStream" uid="uid://dylg0f2e843d1" path="res://3xBlast - The Sad Part- triste ou omissão.wav" id="17_k8gp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vepy8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7ifq"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuaea"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lt21"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3gyk"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljkt0"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue4te"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx0x7"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5eao"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crtxh"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psxnn"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekvvx"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdpci"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lgyy"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbsal"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdjx4"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkdku"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30mko"]
+atlas = ExtResource("4_vb7hh")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkvf4"]
+atlas = ExtResource("6_xmsjl")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inxtl"]
+atlas = ExtResource("6_xmsjl")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4oa3"]
+atlas = ExtResource("6_xmsjl")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dypm0"]
+atlas = ExtResource("6_xmsjl")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r7euc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7ifq")
+}],
+"loop": true,
+"name": &"conversa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuaea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lt21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3gyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljkt0")
+}],
+"loop": true,
+"name": &"costas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue4te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx0x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5eao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crtxh")
+}],
+"loop": true,
+"name": &"direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psxnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekvvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdpci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lgyy")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbsal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdjx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkdku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30mko")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkvf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inxtl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4oa3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dypm0")
+}],
+"loop": true,
+"name": &"rindo",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hsyxr"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8nhfj"]
+radius = 5.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5dayf"]
+radius = 6.666687
+height = 14.666687
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8xxi"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8gp0"]
+bg_color = Color(0.06051457, 0.2806551, 0.42433894, 0.79607844)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkvf4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8xxi"]
+atlas = ExtResource("13_w8xxi")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vknok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8xxi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mc2c"]
+atlas = ExtResource("14_k8gp0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8gp0"]
+atlas = ExtResource("14_w8xxi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kll2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mc2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8gp0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixejj"]
+radius = 2.0
+height = 9.333374
+
+[node name="Cutscene1Ruim" type="Node2D" unique_id=912082081]
+script = ExtResource("1_elqpv")
+
+[node name="EntradaDaEscolaEmPixelArt" type="Sprite2D" parent="." unique_id=1759474675]
+position = Vector2(965.38257, 583.75)
+scale = Vector2(1.1951841, 1.1951842)
+texture = ExtResource("1_mm548")
+
+[node name="bully" parent="." unique_id=1957441867 instance=ExtResource("3_is2qo")]
+position = Vector2(988, 1071)
+scale = Vector2(1.5, 1.5)
+motion_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Collision" parent="bully" index="1" unique_id=779873815]
+visible = false
+position = Vector2(-4, -8)
+shape = SubResource("RectangleShape2D_vepy8")
+
+[node name="CollisionShape2D" parent="bully/Actionable" parent_id_path=PackedInt32Array(1957441867, 1836018293) index="0" unique_id=1722440272]
+visible = false
+
+[node name="Control" parent="bully/Actionable" parent_id_path=PackedInt32Array(1957441867, 1836018293) index="1" unique_id=613734701]
+visible = false
+offset_left = -20.666668
+offset_top = -81.33335
+offset_right = 32.00002
+offset_bottom = -34.000008
+
+[node name="PanelContainer" parent="bully/Actionable/Control" index="0" unique_id=293701752]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43500003
+anchor_top = 0.65300006
+anchor_right = 0.43500003
+anchor_bottom = 0.65300006
+offset_left = -16.909985
+offset_top = 11.757999
+offset_right = 5.0900154
+offset_bottom = 23.341335
+
+[node name="AvisoChat" parent="bully/Actionable/Control/PanelContainer" index="0" unique_id=13439119]
+z_index = 200
+texture_filter = 1
+theme_override_font_sizes/font_size = 4
+
+[node name="AnimatedSprite2D" parent="bully" index="3" unique_id=1158655805]
+position = Vector2(97.66668, -110.66668)
+scale = Vector2(7.354167, 7.354167)
+sprite_frames = SubResource("SpriteFrames_r7euc")
+animation = &"rindo"
+frame_progress = 0.11664404
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bully" unique_id=584030428]
+position = Vector2(-4, -2.666687)
+shape = SubResource("CapsuleShape2D_hsyxr")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=868963888]
+position = Vector2(965, 550)
+script = ExtResource("5_elqpv")
+
+[node name="bully3" parent="." unique_id=202114242 instance=ExtResource("3_is2qo")]
+position = Vector2(877, 1077)
+scale = Vector2(1.5, 1.5)
+motion_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Collision" parent="bully3" index="1" unique_id=779873815]
+visible = false
+
+[node name="CollisionShape2D" parent="bully3/Actionable" parent_id_path=PackedInt32Array(202114242, 1836018293) index="0" unique_id=1722440272]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_8nhfj")
+
+[node name="Control" parent="bully3/Actionable" parent_id_path=PackedInt32Array(202114242, 1836018293) index="1" unique_id=613734701]
+visible = false
+
+[node name="PanelContainer" parent="bully3/Actionable/Control" index="0" unique_id=293701752]
+visible = false
+
+[node name="AvisoChat" parent="bully3/Actionable/Control/PanelContainer" index="0" unique_id=13439119]
+visible = false
+z_index = 200
+texture_filter = 1
+theme_override_font_sizes/font_size = 14
+
+[node name="AnimatedSprite2D" parent="bully3" index="3" unique_id=1158655805]
+position = Vector2(16.33331, -112.3333)
+scale = Vector2(7.1041646, 7.1041646)
+sprite_frames = ExtResource("6_x6jjf")
+animation = &"frente"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bully3" unique_id=240233810]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_5dayf")
+
+[node name="vitima" parent="." unique_id=1072776503 instance=ExtResource("7_cgviw")]
+y_sort_enabled = true
+position = Vector2(1446, 862.00006)
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="Collision" parent="vitima/ColisaoFisica" parent_id_path=PackedInt32Array(1072776503, 1671230760) index="0" unique_id=779873815]
+position = Vector2(0, -7.333331)
+
+[node name="AnimatedSprite2D" parent="vitima" index="3" unique_id=1705656383]
+position = Vector2(43.999992, -60.666656)
+scale = Vector2(3.791666, 3.791666)
+
+[node name="CollisionShape2D" parent="vitima" index="4" unique_id=1191103303]
+position = Vector2(0, -6.6666665)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=589145572]
+
+[node name="Mensagem" type="Control" parent="CanvasLayer" unique_id=1003059590]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Mensagem" unique_id=1447017782]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 1882.0
+offset_bottom = 1120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(961, 579.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_w8xxi")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Mensagem/Panel" unique_id=64732988]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -795.0
+offset_top = -221.5
+offset_right = 798.0
+offset_bottom = 199.08331
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=1233233046]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 44
+text = "Participar da piada pode parecer o caminho mais fácil para se enturmar, 
+mas o custo é alto. O bullying feriu uma jovem que só queria ser acolhida em
+ seu primeiro dia. Amizades verdadeiras não nascem da humilhação dos outros,
+ e sim do respeito às diferenças."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="Control" parent="CanvasLayer" unique_id=1537265482]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Menu" unique_id=47978524]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.26395
+offset_top = -200.125
+offset_right = 359.26395
+offset_bottom = 200.125
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(731, 441)
+theme_override_styles/panel = SubResource("StyleBoxFlat_k8gp0")
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/Panel" unique_id=1961227613]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.49994
+offset_top = 70.0
+offset_right = 247.50009
+offset_bottom = 102.10417
+grow_horizontal = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 32
+text = "Diante dos erros, é necessário refazer a fase."
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/Panel" unique_id=1194438995]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.87498
+offset_top = -120.25
+offset_right = 174.87498
+offset_bottom = 120.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="Reiniciar" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=1596426795]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("10_x6jjf")
+theme_override_styles/pressed = ExtResource("11_cgviw")
+theme_override_styles/hover = ExtResource("12_xmsjl")
+text = "Reiniciar Fase"
+
+[node name="Quitmenu" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=617191875]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("10_x6jjf")
+theme_override_styles/pressed = ExtResource("11_cgviw")
+theme_override_styles/hover = ExtResource("12_xmsjl")
+text = "Ir para Menu"
+
+[node name="sair" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=829435490]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("10_x6jjf")
+theme_override_styles/pressed = ExtResource("11_cgviw")
+theme_override_styles/hover = ExtResource("12_xmsjl")
+text = "Sair do Jogo"
+
+[node name="Panel" type="Panel" parent="." unique_id=568910500]
+visible = false
+offset_right = 1969.0
+offset_bottom = 1249.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bkvf4")
+
+[node name="npc2" type="AnimatedSprite2D" parent="." unique_id=2121418245]
+z_index = 1
+position = Vector2(404, 793.00006)
+scale = Vector2(5.9609375, 5.9609375)
+sprite_frames = SubResource("SpriteFrames_vknok")
+
+[node name="npc1" type="AnimatedSprite2D" parent="." unique_id=79014785]
+z_index = 1
+position = Vector2(502.00003, 797)
+scale = Vector2(5.9218755, 5.9218755)
+sprite_frames = SubResource("SpriteFrames_kll2r")
+autoplay = "default"
+
+[node name="jogador" parent="." unique_id=1796086270 instance=ExtResource("8_xmsjl")]
+y_sort_enabled = true
+position = Vector2(988.00006, 884.00006)
+scale = Vector2(15, 15)
+motion_mode = 1
+
+[node name="AnimatedSprite2D" parent="jogador" index="3" unique_id=1933817662]
+position = Vector2(-22.000004, 3.466663)
+scale = Vector2(0.061611507, 0.061611515)
+autoplay = "frente2"
+frame_progress = 0.2773549
+
+[node name="Collision" type="CollisionShape2D" parent="jogador" unique_id=1977111953]
+position = Vector2(0, -4.6666665)
+shape = SubResource("CapsuleShape2D_ixejj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=717483335]
+stream = ExtResource("16_w8xxi")
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=742916795]
+stream = ExtResource("17_k8gp0")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/Quitmenu" to="." method="_on_quitmenu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/sair" to="." method="_on_sair_pressed"]
+
+[editable path="bully"]
+[editable path="bully3"]
+[editable path="vitima"]
+[editable path="jogador"]

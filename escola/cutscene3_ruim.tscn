@@ -1,92 +1,589 @@
 [gd_scene format=3 uid="uid://bodhdy8ikjnrf"]
 
-[ext_resource type="Script" uid="uid://cri84aea083nb" path="res://escola/cutscene_3_ruim.gd" id="1_p447p"]
-[ext_resource type="Texture2D" uid="uid://vygrhshvvmu8" path="res://tiles/jogador/spritesheet_vitima1 (1).png" id="2_0cges"]
-[ext_resource type="Texture2D" uid="uid://552kfr4olovp" path="res://escola/escola.jpg" id="2_p447p"]
+[ext_resource type="Script" uid="uid://cri84aea083nb" path="res://escola/cutscene3_ruim.gd" id="1_p447p"]
+[ext_resource type="Texture2D" uid="uid://ca766ui2f6sjh" path="res://tiles/jogador/vitima1 sprite mochila.png" id="2_0cges"]
+[ext_resource type="Texture2D" uid="uid://fq8ah3lu17vw" path="res://escola/Escritório do Diretor em Pixel Art(1).png" id="2_kow37"]
+[ext_resource type="Texture2D" uid="uid://dbx5v2cs8bgmb" path="res://escola/Entrada da Escola com Parque e Carro pixeis.png" id="2_vaikn"]
+[ext_resource type="Texture2D" uid="uid://c25f1c28c724t" path="res://escola/saida da Escola em Pixel Art(1).png" id="3_1ax5e"]
+[ext_resource type="Texture2D" uid="uid://bt1lis1jrsp0s" path="res://escola/Suspensão no Gabinete do Diretor.png" id="3_wgsyf"]
+[ext_resource type="Script" uid="uid://biju4tfewuta1" path="res://escola/camera_2d.gd" id="4_1ax5e"]
+[ext_resource type="StyleBox" uid="uid://c2pd84bm3ctkw" path="res://title_screen/new_style_box_flat.tres" id="5_8i5yf"]
+[ext_resource type="StyleBox" uid="uid://c16tklxax28ga" path="res://title_screen/press.tres" id="6_vaikn"]
+[ext_resource type="StyleBox" uid="uid://dont7y46iikxo" path="res://title_screen/hover.tres" id="7_tqqgw"]
+[ext_resource type="PackedScene" uid="uid://cirbkat7hhyix" path="res://bully.tscn" id="11_ecvkd"]
+[ext_resource type="Texture2D" uid="uid://co10qgrnto8ta" path="res://title_screen/spritesheet_Caua.png" id="12_nrait"]
+[ext_resource type="Texture2D" uid="uid://dpfatn1lixaej" path="res://tiles/jogador/bully culpa.png" id="13_83a7a"]
+[ext_resource type="SpriteFrames" uid="uid://cl4dvqtyu8ylp" path="res://anim_bully2.tres" id="14_lyfce"]
+[ext_resource type="PackedScene" uid="uid://xkirejhhbkk8" path="res://bonecos/boneco01.tscn" id="15_wgsyf"]
+[ext_resource type="AudioStream" uid="uid://bf1butqp3cp8x" path="res://escola/terrain/assets/button-press.ogg" id="16_ecvkd"]
+[ext_resource type="AudioStream" uid="uid://cvtmos0rfhj4n" path="res://Frustration-KilluaBoy.wav" id="17_nrait"]
 
-[sub_resource type="Animation" id="Animation_p447p"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_bla0f"]
-resource_name = "cutscene"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("aluna_nova:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(227, -5)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hwksp"]
-_data = {
-&"RESET": SubResource("Animation_p447p"),
-&"cutscene": SubResource("Animation_bla0f")
-}
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ax5e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaowg"]
 atlas = ExtResource("2_0cges")
-region = Rect2(32, 96, 32, 32)
+region = Rect2(128, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bla0f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c71f"]
 atlas = ExtResource("2_0cges")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw40k"]
+atlas = ExtResource("2_0cges")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaikn"]
+atlas = ExtResource("2_0cges")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwksp"]
+atlas = ExtResource("2_0cges")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i5yf"]
+atlas = ExtResource("2_0cges")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqqgw"]
+atlas = ExtResource("2_0cges")
+region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hwksp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ax5e")
+"texture": SubResource("AtlasTexture_aaowg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bla0f")
+"texture": SubResource("AtlasTexture_0c71f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw40k")
 }],
 "loop": true,
-"name": &"default",
+"name": &"costas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaikn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwksp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i5yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqqgw")
+}],
+"loop": true,
+"name": &"embora",
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cges"]
-bg_color = Color(0.50928617, 0.5092862, 0.509286, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaowg"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c71f"]
+bg_color = Color(0.06051457, 0.2806551, 0.42433894, 0.79607844)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw40k"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w58tx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7ifq"]
+atlas = ExtResource("12_nrait")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuaea"]
+atlas = ExtResource("12_nrait")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lt21"]
+atlas = ExtResource("12_nrait")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3gyk"]
+atlas = ExtResource("12_nrait")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljkt0"]
+atlas = ExtResource("12_nrait")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nrp1"]
+atlas = ExtResource("13_83a7a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue4te"]
+atlas = ExtResource("12_nrait")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx0x7"]
+atlas = ExtResource("12_nrait")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5eao"]
+atlas = ExtResource("12_nrait")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crtxh"]
+atlas = ExtResource("12_nrait")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psxnn"]
+atlas = ExtResource("12_nrait")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekvvx"]
+atlas = ExtResource("12_nrait")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdpci"]
+atlas = ExtResource("12_nrait")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lgyy"]
+atlas = ExtResource("12_nrait")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbsal"]
+atlas = ExtResource("12_nrait")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdjx4"]
+atlas = ExtResource("12_nrait")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkdku"]
+atlas = ExtResource("12_nrait")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30mko"]
+atlas = ExtResource("12_nrait")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8jhe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7ifq")
+}],
+"loop": true,
+"name": &"conversa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuaea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lt21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3gyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljkt0")
+}],
+"loop": true,
+"name": &"costas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nrp1")
+}],
+"loop": true,
+"name": &"culpa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue4te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx0x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5eao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crtxh")
+}],
+"loop": true,
+"name": &"direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psxnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekvvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdpci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lgyy")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbsal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdjx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkdku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30mko")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ghxb"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gssao"]
+radius = 5.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1176p"]
+radius = 6.666687
+height = 14.666687
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ecvkd"]
+radius = 2.0
+height = 9.333374
 
 [node name="Cutscene3Ruim" type="Node2D" unique_id=185003200]
 script = ExtResource("1_p447p")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=702862241]
-libraries/ = SubResource("AnimationLibrary_hwksp")
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=626483908]
+visible = false
+z_index = -20
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -12.0
+offset_right = 1931.5313
+offset_bottom = 1099.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kow37")
 
-[node name="aluna_nova" type="AnimatedSprite2D" parent="." unique_id=211391577]
-position = Vector2(1024, 792)
-scale = Vector2(5.8125, 5.8125)
-sprite_frames = SubResource("SpriteFrames_hwksp")
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=2022353509]
+visible = false
+z_index = -20
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -46.0
+offset_right = 1939.9717
+offset_bottom = 1286.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wgsyf")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1184986886]
+visible = false
+z_index = -20
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -7.0
+offset_right = 1992.833
+offset_bottom = 1117.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vaikn")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1422649346]
 z_index = -20
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -11.0
-offset_right = 2068.3333
-offset_bottom = 1197.0
+offset_left = -142.0
+offset_top = -84.0
+offset_right = 2088.625
+offset_bottom = 1161.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_p447p")
+texture = ExtResource("3_1ax5e")
 
-[node name="Panel" type="Panel" parent="." unique_id=867582436]
+[node name="aluna_nova" type="AnimatedSprite2D" parent="." unique_id=211391577]
+position = Vector2(876.00006, 860)
+scale = Vector2(17.34375, 17.34375)
+sprite_frames = SubResource("SpriteFrames_hwksp")
+animation = &"costas"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1210507623]
+position = Vector2(965, 550)
+script = ExtResource("4_1ax5e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=879263421]
+
+[node name="Mensagem" type="Control" parent="CanvasLayer" unique_id=2062000091]
 visible = false
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_0cges")
 
-[node name="Label" type="Label" parent="Panel" unique_id=1000243885]
-layout_mode = 0
-offset_left = -354.0
-offset_top = 822.0
-offset_right = -247.0
-offset_bottom = 845.0
-text = "Suas escolhas"
+[node name="Panel" type="Panel" parent="CanvasLayer/Mensagem" unique_id=877336063]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 1882.0
+offset_bottom = 1120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(961, 579.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_aaowg")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Mensagem/Panel" unique_id=642029985]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -795.0
+offset_top = -221.5
+offset_right = 798.0
+offset_bottom = 199.08331
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=88910229]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 54
+text = "Sem apoio e enfrentando hostilidade todos os dias, 
+a aluna nova recolheu seus materiais e deixou a escola, 
+traumatizada. Na diretoria, os responsáveis pelos ataques 
+foram punidos. A intolerância só causou sofrimento aos envolvidos."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="Control" parent="CanvasLayer" unique_id=1222061328]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Menu" unique_id=1380712197]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -369.13754
+offset_top = -205.625
+offset_right = 369.13754
+offset_bottom = 205.625
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(731, 441)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0c71f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/Panel" unique_id=1631435561]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.74954
+offset_top = -61.5
+offset_right = 152.75052
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="Reiniciar" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=603743393]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("5_8i5yf")
+theme_override_styles/pressed = ExtResource("6_vaikn")
+theme_override_styles/hover = ExtResource("7_tqqgw")
+text = "Reiniciar Fase"
+
+[node name="Quitmenu" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=1558811891]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("5_8i5yf")
+theme_override_styles/pressed = ExtResource("6_vaikn")
+theme_override_styles/hover = ExtResource("7_tqqgw")
+text = "Ir para Menu"
+
+[node name="sair" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=382940738]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("5_8i5yf")
+theme_override_styles/pressed = ExtResource("6_vaikn")
+theme_override_styles/hover = ExtResource("7_tqqgw")
+text = "Sair do Jogo"
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/Panel" unique_id=1777145487]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.49994
+offset_top = 70.0
+offset_right = 247.50009
+offset_bottom = 102.10417
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 33
+text = "Diante dos erros, é necessário refazer a fase."
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=164335487]
+visible = false
+z_index = 2
+offset_right = 1969.0
+offset_bottom = 1249.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pw40k")
+
+[node name="bully" parent="." unique_id=1957441867 instance=ExtResource("11_ecvkd")]
+visible = false
+position = Vector2(982, 835)
+scale = Vector2(1.5, 1.5)
+motion_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Collision" parent="bully" index="1" unique_id=779873815]
+visible = false
+position = Vector2(-4, -8)
+shape = SubResource("RectangleShape2D_w58tx")
+
+[node name="CollisionShape2D" parent="bully/Actionable" parent_id_path=PackedInt32Array(1957441867, 1836018293) index="0" unique_id=1722440272]
+visible = false
+
+[node name="Control" parent="bully/Actionable" parent_id_path=PackedInt32Array(1957441867, 1836018293) index="1" unique_id=613734701]
+visible = false
+offset_left = -20.666668
+offset_top = -81.33335
+offset_right = 32.00002
+offset_bottom = -34.000008
+
+[node name="PanelContainer" parent="bully/Actionable/Control" index="0" unique_id=293701752]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43500003
+anchor_top = 0.65300006
+anchor_right = 0.43500003
+anchor_bottom = 0.65300006
+offset_left = -16.909985
+offset_top = 11.757999
+offset_right = 5.0900154
+offset_bottom = 23.341335
+
+[node name="AvisoChat" parent="bully/Actionable/Control/PanelContainer" index="0" unique_id=13439119]
+z_index = 200
+texture_filter = 1
+theme_override_font_sizes/font_size = 4
+
+[node name="AnimatedSprite2D" parent="bully" index="3" unique_id=1158655805]
+position = Vector2(158, -171)
+scale = Vector2(11.125, 11.125)
+sprite_frames = SubResource("SpriteFrames_f8jhe")
+animation = &"culpa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bully" unique_id=222000553]
+position = Vector2(-4, -2.666687)
+shape = SubResource("CapsuleShape2D_1ghxb")
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1649186191]
+position = Vector2(965, 550)
+script = ExtResource("4_1ax5e")
+
+[node name="bully3" parent="." unique_id=1494433407 instance=ExtResource("11_ecvkd")]
+visible = false
+position = Vector2(988, 831)
+scale = Vector2(1.5, 1.5)
+motion_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Collision" parent="bully3" index="1" unique_id=779873815]
+visible = false
+
+[node name="CollisionShape2D" parent="bully3/Actionable" parent_id_path=PackedInt32Array(1494433407, 1836018293) index="0" unique_id=1722440272]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_gssao")
+
+[node name="Control" parent="bully3/Actionable" parent_id_path=PackedInt32Array(1494433407, 1836018293) index="1" unique_id=613734701]
+visible = false
+
+[node name="PanelContainer" parent="bully3/Actionable/Control" index="0" unique_id=293701752]
+visible = false
+
+[node name="AvisoChat" parent="bully3/Actionable/Control/PanelContainer" index="0" unique_id=13439119]
+visible = false
+z_index = 200
+texture_filter = 1
+theme_override_font_sizes/font_size = 14
+
+[node name="AnimatedSprite2D" parent="bully3" index="3" unique_id=1158655805]
+position = Vector2(-178.33331, -169.66663)
+scale = Vector2(10.687497, 10.687497)
+sprite_frames = ExtResource("14_lyfce")
+animation = &"culpa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bully3" unique_id=1810906581]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_1176p")
+
+[node name="jogador" parent="." unique_id=1796086270 instance=ExtResource("15_wgsyf")]
+visible = false
+y_sort_enabled = true
+position = Vector2(1584, 730)
+scale = Vector2(19, 19)
+motion_mode = 1
+
+[node name="Collision" type="CollisionShape2D" parent="jogador" unique_id=2102431374]
+position = Vector2(0, -4.6666665)
+shape = SubResource("CapsuleShape2D_ecvkd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=992097464]
+stream = ExtResource("16_ecvkd")
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=805338728]
+stream = ExtResource("17_nrait")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/Quitmenu" to="." method="_on_quitmenu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/sair" to="." method="_on_sair_pressed"]
+
+[editable path="bully"]
+[editable path="bully3"]
