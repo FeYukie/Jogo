@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpwxvpfmyivgh"
+path="res://.godot/imported/Accept Defeat - 86.wav-224bc57c6c32cb38856028ec342dd9df.sample"
+
+[deps]
+
+source_file="res://patio/terrain/assets/Accept Defeat - 86.wav"
+dest_files=["res://.godot/imported/Accept Defeat - 86.wav-224bc57c6c32cb38856028ec342dd9df.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
