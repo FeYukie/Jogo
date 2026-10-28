@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://budj1fgmryi6k"]
+
+[ext_resource type="FontFile" uid="uid://ben75fgxhkhw1" path="res://Jersey10-Regular.ttf" id="1_amlv4"]
+
+[resource]
+default_base_scale = 1.0
+default_font = ExtResource("1_amlv4")
+default_font_size = 16

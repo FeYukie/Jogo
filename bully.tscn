@@ -30,7 +30,7 @@ func iniciar_dialogo():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74x36"]
-size = Vector2(41, 33.28125)
+size = Vector2(41, 47)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds0xd"]
 content_margin_left = 3.0
@@ -42,10 +42,11 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ds0xd"]
 atlas = ExtResource("2_q03y0")
@@ -155,6 +156,8 @@ animations = [{
 }]
 
 [node name="vitima" type="CharacterBody2D" unique_id=1957441867]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_74x36")
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=74300959]
@@ -165,10 +168,12 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_j1h26")
 
 [node name="Actionable" type="Area2D" parent="." unique_id=1836018293]
+collision_layer = 4
+collision_mask = 2
 script = SubResource("GDScript_74x36")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable" unique_id=1722440272]
-position = Vector2(0, -14.28125)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_74x36")
 
 [node name="Control" type="Control" parent="Actionable" unique_id=613734701]
