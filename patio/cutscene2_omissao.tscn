@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://dsvfiqdjobdul"]
+
+[ext_resource type="Script" uid="uid://j58flipt6lvw" path="res://patio/cutscene_2_omissao.gd" id="1_b4xp2"]
+[ext_resource type="Texture2D" uid="uid://dp78kukfl8xy6" path="res://patio/Parque Pixelado com Playground e Fonte.png" id="2_7363e"]
+[ext_resource type="Script" uid="uid://biju4tfewuta1" path="res://escola/camera_2d.gd" id="5_gtwl5"]
+[ext_resource type="Texture2D" uid="uid://bcsslwoc50744" path="res://tiles/jogador/npcs.png" id="8_f8hkv"]
+[ext_resource type="Texture2D" uid="uid://w6rqgix7jllo" path="res://tiles/jogador/vitima2_spritesheet2.png" id="9_18isp"]
+[ext_resource type="AudioStream" uid="uid://bf1butqp3cp8x" path="res://escola/terrain/assets/button-press.ogg" id="9_b4xp2"]
+[ext_resource type="StyleBox" uid="uid://c2pd84bm3ctkw" path="res://title_screen/new_style_box_flat.tres" id="9_og2tg"]
+[ext_resource type="AudioStream" uid="uid://b0ga3vui6o22d" path="res://Sweet Irony - 91- omissao ou tela.wav" id="10_7363e"]
+[ext_resource type="StyleBox" uid="uid://c16tklxax28ga" path="res://title_screen/press.tres" id="10_rwg7i"]
+[ext_resource type="StyleBox" uid="uid://dont7y46iikxo" path="res://title_screen/hover.tres" id="11_rejyj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmgir"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vepy8"]
+bg_color = Color(0.06051457, 0.2806551, 0.42433894, 0.79607844)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7euc"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si857"]
+atlas = ExtResource("8_f8hkv")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlsua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si857")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oh2s"]
+atlas = ExtResource("8_f8hkv")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvjt8"]
+atlas = ExtResource("8_f8hkv")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcv5k"]
+atlas = ExtResource("8_f8hkv")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vepy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oh2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvjt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcv5k")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6q13"]
+atlas = ExtResource("9_18isp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4xp2"]
+atlas = ExtResource("9_18isp")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xkbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6q13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4xp2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Cutscene2Omissao" type="Node2D" unique_id=912082081]
+script = ExtResource("1_b4xp2")
+
+[node name="parque" type="Sprite2D" parent="." unique_id=1759474675]
+z_index = -1
+position = Vector2(1085.6133, 547.25)
+scale = Vector2(1.4461434, 1.4461434)
+texture = ExtResource("2_7363e")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=868963888]
+position = Vector2(965, 550)
+script = ExtResource("5_gtwl5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=473928968]
+
+[node name="Mensagem" type="Control" parent="CanvasLayer" unique_id=551890135]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Mensagem" unique_id=863270800]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 1882.0
+offset_bottom = 1120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(961, 579.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vmgir")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Mensagem/Panel" unique_id=1651161039]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -795.0
+offset_top = -221.5
+offset_right = 798.0
+offset_bottom = 199.08331
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=1475087198]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 49
+text = "A pressão de 'se encaixar' e o medo do preconceito pesaram forte. 
+Enoque até voltou ao parque, mas a falta de apoio fez com que ele 
+se sentisse deslocado, com a insegurança de parecer 'estranho' 
+para os outros e preferindo ficar no seu canto."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="Control" parent="CanvasLayer" unique_id=1023969175]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Menu" unique_id=1684012158]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.46875
+offset_top = -199.125
+offset_right = 357.46875
+offset_bottom = 199.125
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(731, 441)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vepy8")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/Panel" unique_id=1174572440]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.74976
+offset_top = -51.5
+offset_right = 152.75024
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="Reiniciar" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=2094828210]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("9_og2tg")
+theme_override_styles/pressed = ExtResource("10_rwg7i")
+theme_override_styles/hover = ExtResource("11_rejyj")
+text = "Reiniciar Fase"
+
+[node name="Quitmenu" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=1092149105]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("9_og2tg")
+theme_override_styles/pressed = ExtResource("10_rwg7i")
+theme_override_styles/hover = ExtResource("11_rejyj")
+text = "Ir para Menu"
+
+[node name="sair" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=1807424858]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("9_og2tg")
+theme_override_styles/pressed = ExtResource("10_rwg7i")
+theme_override_styles/hover = ExtResource("11_rejyj")
+text = "Sair do Jogo"
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/Panel" unique_id=1109466644]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.50075
+offset_top = 60.0
+offset_right = 194.49927
+offset_bottom = 92.10417
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 33
+text = "Praticar a empatia exige atitude."
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=2133278155]
+visible = false
+z_index = 2
+offset_right = 1969.0
+offset_bottom = 1249.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r7euc")
+
+[node name="npc2" type="AnimatedSprite2D" parent="." unique_id=996042123]
+z_index = 1
+position = Vector2(235, 393.00003)
+scale = Vector2(7.8281255, 7.8281255)
+sprite_frames = SubResource("SpriteFrames_vlsua")
+
+[node name="npc1" type="AnimatedSprite2D" parent="." unique_id=1007800628]
+position = Vector2(466.62506, 610.3751)
+scale = Vector2(16.648434, 16.648434)
+sprite_frames = SubResource("SpriteFrames_vepy8")
+frame = 2
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1671880351]
+position = Vector2(1586, 586)
+scale = Vector2(17.140625, 17.140625)
+sprite_frames = SubResource("SpriteFrames_0xkbd")
+frame = 1
+frame_progress = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1713005550]
+stream = ExtResource("9_b4xp2")
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=1889990537]
+stream = ExtResource("10_7363e")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/Quitmenu" to="." method="_on_quitmenu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/sair" to="." method="_on_sair_pressed"]

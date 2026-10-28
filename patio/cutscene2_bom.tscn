@@ -1,0 +1,340 @@
+[gd_scene format=3 uid="uid://bjmr2d0ck1gxg"]
+
+[ext_resource type="Script" uid="uid://gtvnia1yygks" path="res://patio/cutscene_2_bom.gd" id="1_f1uyn"]
+[ext_resource type="Texture2D" uid="uid://cpxhwlxas3a5x" path="res://patio/Mural da Diversidade no Parque (1).png" id="2_x46sd"]
+[ext_resource type="Script" uid="uid://biju4tfewuta1" path="res://escola/camera_2d.gd" id="5_esnna"]
+[ext_resource type="Texture2D" uid="uid://bcsslwoc50744" path="res://tiles/jogador/npcs.png" id="7_1bxay"]
+[ext_resource type="PackedScene" uid="uid://xkirejhhbkk8" path="res://bonecos/boneco01.tscn" id="8_8frdy"]
+[ext_resource type="Texture2D" uid="uid://c0jwtxbgk81jr" path="res://tiles/jogador/irmã-sheet.png" id="8_f1uyn"]
+[ext_resource type="StyleBox" uid="uid://c2pd84bm3ctkw" path="res://title_screen/new_style_box_flat.tres" id="9_3fwjj"]
+[ext_resource type="Texture2D" uid="uid://w6rqgix7jllo" path="res://tiles/jogador/vitima2_spritesheet2.png" id="9_wjgf4"]
+[ext_resource type="StyleBox" uid="uid://c16tklxax28ga" path="res://title_screen/press.tres" id="10_q6qtn"]
+[ext_resource type="StyleBox" uid="uid://dont7y46iikxo" path="res://title_screen/hover.tres" id="11_cmg5v"]
+[ext_resource type="AudioStream" uid="uid://bf1butqp3cp8x" path="res://escola/terrain/assets/button-press.ogg" id="11_wjgf4"]
+[ext_resource type="AudioStream" uid="uid://bsir72ed5xeey" path="res://patio/terrain/assets/656124__itsthegoodstuff__nature-ambiance.wav" id="12_m6kvq"]
+[ext_resource type="AudioStream" uid="uid://c18g78akp713" path="res://16 HoliznaCC0 - Letting Go Of The Past- feliz ou fundosala.ogg" id="13_yc80t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53a36"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk42e"]
+bg_color = Color(0.06051457, 0.2806551, 0.42433894, 0.79607844)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82qx4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1uyn"]
+atlas = ExtResource("7_1bxay")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6kvq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1uyn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6r6a"]
+atlas = ExtResource("8_f1uyn")
+region = Rect2(0, 0, 500, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc80t"]
+atlas = ExtResource("8_f1uyn")
+region = Rect2(0, 0, 456, 547)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqk48"]
+atlas = ExtResource("8_f1uyn")
+region = Rect2(0, 1094, 456, 547)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7e53"]
+atlas = ExtResource("8_f1uyn")
+region = Rect2(465, 550, 465, 550)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou121"]
+atlas = ExtResource("8_f1uyn")
+region = Rect2(465, 0, 465, 550)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j10j8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6r6a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc80t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqk48")
+}],
+"loop": false,
+"name": &"feliz",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7e53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou121")
+}],
+"loop": false,
+"name": &"triste",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjgf4"]
+atlas = ExtResource("7_1bxay")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7wa6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjgf4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6kvq"]
+atlas = ExtResource("9_wjgf4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8l43"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6kvq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjgf4"]
+radius = 2.0
+height = 9.333374
+
+[node name="Cutscene2Bom" type="Node2D" unique_id=92800515]
+script = ExtResource("1_f1uyn")
+
+[node name="Mural" type="Sprite2D" parent="." unique_id=609560892]
+position = Vector2(962.90826, 582.25006)
+scale = Vector2(1.1921104, 1.1921105)
+texture = ExtResource("2_x46sd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2001555181]
+position = Vector2(965, 550)
+script = ExtResource("5_esnna")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=961990450]
+
+[node name="Mensagem" type="Control" parent="CanvasLayer" unique_id=1956344775]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Mensagem" unique_id=204269606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 1882.0
+offset_bottom = 1120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(961, 579.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_53a36")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Mensagem/Panel" unique_id=404835197]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -795.0
+offset_top = -221.5
+offset_right = 798.0
+offset_bottom = 199.08331
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=574009618]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 42
+text = "Conhecer uma cultura nova é como abrir uma janela para o mundo! 
+Ao defender Enoque contra o preconceito, você valorizou a 
+diversidade, ajudando a criar um espaço onde todos se sentem 
+seguros para ser quem são. Respeitar de onde viemos transforma 
+o mundo num lugar muito mais rico e acolhedor."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="Control" parent="CanvasLayer" unique_id=1898379671]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Menu" unique_id=947054646]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -442.06744
+offset_top = -246.25
+offset_right = 442.06744
+offset_bottom = 246.25
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(731, 441)
+theme_override_styles/panel = SubResource("StyleBoxFlat_dk42e")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/Panel" unique_id=1974145804]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.50043
+offset_top = 100.0
+offset_right = 247.49957
+offset_bottom = 132.10417
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 33
+text = "Parabéns, você desbloqueou a próxima fase!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/Panel" unique_id=1885656314]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.75046
+offset_top = -65.5
+offset_right = 152.74957
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="Prosseguir" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=385572634]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("9_3fwjj")
+theme_override_styles/pressed = ExtResource("10_q6qtn")
+theme_override_styles/hover = ExtResource("11_cmg5v")
+text = "Próxima Fase"
+
+[node name="Reiniciar" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=893142092]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("9_3fwjj")
+theme_override_styles/pressed = ExtResource("10_q6qtn")
+theme_override_styles/hover = ExtResource("11_cmg5v")
+text = "Reiniciar Fase"
+
+[node name="Quitmenu" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=400382056]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("9_3fwjj")
+theme_override_styles/pressed = ExtResource("10_q6qtn")
+theme_override_styles/hover = ExtResource("11_cmg5v")
+text = "Ir para Menu"
+
+[node name="sair" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=879697911]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("9_3fwjj")
+theme_override_styles/pressed = ExtResource("10_q6qtn")
+theme_override_styles/hover = ExtResource("11_cmg5v")
+text = "Sair do Jogo"
+
+[node name="Panel" type="Panel" parent="." unique_id=873122101]
+visible = false
+z_index = 2
+offset_right = 1969.0
+offset_bottom = 1249.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_82qx4")
+
+[node name="npc3" type="AnimatedSprite2D" parent="." unique_id=655577348]
+z_index = 1
+position = Vector2(382, 766.99994)
+scale = Vector2(14.746463, 14.746462)
+sprite_frames = SubResource("SpriteFrames_m6kvq")
+autoplay = "default"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2120215295]
+position = Vector2(674, 807)
+scale = Vector2(0.69836015, 0.6983601)
+sprite_frames = SubResource("SpriteFrames_j10j8")
+animation = &"feliz"
+
+[node name="npc1" type="AnimatedSprite2D" parent="." unique_id=529380177]
+position = Vector2(1354, 707.00006)
+scale = Vector2(16.390625, 16.390625)
+sprite_frames = SubResource("SpriteFrames_7wa6g")
+
+[node name="Enoque" type="AnimatedSprite2D" parent="." unique_id=731211368]
+position = Vector2(919, 702)
+scale = Vector2(15.5625, 15.5625)
+sprite_frames = SubResource("SpriteFrames_b8l43")
+
+[node name="jogador" parent="." unique_id=1796086270 instance=ExtResource("8_8frdy")]
+y_sort_enabled = true
+position = Vector2(1225, 1060)
+scale = Vector2(34, 34)
+motion_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape2D" parent="jogador" unique_id=1727153476]
+position = Vector2(0, -4.6666665)
+shape = SubResource("CapsuleShape2D_wjgf4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=119819297]
+stream = ExtResource("11_wjgf4")
+
+[node name="ambiente" type="AudioStreamPlayer" parent="." unique_id=2117859398]
+stream = ExtResource("12_m6kvq")
+autoplay = true
+bus = &"Music"
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=1636838584]
+stream = ExtResource("13_yc80t")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/Prosseguir" to="." method="_on_prosseguir_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/Quitmenu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/VBoxContainer/sair" to="." method="_on_sair_pressed"]
