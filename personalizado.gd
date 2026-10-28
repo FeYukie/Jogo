@@ -7,24 +7,52 @@ var portraits: Dictionary = {
 	"Nicole": {
 		"padrao": preload("res://tiles/jogador/bully2.png"),
 		"bravo": preload("res://tiles/jogador/bully2 af.png"),
-		"rindo": preload("res://tiles/jogador/bully2 ri.png")
+		"rindo": preload("res://tiles/jogador/bully2 ri.png"),
+		"lado": preload("res://tiles/jogador/bully2 lado.png")
 	},
 	"Carolina": {
 		"padrao": preload("res://tiles/jogador/vitima.png"),
-		"triste": preload("res://tiles/jogador/vitima.png")
+		"triste": preload("res://tiles/jogador/triste.png"),
+		"timida": preload("res://tiles/jogador/timida.png"),
+		"vergonha": preload("res://tiles/jogador/vergonha.png"),
+		"duvida": preload("res://tiles/jogador/duvida.png")
+	},
+	"Aluna nova": {
+		"padrao": preload("res://tiles/jogador/vitima.png"),
+		"triste": preload("res://tiles/jogador/triste.png")
 	},
 	"Cauã": {
 		"padrao": preload("res://tiles/jogador/bully1.png"),
 		"rindo": preload("res://tiles/jogador/bully1 ri.png")
 	},
 	"Professor": {
-		"padrao": preload("res://tiles/jogador/professor_retrato.png")
+		"padrao": preload("res://tiles/jogador/professor.png")
 	},
-	"Rafaela": {
-		"padrao": preload("res://tiles/jogador/menina_retrato.png")
+	"Professora": {
+		"padrao": preload("res://tiles/jogador/professora retrato.png")
 	},
-	"Davi": {
-		"padrao": preload("res://tiles/jogador/menino_retrato.png")
+	"Manu": {
+		"padrao": preload("res://tiles/jogador/menina_retrato.png"),
+		"desvia": preload("res://tiles/jogador/desvia.png")
+	},
+	"Menina feliz": {
+		"padrao": preload("res://escola/feliz.png")
+	},
+	"Enoque": {
+		"padrao": preload("res://patio/enoque1.png"),
+		"triste": preload("res://tiles/jogador/vitima.png"),
+		"feliz": preload("res://patio/enoque feliz.png"),
+		"cut": preload("res://patio/enoque.png")
+	},
+	"Yara": {
+		"padrao": preload("res://patio/irmã-nova.png"),
+	},
+	"Manoel": {
+		"padrao": preload("res://tiles/jogador/menino_retrato.png"),
+		"desvia": preload("res://tiles/jogador/desvio.png")
+	},
+	"Leitora": {
+		"padrao": preload("res://tiles/jogador/leitora.png")
 	}
 }
 
@@ -260,3 +288,33 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	if letter != " " and letter != "\n":
+		# Define o tom base dependendo de quem está falando
+		var pitch_base: float = 1.0
+		
+		# Verifica o nome do personagem do Dialogue Manager
+		if dialogue_line.character == "Leitora":
+			pitch_base = 1.35  # Voz mais aguda / feminina / jovem
+		elif dialogue_line.character == "Professor":
+			pitch_base = 0.75  # Voz mais grave / adulta
+		elif dialogue_line.character == "Professora":
+			pitch_base = 1.1  # Voz mais grave / adulta
+		elif dialogue_line.character == "Jogador" or dialogue_line.character == Global.nome_jogador:
+			pitch_base = 1.05  # Voz neutra/média
+		elif dialogue_line.character == "Nicole":
+			pitch_base = 1.17  # Voz mais aguda / feminina / jovem
+		elif dialogue_line.character == "Aluna nova" or dialogue_line.character == "Carolina":
+			pitch_base = 1.12  # Voz mais aguda / feminina / jovem
+		elif dialogue_line.character == "Cauã":
+			pitch_base = 0.98
+		elif dialogue_line.character == "Menina feliz":
+			pitch_base = 1.3  # Voz mais grave / adulta
+		elif dialogue_line.character == "Yara":
+			pitch_base = 1.4  # Voz mais grave / adulta
+		# Aplica a microvariação aleatória em cima do tom base do personagem
+		$AudioStreamPlayer.pitch_scale = randf_range(pitch_base - 0.05, pitch_base + 0.05)
+		#$AudioStreamPlayer.pitch_scale = randf_range(0.95, 1.05) #variação leve de tom para ficar dinâmico
+		$AudioStreamPlayer.play() 

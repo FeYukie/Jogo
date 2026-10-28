@@ -1,18 +1,27 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://62fiuawuicd3"]
 
 [ext_resource type="Texture2D" uid="uid://d0foblhnwmn73" path="res://tiles/jogador/spritesheet_o.png" id="1_hdski"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ppnlk"]
-atlas = ExtResource("1_hdski")
-region = Rect2(668, 0, 668, 1002)
+[ext_resource type="Texture2D" uid="uid://bwxrs5abtpwjh" path="res://tiles/jogador/spritesheet_sentados.png" id="2_wjpqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqrky"]
 atlas = ExtResource("1_hdski")
 region = Rect2(0, 0, 668, 1002)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppnlk"]
+atlas = ExtResource("1_hdski")
+region = Rect2(668, 0, 668, 1002)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_16282"]
 atlas = ExtResource("1_hdski")
 region = Rect2(1336, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjpqr"]
+atlas = ExtResource("1_hdski")
+region = Rect2(0, 0, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykhby"]
+atlas = ExtResource("1_hdski")
+region = Rect2(2004, 1002, 668, 1002)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07fpq"]
 atlas = ExtResource("1_hdski")
@@ -30,33 +39,56 @@ region = Rect2(2004, 0, 668, 1002)
 atlas = ExtResource("1_hdski")
 region = Rect2(1336, 1002, 668, 1002)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h871g"]
-atlas = ExtResource("1_hdski")
-region = Rect2(668, 2004, 668, 1002)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tehqa"]
 atlas = ExtResource("1_hdski")
 region = Rect2(2004, 1002, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h871g"]
+atlas = ExtResource("1_hdski")
+region = Rect2(668, 2004, 668, 1002)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3kae"]
 atlas = ExtResource("1_hdski")
 region = Rect2(0, 2004, 668, 1002)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oacq6"]
+atlas = ExtResource("1_hdski")
+region = Rect2(2004, 1002, 668, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07cv3"]
+atlas = ExtResource("1_hdski")
+region = Rect2(2505, 2004, 835, 1002)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5014j"]
+atlas = ExtResource("2_wjpqr")
+region = Rect2(2672, 2004, 668, 1002)
+
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ppnlk")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_tqrky")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ppnlk")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_16282")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjpqr")
 }],
-"loop": 1,
+"loop": true,
 "name": &"costas",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykhby")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -65,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_07vtp")
 }],
-"loop": 1,
+"loop": true,
 "name": &"direita",
 "speed": 9.0
 }, {
@@ -76,21 +108,40 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wac4r")
 }],
-"loop": 1,
+"loop": true,
 "name": &"esquerda",
 "speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h871g")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_tehqa")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_h871g")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_u3kae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oacq6")
 }],
-"loop": 1,
+"loop": true,
 "name": &"frente",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07cv3")
+}],
+"loop": true,
+"name": &"sentado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5014j")
+}],
+"loop": true,
+"name": &"sentado-lado",
+"speed": 5.0
 }]
