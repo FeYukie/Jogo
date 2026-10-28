@@ -22,6 +22,8 @@ DialogueManager="*uid://c3rodes2l3gxb"
 Vida="*uid://bjspc3arup0ol"
 Coracoes="*uid://bln2nfsm8vdxb"
 Transicao="*uid://cpd0e46xooh7g"
+SaveSystem="*uid://wavupmawx8jl"
+Personagem="*uid://dth3qtcn7axdm"
 
 [dialogue_manager]
 
@@ -38,6 +40,13 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[gui]
+
+theme/default_font_antialiasing=0
+theme/default_font_subpixel_positioning=0
+theme/custom="uid://budj1fgmryi6k"
+theme/custom_font="16"
 
 [input]
 
@@ -75,10 +84,20 @@ chat={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":69,"location":0,"echo":false,"script":null)
 ]
 }
+"diálogo"={
+"deadzone": 0.2,
+"events": []
+}
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue1.dialogue", "res://dialogue/dialogue2.dialogue", "res://dialogue/dialogue3.dialogue", "res://dialogue3.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue1.dialogue", "res://dialogue/dialogue2.dialogue", "res://dialogue/dialogue3.dialogue", "res://dialogue/leitora.dialogue", "res://dialogue/professora.dialogue", "res://dialogue/cutscene2_ruim.dialogue", "res://dialogue/procura.dialogue", "res://dialogue/parque.dialogue", "res://dialogue/orienta.dialogue")
+
+[layer_names]
+
+2d_physics/layer_1="Cenário"
+2d_physics/layer_2="Jogador"
+2d_physics/layer_3="NPCs"
 
 [physics]
 

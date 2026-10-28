@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0ga3vui6o22d"
+path="res://.godot/imported/Sweet Irony - 91- omissao ou tela.wav-5eecb21cdba7a19959c8514d08063498.sample"
+
+[deps]
+
+source_file="res://Sweet Irony - 91- omissao ou tela.wav"
+dest_files=["res://.godot/imported/Sweet Irony - 91- omissao ou tela.wav-5eecb21cdba7a19959c8514d08063498.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

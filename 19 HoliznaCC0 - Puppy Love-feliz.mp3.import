@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cd1vq4358u4eo"
+path="res://.godot/imported/19 HoliznaCC0 - Puppy Love-feliz.mp3-192435a2c6b790efbe13c24d30e64404.mp3str"
+
+[deps]
+
+source_file="res://19 HoliznaCC0 - Puppy Love-feliz.mp3"
+dest_files=["res://.godot/imported/19 HoliznaCC0 - Puppy Love-feliz.mp3-192435a2c6b790efbe13c24d30e64404.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

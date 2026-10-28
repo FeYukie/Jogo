@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://baq2kdsv0g26s"
+path="res://.godot/imported/musica tela.wav-c8720eb2a67b9691a87c01229a0f2980.sample"
+
+[deps]
+
+source_file="res://musica tela.wav"
+dest_files=["res://.godot/imported/musica tela.wav-c8720eb2a67b9691a87c01229a0f2980.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
