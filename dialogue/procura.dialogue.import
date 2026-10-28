@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://buv2xw8wbut2q"
+path="res://.godot/imported/procura.dialogue-9a30ee69eefdd6ce24f8f4f009cf49fb.tres"
+
+[deps]
+
+source_file="res://dialogue/procura.dialogue"
+dest_files=["res://.godot/imported/procura.dialogue-9a30ee69eefdd6ce24f8f4f009cf49fb.tres"]
+
+[params]
+
+defaults=true

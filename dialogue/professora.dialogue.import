@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://besc1vqi0i2nq"
+path="res://.godot/imported/professora.dialogue-eebea2660e2f9b0e2fd7c01d568bb9c4.tres"
+
+[deps]
+
+source_file="res://dialogue/professora.dialogue"
+dest_files=["res://.godot/imported/professora.dialogue-eebea2660e2f9b0e2fd7c01d568bb9c4.tres"]
+
+[params]
+
+defaults=true

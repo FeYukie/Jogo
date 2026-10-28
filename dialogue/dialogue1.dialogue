@@ -1,81 +1,137 @@
 #import "res://dialogue/dialogue2.dialogue" as dialogue2
-
 ~ start
+#set jogador = $/root/Personagens/jogador
+do zerar_pontos()
+do bloquear_passagem() 
 {{Global.nome_jogador}}: Oi, gente.
+
 #do play_animation()
-Cauã: E aí! Quanto tempo, cara.
-Nicole: Como foram as férias? Deu pra descansar ou só ficou jogando?
-Cauã: A gente acabou de chegar também, estávamos botando a fofoca em dia, hehe... Inclusive, você viu aquela menina estranha ali no canto?
-Nicole: Difícil não ver, né? Ocupa o espaço de três pessoas.
-Cauã: Hahaha, acho que a escola vai ter que aumentar a porta da cantina esse ano.[#rindo]
+Cauã: E aí, {{Global.nome_jogador}}! Cara, quanto tempo!
+Nicole: Como foram as férias? Aposto que só ficou jogando.
+
+- "Como descobriu?"
+	{{Global.nome_jogador}}: [#desvia]Como descobriu?!
+	do rir()
+	{{Global.nome_jogador}}: Eu, hein. Tava me stalkeando, é?
+	Cauã: [#rindo]Ha ha ha! Você que é muito previsível! A gente te conhece!
+	Nicole: [#rindo]Acho que já fazia um mês que {{Global.nome_jogador}} não via a luz do sol.
+	do para()
+	Nicole: Mas sério, sair de casa faz bem, sabia?
+- "Não fiz só isso"
+	{{Global.nome_jogador}}: Errou!
+	Cauã: Não é possível!
+	{{Global.nome_jogador}}: Eu dormi bastante também.
+	Nicole: Ah, aproveitou bem as férias você.
+{{Global.nome_jogador}}: Mesmo assim, foi bom. Mas enfim, chegaram faz tempo?
+do olhar()
+Nicole: Acabamos de chegar... Inclusive, você viu aquela menina estranha ali no canto?[#lado]
+Cauã: Difícil não ver, né? Ocupa o espaço de três pessoas.
+do rir()
+Nicole: Ha ha ha, acho que a escola vai ter que aumentar a porta da cantina esse ano.[#rindo]
 
 - "Pois é, ela é bem... grande."
 	{{Global.nome_jogador}}: Pois é, ela é bem... grande. Chegou chegando mesmo.
 	do Vida.perder_vida()
+	do adicionar_bullying()
 	Cauã: Até você concorda. Ela parece um mamute andando e o chão tremendo...
-	Nicole: Ha ha ha ha ha! Essa foi boa![#rindo]
+	do rir()
+	Nicole: Ha ha ha ha! Essa foi boa![#rindo]
 	Cauã: Vamos lá ver o mamute mais de perto.
-- (Ficar quieto)
+- Ficar quieto
 	{{Global.nome_jogador}}: Ah, sim...
 	do Vida.perder_vida()
+	do adicionar_omissao()
+	do para()
 	Nicole: Relaxa... ninguém vai te levar para a direção se você zoar também.
 	Cauã: É só uma piada.
 	Nicole: Vamos dar as boas-vindas à novata.
 - "Não tem graça."
 	{{Global.nome_jogador}}: Não tem graça. Que implicância, é o primeiro dia dela!
-	Nicole: Ih, virou advogado dela agora? Relaxa, a gente só tá brincando.[#bravo]
+	do af()
+	do adicionar_bom() 
+	if Global.genero_jogador == "menino"
+		Nicole: Ih, virou advogado dela agora? Relaxa, a gente só tá brincando.[#bravo]
+		
+	else
+		Nicole: Ih, virou advogada dela agora? Relaxa, a gente só tá brincando.[#bravo]
 	Cauã: É. Vamos lá falar com a novata.
 do sequencia_bullying()
 => cena_2_trote
 
 ~ cena_2_trote
 
-# vocês se aproximam da Carolina
+# vocês se aproximam da Aluna nova
 Cauã: E aí, grande! 
-Nicole: (segurando a risada) Nunca te vimos antes.[#rindo]
-Carolina: Oi, tudo bem? Eu sou nova aqui.
-Cauã: Ah, claro... É bom se acostumar com essa escola logo.
-Nicole: É, inclusive, a gente tá cobrando uma taxa de entrada. Um lanche pra cada um, fechou?
-Carolina: Como assim? É sério isso?
+do ri()
+Nicole: Nunca te vimos antes.[#rindo]
+Aluna nova: Oi, tudo bem? Eu sou nova aqui.
+do normal()
+Nicole: Ah, claro... É bom se acostumar com essa escola logo.
+Cauã: É, inclusive, a gente tá cobrando uma taxa de entrada. Um lanche pra cada um, fechou?
+Aluna nova: Como assim? É sério isso?
 Cauã: Relaxa, pelo seu tamanho a gente sabe que você tem estoque guardado aí.
 
-- (Ignorar)
-	{{Global.nome_jogador}}: (Você olha para o chão, com um sorrisinho sem-graça. Tenta prestar atenção ao redor, se distrair dos risos maldosos de seus Cauãs.)
+- "Para mim não precisa"
+	#{{Global.nome_jogador}}: (Você olha para o chão, sem-graça. Tenta prestar atenção ao redor, se distrair dos risos maldosos de seus amigos.)
+	{{Global.nome_jogador}}: ... para mim não precisa, não.[#desvia]
 	do Vida.perder_vida()
-	Cauã: Você tem até essa semana para nos pagar, hein! Vamos, vai começar a aula.
+	do adicionar_omissao()
+	Cauã: Ah, que bom. Pode deixar que eu como o seu, então! Vamos te lembrar disso mais tarde.
+	
 - "É verdade, se quiser ficar aqui vai ter que pagar o pedágio."
 	{{Global.nome_jogador}}: É verdade, se quiser ficar aqui vai ter que pagar o pedágio. Começou mal.
 	do Vida.perder_vida()
-	Nicole: Não é caro, não. É mais barato do que uma refeição sua, claro.
+	do adicionar_bullying()
+	#[wait = 0.1]
+	Nicole: Não é caro, não. É mais barato do que uma refeição sua, com certeza.
 	Cauã: Vamos deixar essa passar, coitada. O pior castigo para um gordo é deixar ele sem comer.
 - "Parem com isso, vocês estão passando do ponto."
+	do adicionar_bom() 
 	{{Global.nome_jogador}}: Parem com isso, vocês estão passando do ponto. Deixem ela em paz, tá?
-	Cauã: Nossa, você tinha que pesar mais o clima, né? Deixa esses dois aí, então.
+	do ladoAf()
+	Nicole: [#bravo]Nossa, você tinha que pesar mais o clima, né? Deixa esses dois aí, então.
+do liberar_passagem() 
 #do get_tree().get_first_node_in_group("player").verificar_final_de_jogo()
+do virar()
 do bully_sair()
+#wait 2
+#do colisao()
 => cena_3_conclusao
 
 ~ cena_3_conclusao
 
-# Os Cauãs saem rindo, deixando a aluna sozinha
-Carolina: (Sussurrando) Nossa, começamos bem...
-# A Carolina baixa a cabeça, visivelmente triste
+# Os amigos saem rindo, deixando a aluna sozinha
+Aluna nova: Nossa, [wait=0.6]começamos bem...[#triste]
+# A Aluna nova baixa a cabeça, visivelmente triste
 
-- (Seguir os amigos sem olhar para trás)
+- Seguir os amigos sem olhar para trás
+	do adicionar_omissao()
 	# O jogador sai da área de conversa
+	do parar()
 	{{Global.nome_jogador}}: Me esperem! Estou indo.
+	do seguir()
 	do Vida.perder_vida()
+	
 	#do vitima.voltar_ao_roaming()
 - Se desculpar por eles
-	{{Global.nome_jogador}}: Oi... desculpa por eles. Eles são idiotas às vezes. Quer ajuda pra achar a sala?
-	Carolina: Ah, tudo bem. Obrigada, de verdade.
-- É drama
-	{{Global.nome_jogador}}: Para de drama, não aceita umas brincadeiras? Vai se acostumando ou já procura outra escola, esquisita.
+	do adicionar_bom() 
+	{{Global.nome_jogador}}: Oi... desculpa por eles. Eles são bobos às vezes. 
+	{{Global.nome_jogador}}: Se precisar de ajuda, só me chamar! 
+	Aluna nova: ...tudo bem. [wait=0.6]Obrigada.[#triste]
+	do grata()
+	{{Global.nome_jogador}}: Ah, inclusive, meu nome é {{Global.nome_jogador}}, e o seu?
+	Carolina: Sou a Carolina.
+	
+- "É drama"
+	{{Global.nome_jogador}}: Para de drama, não aceita umas brincadeiras? Vai se acostumando ou já procura outra escola.
 	do Vida.perder_vida()
-	Carolina: ... Eu não fiz nada pra você. Por favor, me deixa sozinha.
+	do adicionar_bullying()
+	Aluna nova: ...Eu não fiz nada pra você. Por favor, me deixa sozinha.
+#wait 1
 do Transicao.fade_out(1.0)
 
-do get_tree().get_first_node_in_group("player").verificar_final_de_jogo()
+#do get_tree().get_first_node_in_group("player").verificar_final_de_jogo()
+do verificar_final_da_fase()
 do Transicao.fade_in(1.0)
 
 => END

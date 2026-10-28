@@ -1,0 +1,7 @@
+~ start
+Yara: Kota (irmão mais velho), vamos brincar no parque!
+Enoque: [#cut]Hoje não, Yara. Podemos brincar em casa, é melhor.
+Yara: Mas está sol lá fora! Vamos sair!
+Enoque: [#cut]Eu disse não! Parece que não entende!
+do triste()
+=> END

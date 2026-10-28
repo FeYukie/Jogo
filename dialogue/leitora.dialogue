@@ -1,0 +1,27 @@
+~ start
+do bloquear_passagem() 
+do susto()
+if Global.genero_jogador == "menino"
+	Leitora: [shake rate=10.0 level=6.0]Ai, que susto, menino![/shake] Não faça mais isso!
+	
+else
+	Leitora: [shake rate=10.0 level=6.0]Ai, que susto, menina![/shake] Não faça mais isso!
+{{Global.nome_jogador}}: Desculpa, não era minha intenção.
+Leitora: Tudo bem. 
+Leitora: Eu estava concentrada procurando o livro "O CEO Dinossauro e a Funcionária Iguana 2".
+Leitora: Sabe onde pode estar?
+- "Teve 'CEO Dinossauro 1'?!"
+	{{Global.nome_jogador}}: Não sabia nem que tinha o volume 1 desse livro.[#desvia]
+	Leitora: É um best-seller! Está por fora, hein!
+- "Na biblioteca da escola é que não está"
+	{{Global.nome_jogador}}: Não sei se tem esse tipo de livro aqui na escola...
+	Leitora: Mas é cultura! Deve estar em algum lugar aqui.
+	
+- "Eu queria ler"
+	{{Global.nome_jogador}}: Nossa, esse livro está sendo muito falado! Queria ler!
+	Leitora: Se eu achar, te aviso depois...
+	Leitora: Depois de eu ler, é claro!
+
+do estante()
+do liberar_passagem() 
+=> END

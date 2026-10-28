@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dlcxfg60v5t8s"
+path="res://.godot/imported/cutscene2_ruim.dialogue-7d253582cb16959a8297b367cb178773.tres"
+
+[deps]
+
+source_file="res://dialogue/cutscene2_ruim.dialogue"
+dest_files=["res://.godot/imported/cutscene2_ruim.dialogue-7d253582cb16959a8297b367cb178773.tres"]
+
+[params]
+
+defaults=true

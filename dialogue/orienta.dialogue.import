@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cbqcpnkyuodtr"
+path="res://.godot/imported/orienta.dialogue-30bbf478f344ac09185896884367529e.tres"
+
+[deps]
+
+source_file="res://dialogue/orienta.dialogue"
+dest_files=["res://.godot/imported/orienta.dialogue-30bbf478f344ac09185896884367529e.tres"]
+
+[params]
+
+defaults=true

@@ -1,102 +1,126 @@
 ~ start
 ~ cena1_apresentacao
+do zerar_pontos()
+do bloquear_passagem() 
 if Global.genero_jogador == "menino"
+	do ri()
 	Nicole: [#rindo]Olha só quem chegou atrasado! 
+	
 else
+	do ri()
 	Nicole: [#rindo]Olha só quem chegou atrasada!
-Cauã: [#rindo]A gorda conseguiu chegar na sala antes de você!
+	
+do rir()
+Cauã: A gorda conseguiu chegar na sala antes de você!
+do normal()
 Professor: Bom, como a maioria já chegou, irei começar. 
 Professor: Todos, sentem-se, por favor.
 do bully_sentar()
-Professor: Atenção, turma! Silêncio, por favor.
+do jogador_sentar(Vector2(865, 390))
+Professor: Atenção, turma!
 Professor: Hoje temos uma nova colega que está se transferindo para a nossa sala.
 Professor: Carolina, por favor, levante-se e apresente-se brevemente para a turma.
 do vitima_levantar()
-Carolina: [#timida] [shake]O-oi, pessoal... Meu nome é Carolina... vim do Colégio São José...
-Cauã: [#rindo] Fala mais alto, novata! Ninguém aqui tem superaudição não!
-Nicole: [#rindo] Ih, além de falar pra dentro, parece que vai desmaiar aí na frente!
-Carolina: [#triste] ...
+Carolina: [#timida][shake]O-oi, pessoal... Meu nome é Carolina, [wait=0.5]vim do Colégio São Pedro...
+do senta_conversa()
+Cauã: [#rindo]Ah, entendi! Pelo visto é de família a gordice.
+{{Global.nome_jogador}}: Como assim?
+Cauã: [#rindo]A mãe foi dar o nome da filha em homenagem àquele doce de padaria.
+Nicole: [#rindo]Ha ha ha, não é possível! 
+Nicole: [#bravo]Eu nem ouvi direito, ela fala tão baixo.
+do vergonha()
+Carolina: [#vergonha]...
 
-- Ficar quieto e não intervir
-	do Global.perder_vida("omissao")
-	{{Global.nome_jogador}}: (...) 
-	Nicole: Continua aí, vamos fazer leitura labial! [#rindo]
+- Ignorar
+	do Vida.perder_vida()
+	do adicionar_omissao()
+	do volta_mesa()
+	{{Global.nome_jogador}}: (...) [#desvia]
+	Nicole: Continua aí! Vamos fazer leitura labial. [#rindo]
 - Entrar na onda e debochar junto
-	do Global.perder_vida("bullying")
-	{{Global.nome_jogador}}: É sério, Carolina, vai precisar de um microfone pras aulas! 
+	do Vida.perder_vida()
+	do adicionar_bullying()
+	{{Global.nome_jogador}}: Daqui a pouco ela vai ter um piripaque aí na frente! 
 	Carolina: ... [#triste]
 - Pedir para pararem
-	{{Global.nome_jogador}}: Dá um tempo, pessoal! Deixa ela terminar de falar. 
-	Nicole: Relaxa aí, fiscal da turma, só estamos descontraindo. [#bravo]
-	Carolina: Obrigada... 
-
-Professor: Chega de conversa paralela no fundo! Parem com as gracinhas e respeitem a colega de vocês. [#bravo]
+	do voltar_mesa()
+	{{Global.nome_jogador}}: Dá um tempo, pessoal! Não estou conseguindo ouvir ela.
+	Cauã: É claro que não está! Ela fala para dentro.
+	Nicole: E quem se interessa pelo que ela tá falando? [#bravo]
+	{{Global.nome_jogador}}: Eu me interesso, tenho o mínimo de respeito pelo próximo.
+	Nicole: [#bravo]Nossa, você está muito sem-graça hoje.
+	do adicionar_bom()
+Professor: Chega de conversa paralela no fundo![#bravo]
+do volta_mesa()
 Professor: Seja bem-vinda, Carolina. Pode se sentar. Vamos iniciar o conteúdo de hoje. 
-#do vitima_sentar()
-=> cena2_duvida
+do vitima_sentar()
+=> cena2
 
 
-~ cena2_duvida
-do Transicao.fade_out(1.0)
-do Transicao.fade_in(1.0)
+~ cena3
+do volta_mesa()
 Professor: ...e com essa sintaxe, encerramos a estrutura condicional principal do algoritmo. 
-Professor: Alguém ficou com alguma pergunta antes de começarmos a prática no terminal? 
+Professor: Alguém tem alguma dúvida? 
 Carolina: Professor... com licença... [#timida]
-Carolina: (dúvida)? [#timida]
+Professor: Pode falar, Carol.
+Carolina: Não sei se entendi muito bem sobre a condição falsa.[#timida]
 Nicole: Pff... sério isso? [#rindo]
-Cauã: Caramba, a garota não sabe nem o básico de lógica! Que pergunta idiota! [#rindo]
-Carolina: E-eu só queria ter certeza... [#triste]
+Cauã: Caramba, a menina não sabe nem o básico de lógica! Que pergunta idiota! [#rindo]
+Nicole: Não é à toa que veio do Colégio São Pobre! Não deve saber nada. [#rindo]
+Carolina: E-eu só queria ter certeza...[#triste]
 
-- Ignorar os comentários
-	{{Global.nome_jogador}}: (...) 
+- "Só queria ir para o intervalo"
+	{{Global.nome_jogador}}: Só queria ir para o intervalo, mas ela tinha que perguntar...[#desvia]
+	do Vida.perder_vida()
+	do adicionar_omissao()
 - Rir junto com seus amigos
-	do Global.perder_vida("bullying")
-	{{Global.nome_jogador}}: Hahaha, boa sorte pra passar no semestre se essa for sua maior dúvida! 
-	Carolina: Desculpa... [#triste]
+	do Vida.perder_vida()
+	do adicionar_bullying()
+	{{Global.nome_jogador}}: Ha ha ha, boa sorte pra passar de ano se essa for sua maior dúvida! 
+	Carolina: Desculpa...[#triste]
 - Defender a dúvida da Carolina
-	{{Global.nome_jogador}}: Para com isso. Muita gente confunde o escopo no começo. A dúvida faz todo sentido. 
-	Cauã: Tá bom, professor, não precisa se estressar. [#desdenho]
-	Carolina: Valeu... 
+	{{Global.nome_jogador}}: Para com isso. Esse conteúdo pode ser confuso no começo. 
+	Nicole: Tá bom, "professor", foi mal.[#bravo]
+	do adicionar_bom()
 
-Professor: Silêncio no fundo! A pergunta da Carolina é muito válida e muita gente erra isso em código real. 
+Professor: Silêncio aí no fundo! A pergunta da Carolina é muito válida e muita gente confunde isso em código real. 
 Professor: Carolina, quando a condição é falsa, o compilador pula todo aquele bloco interno, mantendo o estado das variáveis inalterado. Entendido? 
-Carolina: Entendi sim, professor. Obrigada! 
-=> END
+Carolina: Entendi sim, professor. Obrigada.
+do liberar_passagem() 
+do Transicao.fade_out(1.0)
+do verificar_final_da_fase()
+do Transicao.fade_in(1.0)
 
 
-~ cena3_saida_materia
-Professor: Para o primeiro dia está bom. A aula de hoje está encerrada. Até a próxima aula
-#do Nicole_levantar()
-#do Carolina_levantar()
-#do sequencia_bullying()
-Nicole: Olha só o que temos aqui dando sopa na bancada... [#rindo]
-Carolina: Ei! Devolve o meu estojo e meu caderno, por favor!  [#bravo]
-Nicole: Pega aí, garotinha do sussurro! Segura aí, cara! [#rindo]
-# O Nicole pro outro Cauã
-Cauã: Opa, recebi! Ih, parece uma tartaruga tentando alcançar! [#rindo]
-Nicole: Passa de volta! "Carolina-muda" não pega nem sombra! [#rindo]
-Carolina: Parem! Isso não tem graça nenhuma! Me devolve! [#triste]
+~ cena2
+Nicole: [#bravo](sussurrando) Eu não consigo ver a lousa porque tem um elefante na minha frente.
+do sentar_conversa()
+Cauã: Eita, {{Global.nome_jogador}}, ela tá falando de você?!
+Nicole: É claro que não. Aqui só tem um elefante, um novato.
+- "Não fale assim"
+	{{Global.nome_jogador}}: Nicole, para de falar da aparência dos outros!
+	Nicole: Eu não estava falando de você![#bravo]
+	{{Global.nome_jogador}}: Independente do alvo do desrespeito! É errado e ponto!
+	Nicole: [#bravo]Ela nem ouviu!
+	do adicionar_bom()
 
-- Pegar suas coisas e ir embora da sala
-	do Global.perder_vida("omissao")
-	{{Global.nome_jogador}}: (Melhor não me meter... Isso não é problema meu.) 
-	# O jogador sai da sala e a vítima fica chorando
-	=> END
-- Entrar na brincadeira e chutar/jogar mais longe
-	do Global.perder_vida("bullying")
-	{{Global.nome_jogador}}: Joga aqui pra mim! Caiu no chão, agora é de quem pegar! 
-	Carolina: Por que você tá fazendo isso comigo?! Eu nunca te fiz nada! [#chorando]
-	=> END
-- Intervir, pegar o material e devolver para a Carolina
-	#do Nicole_parar_brincadeira()
-	{{Global.nome_jogador}}: Já deu! Devolve isso agora. 
-	{{Global.nome_jogador}}: Entra na frente e intercepta o caderno.
-	Nicole: Qual é o seu problema? Estragou a diversão. [#bravo]
-	{{Global.nome_jogador}}: Diversão é outra coisa. Deixa ela em paz. #[determinado]
-	{{Global.nome_jogador}}: Aqui, Carolina. Seu material tá inteiro. 
-	Carolina: Muito obrigada... Eu não sabia o que fazer... [#timida]
+- Trocar de lugar
+	{{Global.nome_jogador}}: Posso pedir para ela trocar de lugar com você.
+	do Vida.perder_vida()
+	do adicionar_omissao()
+	# Você continua a fingir que presta atenção no quadro, olhando para a frente.
+	Nicole: Não precisa. Desisti de anotar.
+	
+
+- Entrar na zoeira
+	{{Global.nome_jogador}}: Ah, bom! Ha ha!
+	{{Global.nome_jogador}}: Bem, só tem ela acima do peso aqui.
+	do Vida.perder_vida()
+	do adicionar_bullying()
+=> cena3
+
 #do Carolina_sai()
-	=> END
+=> END
 	
 	#NPC
 	

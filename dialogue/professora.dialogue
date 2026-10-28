@@ -1,0 +1,26 @@
+~ start
+do bloquear_passagem() 
+Professora: Oi, {{Global.nome_jogador}}! 
+Professora: Sua aula já não começou, não?
+{{Global.nome_jogador}}: Acho que não... não sei.[#desvia]
+Professora: Bonito, {{Global.nome_jogador}}... Matando aula, {{Global.nome_jogador}}??
+{{Global.nome_jogador}}: Eita... 
+- "Desculpa, professora"
+	{{Global.nome_jogador}}: Já estou indo para a sala.
+	Professora: Bom mesmo...
+- "Me perdi"
+	{{Global.nome_jogador}}: Acho que me perdi.[#desvia]
+	if Global.genero_jogador == "menino"
+		Professora: Estuda aqui há anos e está perdido? Sei...
+	else
+		Professora: Estuda aqui há anos e está perdida? Sei...
+	Professora: Sua sala é ali do lado. Vai lá.
+	if Global.genero_jogador == "menino"
+		{{Global.nome_jogador}}: Obrigado, professora. 
+	else
+		{{Global.nome_jogador}}: Obrigada, professora.
+- "Só vim dar um oi"
+	{{Global.nome_jogador}}: Só vim dar um oizinho depois das férias!
+	 Professora: Então oizinho.
+do liberar_passagem() 
+=> END
