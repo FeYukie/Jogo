@@ -12,13 +12,17 @@ const BALAO_CENA = preload("res://personalizado.tscn")
 # Funções chamadas pelo Dialogue Manager
 func adicionar_omissao() -> void:
 	omissao += 1
-
+	Global.total_omissao += 1
+	
 func adicionar_bullying() -> void:
+	get_tree().call_group("gui_vida", "piscar_vermelho")
 	bullying += 1
-
+	Global.total_bullying += 1
+	
 func adicionar_bom() -> void:
 	bom += 1
-
+	Global.total_bom += 1
+	
 func zerar_pontos() -> void:
 	omissao = 0
 	bullying = 0
@@ -70,7 +74,7 @@ func sequencia_bullying():
 func _ready() -> void:
 	configurar_posicoes_iniciais()
 	liberar_passagem()
-	
+	Global.resetar_escolhas()
 	  # Força a parar qualquer animação salva no .tres
 	anim_jog.stop()
 

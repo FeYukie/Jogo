@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://8b02ptlsbam2" path="res://title_screen/label_morte.tscn" id="10_n12eb"]
 [ext_resource type="PackedScene" uid="uid://c80b6ydxlpefi" path="res://title_screen/coracoes.tscn" id="11_yuaea"]
 [ext_resource type="PackedScene" uid="uid://ioaywlx4lxge" path="res://title_screen/pause_menu.tscn" id="12_6lt21"]
+[ext_resource type="Script" uid="uid://bjh3bgl3biwyp" path="res://bonecos/vitima.gd" id="12_b5eao"]
 [ext_resource type="PackedScene" uid="uid://cirbkat7hhyix" path="res://bully.tscn" id="13_q3gyk"]
-[ext_resource type="Resource" uid="uid://j34n661562gy" path="res://dialogue/dialogue2.dialogue" id="14_ljkt0"]
 [ext_resource type="Texture2D" uid="uid://co10qgrnto8ta" path="res://title_screen/spritesheet_Caua.png" id="15_ue4te"]
 [ext_resource type="PackedScene" uid="uid://xkirejhhbkk8" path="res://bonecos/boneco01.tscn" id="16_tx0x7"]
 [ext_resource type="PackedScene" uid="uid://b3xjlccp41svc" path="res://vitima.tscn" id="17_b5eao"]
@@ -81,23 +81,311 @@ texture = ExtResource("2_wvs4q")
 [sub_resource type="TileSet" id="TileSet_d0u6y"]
 sources/3 = SubResource("TileSetAtlasSource_ohdac")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5eao"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jvn1"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ue4te"]
 bg_color = Color(0.43519226, 0.4351923, 0.43519217, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 shadow_color = Color(0, 0, 0, 1)
 shadow_size = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crtxh"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24bv2"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tx0x7"]
 bg_color = Color(0.43529412, 0.43529412, 0.43529412, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 shadow_color = Color(0, 0, 0, 1)
 shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psxnn"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ep38"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekvvx"]
+bg_color = Color(0.43529412, 0.43529412, 0.43529412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdpci"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g20gx"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lgyy"]
+bg_color = Color(0.43529412, 0.43529412, 0.43529412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7ifq"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yu04y"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3hhs"]
+bg_color = Color(0.43529412, 0.43529412, 0.43529412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_copo7"]
+bg_color = Color(0.011764706, 0.11372549, 0.18431373, 0.7921569)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1w7ac"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxf4i"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.18072194, 0.18072197, 0.18072191, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5abb"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.49747366, 0.49747372, 0.49747354, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0r8v"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2c7h"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5j7a3"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.8862745, 0.8862745, 0.8862745, 0.89411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cc3um"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y05j3"]
+content_margin_top = 60.0
+content_margin_bottom = 60.0
+bg_color = Color(0.44705883, 0.19215687, 0.32156864, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 8
+shadow_offset = Vector2(3, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psxnn"]
 
@@ -111,10 +399,10 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 corner_detail = 4
 expand_margin_left = 6.0
 expand_margin_right = 4.0
@@ -312,9 +600,9 @@ height = 16.0
 radius = 2.0
 height = 9.333374
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f7ifq"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1h26"]
 radius = 5.0
-height = 24.0
+height = 26.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yuaea"]
 radius = 6.666687
@@ -3201,32 +3489,94 @@ visible = false
 
 [node name="pausa" parent="Pause" unique_id=488715186 instance=ExtResource("12_6lt21")]
 
-[node name="Resume" parent="Pause/pausa/PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(488715186, 402809199) index="0" unique_id=23563906]
+[node name="PanelContainer" parent="Pause/pausa" index="0" unique_id=199577020]
+offset_top = -183.0
+
+[node name="VBoxContainer" parent="Pause/pausa/PanelContainer" index="0" unique_id=402809199]
+theme_override_constants/separation = 17
+
+[node name="Resume" parent="Pause/pausa/PanelContainer/VBoxContainer" index="0" unique_id=23563906]
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5eao")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0jvn1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ue4te")
 
-[node name="config" type="Button" parent="Pause/pausa/PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(488715186, 402809199) index="1" unique_id=462140497]
+[node name="config" type="Button" parent="Pause/pausa/PanelContainer/VBoxContainer" index="1" unique_id=462140497]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_crtxh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_24bv2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tx0x7")
 text = "Configurações"
 
-[node name="Reiniciar" parent="Pause/pausa/PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(488715186, 402809199) index="2" unique_id=1571301973]
-text = "Reiniciar Fase"
+[node name="Reiniciar" parent="Pause/pausa/PanelContainer/VBoxContainer" index="2" unique_id=1571301973]
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_psxnn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4ep38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ekvvx")
 
-[node name="Quitmenu" parent="Pause/pausa/PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(488715186, 402809199) index="3" unique_id=1062787494]
-text = "Ir para Menu"
+[node name="Quitmenu" parent="Pause/pausa/PanelContainer/VBoxContainer" index="3" unique_id=1062787494]
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_fdpci")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g20gx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7lgyy")
 
-[node name="sair" parent="Pause/pausa/PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(488715186, 402809199) index="4" unique_id=1173224470]
-text = "Sair do Jogo"
+[node name="sair" parent="Pause/pausa/PanelContainer/VBoxContainer" index="4" unique_id=1173224470]
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_f7ifq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yu04y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f3hhs")
 
-[node name="Config" parent="Pause/pausa/PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(488715186, 402809199) index="5" unique_id=226512320]
+[node name="Config" parent="Pause/pausa/PanelContainer/VBoxContainer" index="5" unique_id=226512320]
 visible = false
+
+[node name="Confirmaçao" parent="Pause/pausa" index="1" unique_id=1888442213]
+visible = true
+offset_left = 30.0
+offset_top = -50.0
+offset_right = 70.0
+offset_bottom = -10.0
+pivot_offset = Vector2(20, 20)
+
+[node name="PanelContainer" parent="Pause/pausa/Confirmaçao" index="0" unique_id=699666673]
+offset_left = -371.0
+offset_right = 235.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_copo7")
+
+[node name="Label" parent="Pause/pausa/Confirmaçao/PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(488715186, 1888442213, 1345984024) index="0" unique_id=865553618]
+theme_override_font_sizes/font_size = 35
+
+[node name="sim" parent="Pause/pausa/Confirmaçao/PanelContainer/VBoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(488715186, 1888442213, 535573743) index="0" unique_id=837819037]
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_1w7ac")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dxf4i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a5abb")
+
+[node name="não" parent="Pause/pausa/Confirmaçao/PanelContainer/VBoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(488715186, 1888442213, 535573743) index="1" unique_id=1154631191]
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_l0r8v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e2c7h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5j7a3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cc3um")
 
 [node name="AudioStreamPlayer" parent="Pause/pausa" index="2" unique_id=841994853]
 bus = &"Efeitos"
 
+[node name="PanelContainer" parent="Pause/pausa/Config" parent_id_path=PackedInt32Array(488715186, 1181903921) index="0" unique_id=547262576]
+theme_override_styles/panel = SubResource("StyleBoxFlat_y05j3")
+
 [node name="Label" parent="Pause/pausa/Config/PanelContainer/VBoxContainer/HBoxVolume" parent_id_path=PackedInt32Array(488715186, 1762023867) index="0" unique_id=1517287105]
+theme_override_font_sizes/font_size = 34
 text = "Efeitos"
+
+[node name="Label" parent="Pause/pausa/Config/PanelContainer/VBoxContainer/HBoxMusica" parent_id_path=PackedInt32Array(488715186, 466396376) index="0" unique_id=72938670]
+theme_override_font_sizes/font_size = 34
+
+[node name="Label" parent="Pause/pausa/Config/PanelContainer/VBoxContainer/HBoxTela" parent_id_path=PackedInt32Array(488715186, 2095361668) index="0" unique_id=1845358013]
+theme_override_font_sizes/font_size = 34
+
+[node name="Button" parent="Pause/pausa/Config/PanelContainer/VBoxContainer" parent_id_path=PackedInt32Array(488715186, 732281828) index="4" unique_id=1079259833]
+theme_override_font_sizes/font_size = 28
 
 [node name="AudioStreamPlayer" parent="Pause/pausa/Config" parent_id_path=PackedInt32Array(488715186, 1181903921) index="1" unique_id=1365593387]
 bus = &"Efeitos"
@@ -3275,7 +3625,7 @@ z_index = 100
 texture_filter = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 33
 horizontal_alignment = 1
 
 [node name="AnimatedSprite2D" parent="Personagens/bully" index="3" unique_id=1158655805]
@@ -3285,32 +3635,6 @@ animation = &"default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/bully" unique_id=1403672016]
 position = Vector2(-4, -2.666687)
-shape = SubResource("CapsuleShape2D_fdpci")
-
-[node name="professor" parent="Personagens" unique_id=965959326 instance=ExtResource("13_q3gyk")]
-visible = false
-position = Vector2(902, 316)
-dialogo_recurso = ExtResource("14_ljkt0")
-
-[node name="Collision" parent="Personagens/professor" index="1" unique_id=779873815]
-visible = false
-position = Vector2(-4, -8)
-shape = SubResource("RectangleShape2D_psxnn")
-
-[node name="CollisionShape2D" parent="Personagens/professor/Actionable" parent_id_path=PackedInt32Array(965959326, 1836018293) index="0" unique_id=1722440272]
-visible = false
-
-[node name="AvisoChat" parent="Personagens/professor/Actionable/Control/PanelContainer" parent_id_path=PackedInt32Array(965959326, 293701752) index="0" unique_id=13439119]
-theme_override_font_sizes/font_size = 6
-
-[node name="AnimatedSprite2D" parent="Personagens/professor" index="3" unique_id=1158655805]
-visible = false
-position = Vector2(-40, -25)
-sprite_frames = SubResource("SpriteFrames_ekvvx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/professor" unique_id=1318445314]
-visible = false
-position = Vector2(3, 4)
 shape = SubResource("CapsuleShape2D_fdpci")
 
 [node name="jogador" parent="Personagens" unique_id=1796086270 instance=ExtResource("16_tx0x7")]
@@ -3349,26 +3673,27 @@ position = Vector2(-0.66666675, -16)
 [node name="CollisionShape2D" parent="Personagens/vitima" index="4" unique_id=1191103303]
 position = Vector2(0, -6.6666665)
 
-[node name="bully3" parent="Personagens" unique_id=1741550638 instance=ExtResource("13_q3gyk")]
+[node name="bully3" type="CharacterBody2D" parent="Personagens" unique_id=1741550638]
 position = Vector2(1428, 398.00003)
 scale = Vector2(1.5, 1.5)
+collision_layer = 4
+collision_mask = 3
 motion_mode = 1
+script = ExtResource("12_b5eao")
 metadata/_edit_group_ = true
 
-[node name="Collision" parent="Personagens/bully3" index="1" unique_id=779873815]
+[node name="Animation" type="AnimationPlayer" parent="Personagens/bully3" unique_id=74300959]
+
+[node name="Collision" type="CollisionShape2D" parent="Personagens/bully3" unique_id=1839857028]
 visible = false
+position = Vector2(1, -3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_j1h26")
 
-[node name="Actionable" parent="Personagens/bully3" index="2" unique_id=1836018293]
-visible = false
-
-[node name="CollisionShape2D" parent="Personagens/bully3/Actionable" index="0" unique_id=1722440272]
-position = Vector2(0, -15)
-shape = SubResource("CapsuleShape2D_f7ifq")
-
-[node name="AnimatedSprite2D" parent="Personagens/bully3" index="3" unique_id=1158655805]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Personagens/bully3" unique_id=891895664]
 position = Vector2(0, -14.666666)
 sprite_frames = ExtResource("18_crtxh")
-animation = &"default"
+animation = &"risada"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/bully3" unique_id=781678639]
 position = Vector2(0, -12)
@@ -3505,10 +3830,10 @@ shape = SubResource("RectangleShape2D_yuaea")
 position = Vector2(933, 720)
 shape = SubResource("RectangleShape2D_6lt21")
 
-[node name="Confirmaçao" parent="." unique_id=1888442213 instance=ExtResource("20_6lt21")]
+[node name="Confirmaçao" parent="." unique_id=2065195757 instance=ExtResource("20_6lt21")]
 visible = false
 
-[node name="Config" type="Control" parent="." unique_id=1181903921]
+[node name="Config" type="Control" parent="." unique_id=562872436]
 visible = false
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 3
@@ -3519,7 +3844,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("23_tx0x7")
 
-[node name="PanelContainer" type="PanelContainer" parent="Config" unique_id=547262576]
+[node name="PanelContainer" type="PanelContainer" parent="Config" unique_id=1186794865]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3555,7 +3880,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 32
 text = "Volume Geral"
 
 [node name="HSliderVolume" type="HSlider" parent="Config/PanelContainer/VBoxContainer/HBoxVolume" unique_id=746086604]
@@ -3569,11 +3894,11 @@ value = 1.0
 [node name="HBoxMusica" type="HBoxContainer" parent="Config/PanelContainer/VBoxContainer" unique_id=466396376]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Config/PanelContainer/VBoxContainer/HBoxMusica" unique_id=72938670]
+[node name="Label" type="Label" parent="Config/PanelContainer/VBoxContainer/HBoxMusica" unique_id=597220735]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 32
 text = "Música"
 
 [node name="HSliderMusica" type="HSlider" parent="Config/PanelContainer/VBoxContainer/HBoxMusica" unique_id=1053512865]
@@ -3587,18 +3912,18 @@ value = 1.0
 [node name="HBoxTela" type="HBoxContainer" parent="Config/PanelContainer/VBoxContainer" unique_id=2095361668]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Config/PanelContainer/VBoxContainer/HBoxTela" unique_id=1845358013]
+[node name="Label" type="Label" parent="Config/PanelContainer/VBoxContainer/HBoxTela" unique_id=839070530]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 32
 text = "Tela Cheia"
 
 [node name="CheckBox" type="CheckBox" parent="Config/PanelContainer/VBoxContainer/HBoxTela" unique_id=730511451]
 layout_mode = 2
 size_flags_horizontal = 6
 
-[node name="Button" type="Button" parent="Config/PanelContainer/VBoxContainer" unique_id=1079259833]
+[node name="Button" type="Button" parent="Config/PanelContainer/VBoxContainer" unique_id=1318262216]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -3627,6 +3952,4 @@ bus = &"Music"
 [editable path="Pause/pausa"]
 [editable path="Pause/pausa/Confirmaçao"]
 [editable path="Personagens/bully"]
-[editable path="Personagens/professor"]
 [editable path="Personagens/vitima"]
-[editable path="Personagens/bully3"]
