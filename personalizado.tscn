@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c2uk65u33cjkv" path="res://personalizado.gd" id="1_e5naa"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_1ysdc"]
+[ext_resource type="Shader" uid="uid://ij00aedirn3k" path="res://personalizado.gdshader" id="2_433tx"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_8m02l"]
 [ext_resource type="AudioStream" uid="uid://iagwtrrxwg6u" path="res://bonecos/blip.wav" id="4_f4gx4"]
+[ext_resource type="AudioStream" uid="uid://ceplm8dj2j3a1" path="res://pop-in-sfx.wav" id="6_iijcj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -47,10 +49,10 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
 default_font_size = 20
@@ -63,6 +65,21 @@ MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_433tx"]
+shader = ExtResource("2_433tx")
+shader_parameter/radius = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tuldx"]
+bg_color = Color(0.016548278, 0.020050792, 0.028273664, 1)
+corner_radius_top_left = 31
+corner_radius_top_right = 31
+corner_radius_bottom_right = 31
+corner_radius_bottom_left = 31
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iijcj"]
+shader = ExtResource("2_433tx")
+shader_parameter/radius = 0.15
 
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
@@ -101,33 +118,33 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5naa"]
-content_margin_left = 6.0
+content_margin_left = 9.0
 content_margin_top = 6.0
-content_margin_right = 6.0
+content_margin_right = 9.0
 content_margin_bottom = 6.0
 bg_color = Color(0.1764706, 0.19607843, 0.23529412, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_433tx"]
 bg_color = Color(0.11746096, 0.13223347, 0.16178492, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4gx4"]
 bg_color = Color(0.11764706, 0.13333334, 0.16078432, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iijcj"]
 bg_color = Color(0.08982786, 0.103035964, 0.12615135, 1)
@@ -135,10 +152,10 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
 
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=1434168376]
 layer = 100
@@ -156,20 +173,25 @@ mouse_filter = 1
 theme = SubResource("Theme_qq3yp")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1011109179]
+material = SubResource("ShaderMaterial_433tx")
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -219.0
-offset_right = -20.0
+offset_left = 70.0
+offset_top = -239.0
+offset_right = -50.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
+pivot_offset = Vector2(900, 109.5)
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=810051587]
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_tuldx")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1030936092]
 layout_mode = 2
@@ -180,6 +202,7 @@ theme_override_constants/separation = 20
 
 [node name="Portrait" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1193503912]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_iijcj")
 custom_minimum_size = Vector2(160, 20)
 layout_mode = 2
 expand_mode = 1
@@ -188,6 +211,7 @@ stretch_mode = 5
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1624289611]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 6
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=507199029]
 unique_name_in_owner = true
@@ -196,7 +220,7 @@ texture_filter = 1
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8392157)
-theme_override_font_sizes/normal_font_size = 34
+theme_override_font_sizes/normal_font_size = 42
 bbcode_enabled = true
 text = "      Character"
 fit_content = true
@@ -206,7 +230,10 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 46
+theme_override_font_sizes/bold_font_size = 46
+theme_override_font_sizes/bold_italics_font_size = 46
+theme_override_font_sizes/italics_font_size = 46
 text = "       Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1162966119]
@@ -244,7 +271,7 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=914537232]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_e5naa")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_433tx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_f4gx4")
@@ -254,6 +281,10 @@ text = "Response example"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]
 unique_name_in_owner = true
 stream = ExtResource("4_f4gx4")
+bus = &"Efeitos"
+
+[node name="opcoes" type="AudioStreamPlayer" parent="." unique_id=2049915293]
+stream = ExtResource("6_iijcj")
 bus = &"Efeitos"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

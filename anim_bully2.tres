@@ -163,16 +163,16 @@ atlas = ExtResource("6_enuxo")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vpqt"]
-atlas = ExtResource("1_xaynv")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("3_enuxo")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hvk7f"]
-atlas = ExtResource("1_xaynv")
-region = Rect2(32, 32, 32, 32)
+atlas = ExtResource("3_enuxo")
+region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sn2rc"]
-atlas = ExtResource("1_xaynv")
-region = Rect2(0, 96, 32, 32)
+atlas = ExtResource("3_enuxo")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_722vr"]
 atlas = ExtResource("3_gab80")

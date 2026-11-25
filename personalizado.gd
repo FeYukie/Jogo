@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var portrait: TextureRect = %Portrait
-
+@onready var som_opcoes: AudioStreamPlayer = $opcoes
 # Caminho para as fotos dos personagens
 var portraits: Dictionary = {
 	"Nicole": {
@@ -208,7 +208,10 @@ func apply_dialogue_line() -> void:
 
 	responses_menu.hide()
 	responses_menu.responses = dialogue_line.responses
-	
+	if "centro" in dialogue_line.tags:
+		dialogue_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	else:
+		dialogue_label.vertical_alignment = VERTICAL_ALIGNMENT_TOP
 	# Show our balloon
 	balloon.show()
 	will_hide_balloon = false
@@ -227,6 +230,9 @@ func apply_dialogue_line() -> void:
 	elif dialogue_line.responses.size() > 0:
 		balloon.focus_mode = Control.FOCUS_NONE
 		responses_menu.show()
+		if is_instance_valid(som_opcoes) and som_opcoes.stream:
+			som_opcoes.pitch_scale = 1.0 # Garante que não herde um pitch maluco
+			som_opcoes.play()
 	elif dialogue_line.time != "":
 		var time: float = dialogue_line.text.length() * 0.02 if dialogue_line.time == "auto" else dialogue_line.time.to_float()
 		await get_tree().create_timer(time).timeout

@@ -96,6 +96,13 @@ func _on_confirmaçao_confirmado(acao: String) -> void:
 
 		"menu":
 			get_tree().paused = false
+			Vida.hp = Vida.max_hp
+			Vida.vida_atual = Vida.max_hp
+			Vida.falhou_na_missao = false
+
+			# Reseta as variáveis globais
+			Global.vidas = 3
+			Global.vidas_atuais = 3
 			get_tree().change_scene_to_file("res://title_screen/title_screen.tscn")
 
 		"sair":
