@@ -18,14 +18,14 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control" unique_id=1273009081]
 layout_mode = 0
-offset_left = 1501.0
-offset_top = 16.0
-offset_right = 1659.0
-offset_bottom = 95.0
+offset_left = 1495.0
+offset_top = 14.0
+offset_right = 1653.0
+offset_bottom = 93.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 57
 text = "VIDAS"
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=431987232]
@@ -43,7 +43,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -649.0
 offset_top = 22.0
-offset_right = -579.0
+offset_right = -607.4
 offset_bottom = 62.0
 grow_horizontal = 0
 scale = Vector2(5, 5.502)
@@ -81,3 +81,12 @@ texture = ExtResource("2_40feo")
 hframes = 7
 vframes = 2
 frame = 2
+
+[node name="FlashDano" type="ColorRect" parent="." unique_id=420119486]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.972549, 0.44313726, 0.44313726, 0)

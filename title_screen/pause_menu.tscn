@@ -6,7 +6,15 @@
 [ext_resource type="Script" uid="uid://xqlatp5qxwj6" path="res://title_screen/config.gd" id="4_8osv6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xkod"]
-bg_color = Color(0.011323427, 0.11419853, 0.18274587, 0.5568628)
+bg_color = Color(0.06674261, 0.29330233, 0.4394664, 0.5568628)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ko5u3"]
 bg_color = Color(0.43519226, 0.4351923, 0.43519217, 1)
@@ -180,7 +188,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -225.5
-offset_top = -118.5
+offset_top = -166.0
 offset_right = 225.5
 offset_bottom = 118.5
 grow_horizontal = 2
@@ -195,31 +203,31 @@ theme_override_constants/separation = 6
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=23563906]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_ko5u3")
 text = "Voltar"
 
 [node name="Reiniciar" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1571301973]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_fp7ag")
-text = "Reiniciar fase"
+text = "Reiniciar Fase"
 
 [node name="Quitmenu" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1062787494]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_8osv6")
-text = "IR PARA MENU"
+text = "Ir para Menu"
 
 [node name="sair" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1173224470]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_jic32")
-text = "SAIR DO JOGO"
+text = "Sair do Jogo"
 
 [node name="Config" type="Button" parent="PanelContainer/VBoxContainer" unique_id=226512320]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "Config"
 
 [node name="Confirmaçao" parent="." unique_id=1888442213 instance=ExtResource("2_ko5u3")]

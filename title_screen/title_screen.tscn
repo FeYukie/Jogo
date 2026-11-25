@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dtb6b15fsek68" path="res://title_screen/title_screen.gd" id="1_dxpbd"]
 [ext_resource type="Texture2D" uid="uid://d3ca1bpx25sfb" path="res://title_screen/Quest Life_ Pôr do Sol na Escola.png" id="2_0m3ch"]
 [ext_resource type="Texture2D" uid="uid://dwvlccwgdlbhp" path="res://title_screen/fase1.png" id="3_2dq6q"]
+[ext_resource type="Shader" uid="uid://dfetlla44ony8" path="res://fase.gdshader" id="3_p7x7j"]
 [ext_resource type="Texture2D" uid="uid://cufia1bco1rxm" path="res://title_screen/fase2.png" id="4_0m3ch"]
 [ext_resource type="Texture2D" uid="uid://dta7dg8n1isep" path="res://title_screen/fase3.png" id="5_fk0fn"]
 [ext_resource type="Texture2D" uid="uid://dx6hk1vnncomv" path="res://title_screen/setas.png" id="6_fh6ay"]
@@ -34,7 +35,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbjqi"]
-bg_color = Color(0.560709, 0.13138002, 0.05976396, 0.827451)
+bg_color = Color(0.70980394, 0.18039216, 0.09019608, 0.827451)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -50,10 +51,11 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 1)
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiiip"]
-bg_color = Color(0.56078434, 0.13333334, 0.05882353, 0.827451)
+bg_color = Color(0.7097073, 0.18174806, 0.09043289, 0.827451)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -69,6 +71,8 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqrgu"]
 bg_color = Color(0.54089165, 0.12531972, 0.055993527, 0.827451)
@@ -78,7 +82,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk0fn"]
-bg_color = Color(0.56078434, 0.13333334, 0.05882353, 0.827451)
+bg_color = Color(0.70980394, 0.18039216, 0.09019608, 0.827451)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -86,13 +90,101 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv0o7"]
 bg_color = Color(0.4458025, 0.19292936, 0.31996098, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 shadow_color = Color(0, 0, 0, 0.59607846)
 shadow_size = 8
 shadow_offset = Vector2(3, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4h7y4"]
+shader = ExtResource("3_p7x7j")
+shader_parameter/radius_px = 12.0
+shader_parameter/feather_px = 1.0
+shader_parameter/hover_light = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7x7j"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mag7y"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4h7y4"]
+bg_color = Color(0.6, 0.6, 0.6, 0.60784316)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7x7j"]
+shader = ExtResource("3_p7x7j")
+shader_parameter/radius_px = 12.0
+shader_parameter/feather_px = 1.0
+shader_parameter/hover_light = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d3o2"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b01o"]
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0nof"]
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3eqcd"]
+shader = ExtResource("3_p7x7j")
+shader_parameter/radius_px = 12.0
+shader_parameter/feather_px = 1.0
+shader_parameter/hover_light = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47vnn"]
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilk26"]
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sybbf"]
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oos5"]
 content_margin_left = 10.0
@@ -259,11 +351,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.98039216)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 34
 text = "Fase 1 (escola)"
 
 [node name="Fase1" type="Button" parent="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer" unique_id=471805799]
+material = SubResource("ShaderMaterial_4h7y4")
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_p7x7j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mag7y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4h7y4")
 icon = ExtResource("3_2dq6q")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Menu_fases/PanelContainer/VBoxContainer4" unique_id=905633089]
@@ -274,12 +370,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 34
 text = "Fase 2 (parque)"
 
 [node name="Fase2" type="Button" parent="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer2" unique_id=1312373327]
+material = SubResource("ShaderMaterial_p7x7j")
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_3d3o2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8b01o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u0nof")
 icon = ExtResource("4_0m3ch")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="Menu_fases/PanelContainer/VBoxContainer4" unique_id=722953036]
@@ -290,12 +390,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 34
 text = "Fase 3 (sala de aula)"
 
 [node name="Fase3" type="Button" parent="Menu_fases/PanelContainer/VBoxContainer4/VBoxContainer3" unique_id=707643493]
+material = SubResource("ShaderMaterial_3eqcd")
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_47vnn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ilk26")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sybbf")
 icon = ExtResource("5_fk0fn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu_fases/PanelContainer/VBoxContainer4" unique_id=2062732258]
@@ -307,7 +411,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxFlat_1oos5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3eqcd")
 text = "Fechar"
@@ -450,7 +554,7 @@ stretch_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxFlat_1oos5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3eqcd")
 text = "Fechar"

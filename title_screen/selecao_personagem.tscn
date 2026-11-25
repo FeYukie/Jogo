@@ -7,6 +7,48 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg0bk"]
 bg_color = Color(0.35544163, 0.14536116, 0.25226313, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vo6q"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcvto"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_weibl"]
+bg_color = Color(0.6, 0.6, 0.6, 0.60784316)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnium"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t60q8"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.60784316)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu4ur"]
+bg_color = Color(0.6, 0.6, 0.6, 0.60784316)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
 [node name="SelecaoPersonagem" type="Node2D" unique_id=15677400]
 script = ExtResource("1_3epah")
 
@@ -39,12 +81,18 @@ custom_minimum_size = Vector2(60, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_3vo6q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kcvto")
+theme_override_styles/hover = SubResource("StyleBoxFlat_weibl")
 icon = ExtResource("2_yg0bk")
 
 [node name="menino" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=110865753]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_rnium")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t60q8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu4ur")
 icon = ExtResource("3_yg0bk")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/menina" to="." method="_on_botao_feminino_pressed"]
