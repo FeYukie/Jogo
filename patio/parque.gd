@@ -10,12 +10,16 @@ var bom: int = 0
 # Funções chamadas pelo Dialogue Manager
 func adicionar_omissao() -> void:
 	omissao += 1
-
+	Global.total_omissao += 1
+	
 func adicionar_bullying() -> void:
+	get_tree().call_group("gui_vida", "piscar_vermelho")
 	bullying += 1
-
+	Global.total_bullying += 1
+	
 func adicionar_bom() -> void:
 	bom += 1
+	Global.total_bom += 1
 
 func zerar_pontos() -> void:
 	omissao = 0
@@ -36,7 +40,7 @@ func _ready() -> void:
 	# Espera 1 frame para garantir que tudo na tela foi carregado
 	await get_tree().process_frame
 	liberar_passagem()
-	
+	Global.resetar_escolhas()
 	#var anim_jogador = $jogador/AnimatedSprite2D
 	#anim_jogador.stop()
 	#if anim_jogador:

@@ -12,10 +12,14 @@
 [ext_resource type="StyleBox" uid="uid://dont7y46iikxo" path="res://title_screen/hover.tres" id="11_rejyj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmgir"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.07058824, 0.08235294, 0.10980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vepy8"]
 bg_color = Color(0.06051457, 0.2806551, 0.42433894, 0.79607844)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7euc"]
 bg_color = Color(0, 0, 0, 1)
@@ -136,6 +140,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=1475087198]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 49
@@ -143,6 +148,19 @@ text = "A pressão de 'se encaixar' e o medo do preconceito pesaram forte.
 Enoque até voltou ao parque, mas a falta de apoio fez com que ele 
 se sentisse deslocado, com a insegurança de parecer 'estranho' 
 para os outros e preferindo ficar no seu canto."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=589747026]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(980, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Ao se posicionar com firmeza contra 
+o bullying, contrariando seu próprio grupo, você provou que o respeito vem antes da pressão dos outros."
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -195,7 +213,7 @@ theme_override_constants/separation = 13
 
 [node name="Reiniciar" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=2094828210]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_og2tg")
 theme_override_styles/pressed = ExtResource("10_rwg7i")
 theme_override_styles/hover = ExtResource("11_rejyj")
@@ -203,7 +221,7 @@ text = "Reiniciar Fase"
 
 [node name="Quitmenu" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=1092149105]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_og2tg")
 theme_override_styles/pressed = ExtResource("10_rwg7i")
 theme_override_styles/hover = ExtResource("11_rejyj")
@@ -211,7 +229,7 @@ text = "Ir para Menu"
 
 [node name="sair" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=1807424858]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_og2tg")
 theme_override_styles/pressed = ExtResource("10_rwg7i")
 theme_override_styles/hover = ExtResource("11_rejyj")
@@ -228,7 +246,7 @@ offset_right = 194.49927
 offset_bottom = 92.10417
 grow_horizontal = 2
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 40
 text = "Praticar a empatia exige atitude."
 horizontal_alignment = 1
 

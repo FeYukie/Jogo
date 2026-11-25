@@ -16,7 +16,7 @@ radius = 2.0
 height = 9.333374
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4i52d"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.07058824, 0.08235294, 0.10980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tucbt"]
 bg_color = Color(0.06051457, 0.2806551, 0.42433894, 0.79607844)
@@ -110,12 +110,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=1918875301]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 46
-text = "Em um momento você demonstrava interesse pela cultura do seu colega, 
-em outro, concordava com piadas preconceituosas para se encaixar no 
-grupo. Essa indecisão só gerou confusão e quebrou a confiança. "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=1073771341]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(990, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Ao se posicionar com firmeza contra 
+o bullying, contrariando seu próprio grupo, você provou que o respeito vem antes da pressão dos outros."
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -169,7 +180,7 @@ theme_override_constants/separation = 13
 
 [node name="Reiniciar" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=764675131]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_bjv0v")
 theme_override_styles/pressed = ExtResource("10_2clo3")
 theme_override_styles/hover = ExtResource("11_gbh7v")
@@ -177,7 +188,7 @@ text = "Reiniciar Fase"
 
 [node name="Quitmenu" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=1635168692]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_bjv0v")
 theme_override_styles/pressed = ExtResource("10_2clo3")
 theme_override_styles/hover = ExtResource("11_gbh7v")
@@ -185,7 +196,7 @@ text = "Ir para Menu"
 
 [node name="sair" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=2032840141]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_bjv0v")
 theme_override_styles/pressed = ExtResource("10_2clo3")
 theme_override_styles/hover = ExtResource("11_gbh7v")
@@ -202,7 +213,7 @@ offset_right = 255.99927
 offset_bottom = 137.20834
 grow_horizontal = 2
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 40
 text = "Não dá para defender o respeito pela metade.
 "
 horizontal_alignment = 1

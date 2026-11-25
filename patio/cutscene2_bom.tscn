@@ -15,10 +15,14 @@
 [ext_resource type="AudioStream" uid="uid://c18g78akp713" path="res://16 HoliznaCC0 - Letting Go Of The Past- feliz ou fundosala.ogg" id="13_yc80t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53a36"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.07058824, 0.08235294, 0.10980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk42e"]
 bg_color = Color(0.06051457, 0.2806551, 0.42433894, 0.79607844)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82qx4"]
 bg_color = Color(0, 0, 0, 1)
@@ -174,6 +178,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=574009618]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 42
@@ -181,7 +186,20 @@ text = "Conhecer uma cultura nova é como abrir uma janela para o mundo!
 Ao defender Enoque contra o preconceito, você valorizou a 
 diversidade, ajudando a criar um espaço onde todos se sentem 
 seguros para ser quem são. Respeitar de onde viemos transforma 
-o mundo num lugar muito mais rico e acolhedor."
+o mundo num lugar muito mais rico e acolhedor. diferenças"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=1169566263]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(980, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Ao se posicionar com firmeza contra 
+o bullying, contrariando seu próprio grupo, você provou que o respeito vem antes da pressão dos outros."
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -222,14 +240,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -247.50043
+offset_left = -412.00043
 offset_top = 100.0
-offset_right = 247.49957
-offset_bottom = 132.10417
+offset_right = 411.99957
+offset_bottom = 144.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 33
-text = "Parabéns, você desbloqueou a próxima fase!"
+theme_override_font_sizes/font_size = 40
+text = "Parabéns pela coragem, você desbloqueou a próxima fase!"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/Panel" unique_id=1885656314]
@@ -250,7 +268,7 @@ theme_override_constants/separation = 13
 [node name="Prosseguir" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=385572634]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_3fwjj")
 theme_override_styles/pressed = ExtResource("10_q6qtn")
 theme_override_styles/hover = ExtResource("11_cmg5v")
@@ -258,7 +276,7 @@ text = "Próxima Fase"
 
 [node name="Reiniciar" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=893142092]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_3fwjj")
 theme_override_styles/pressed = ExtResource("10_q6qtn")
 theme_override_styles/hover = ExtResource("11_cmg5v")
@@ -266,7 +284,7 @@ text = "Reiniciar Fase"
 
 [node name="Quitmenu" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=400382056]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_3fwjj")
 theme_override_styles/pressed = ExtResource("10_q6qtn")
 theme_override_styles/hover = ExtResource("11_cmg5v")
@@ -274,7 +292,7 @@ text = "Ir para Menu"
 
 [node name="sair" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=879697911]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("9_3fwjj")
 theme_override_styles/pressed = ExtResource("10_q6qtn")
 theme_override_styles/hover = ExtResource("11_cmg5v")

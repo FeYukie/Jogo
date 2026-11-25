@@ -6,7 +6,7 @@ extends Node2D
 @onready var panel = $Panel
 @onready var ui_consequencia = $CanvasLayer/Mensagem
 @onready var label_mensagem = $CanvasLayer/Mensagem/Panel/MarginContainer/Label
-
+@onready var rich_text_label: RichTextLabel = %RichTextLabel    
 @onready var menu_progresso = $CanvasLayer/Menu
 @onready var botao_reiniciar = $CanvasLayer/Menu/Panel/Reiniciar
 @onready var botao_proxima = $CanvasLayer/Menu/Panel/Prosseguir
@@ -44,6 +44,21 @@ func _ready() -> void:
 
 	
 func exibir_mensagem_consequencia() -> void:
+	var bom := Global.total_bom
+	var omissao := Global.total_omissao
+	var bullying := Global.total_bullying
+
+	var cor_destaque = "#4ADE80"
+	var mensagem_final = "Valorizar a diversidade transforma o mundo num lugar muito mais rico e acolhedor!"
+
+	var texto := "[color=#F1F5F9]Suas atitudes diante da xenofobia (preconceito por causa do sotaque ou cultura de onde a pessoa veio):[/color]\n\n"
+	texto += "[color=#4ADE80]• Ajudou o menino angolano:[/color] %s\n" % Global.formatar_vezes(bom)
+	texto += "[color=#FBBF24]• Preferiu não se envolver:[/color] %s\n" % Global.formatar_vezes(omissao)
+	texto += "[color=#F87171]• Praticou bullying:[/color] %s\n\n" % Global.formatar_vezes(bullying)
+	texto += "[color=%s]%s[/color]" % [cor_destaque, mensagem_final]
+
+	#$RichTextLabel.bbcode_enabled = true
+	rich_text_label.text = texto
 	ui_consequencia.visible = true
 	
 	# Espera 10 segundos exibindo a mensagem na tela antes de fechar
@@ -105,6 +120,13 @@ func _on_reiniciar_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	$AudioStreamPlayer.play()
+	Vida.hp = Vida.max_hp
+	Vida.vida_atual = Vida.max_hp
+	Vida.falhou_na_missao = false
+
+	# Reseta as variáveis globais
+	Global.vidas = 3
+	Global.vidas_atuais = 3
 	get_tree().change_scene_to_file("res://title_screen/title_screen.tscn")
 
 

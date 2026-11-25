@@ -13,10 +13,14 @@
 [ext_resource type="StyleBox" uid="uid://dont7y46iikxo" path="res://title_screen/hover.tres" id="12_gdg8q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8xxi"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.07058824, 0.08235294, 0.10980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8gp0"]
 bg_color = Color(0.06051457, 0.2806551, 0.42433894, 0.79607844)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkvf4"]
 bg_color = Color(0, 0, 0, 1)
@@ -114,12 +118,26 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=1233233046]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 49
 text = "O preconceito fez o garoto se fechar e ter vergonha de expressar 
 suas origens e tradições familiares. Ninguém deveria se esconder 
 ou apagar sua identidade para caber no mundo dos outros."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=251208569]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(980, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Ao se posicionar com firmeza contra 
+o bullying, contrariando seu próprio grupo, você provou que o respeito vem antes da pressão dos outros."
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -171,7 +189,7 @@ theme_override_constants/separation = 13
 
 [node name="Reiniciar" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=1596426795]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("10_yh6cq")
 theme_override_styles/pressed = ExtResource("11_53xab")
 theme_override_styles/hover = ExtResource("12_gdg8q")
@@ -179,7 +197,7 @@ text = "Reiniciar Fase"
 
 [node name="Quitmenu" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=617191875]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("10_yh6cq")
 theme_override_styles/pressed = ExtResource("11_53xab")
 theme_override_styles/hover = ExtResource("12_gdg8q")
@@ -187,7 +205,7 @@ text = "Ir para Menu"
 
 [node name="sair" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=829435490]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("10_yh6cq")
 theme_override_styles/pressed = ExtResource("11_53xab")
 theme_override_styles/hover = ExtResource("12_gdg8q")
@@ -204,7 +222,7 @@ offset_right = 247.50009
 offset_bottom = 102.10417
 grow_horizontal = 2
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 40
 text = "Diante dos erros, é necessário refazer a fase."
 horizontal_alignment = 1
 
