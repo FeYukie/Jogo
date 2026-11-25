@@ -10,6 +10,7 @@ extends Node2D
 @onready var cenario3 = $TextureRect3
 @onready var cenario4 = $TextureRect4
 # Nós da UI
+@onready var rich_text_label: RichTextLabel = %RichTextLabel    
 @onready var panel = $Panel
 @onready var ui_consequencia = $CanvasLayer/Mensagem
 @onready var label_mensagem = $CanvasLayer/Mensagem/Panel/MarginContainer/Label
@@ -74,12 +75,25 @@ func camera_resetar(duracao: float) -> void:
 	await tween_zoom.finished
 	
 func exibir_mensagem_consequencia() -> void:
+	var bom := Global.total_bom
+	var omissao := Global.total_omissao
+	var bullying := Global.total_bullying
+
+	var cor_destaque = "#FB923C"
+	var mensagem_final = "Ao tomar atitudes contrárias, seu grupo de amigos e a aluna novo perderam a confiança em você, por isso se afastaram. O ambiente escolar se tornou solitário."
+
+	var texto := "[color=#F1F5F9]Suas atitudes diante do bullying com a aluna nova:[/color]\n\n"
+	texto += "[color=#4ADE80]• Ajudou a Carolina:[/color] %s\n" % Global.formatar_vezes(bom)
+	texto += "[color=#FBBF24]• Preferiu não se envolver:[/color] %s\n" % Global.formatar_vezes(omissao)
+	texto += "[color=#F87171]• Praticou bullying:[/color] %s\n\n" % Global.formatar_vezes(bullying)
+	texto += "[color=%s]%s[/color]" % [cor_destaque, mensagem_final]
+
+	#$RichTextLabel.bbcode_enabled = true
+	rich_text_label.text = texto
 	ui_consequencia.visible = true
 	
-	# Espera 6 segundos exibindo a mensagem na tela antes de fechar
-	await get_tree().create_timer(8.0).timeout
-	
-
+	# Espera 10 segundos exibindo a mensagem na tela antes de fechar
+	await get_tree().create_timer(10.0).timeout
 
 func exibir_menu_progresso() -> void:
 	menu_progresso.visible = true
@@ -120,4 +134,11 @@ func _on_sair_pressed() -> void:
 
 
 func _on_quitmenu_pressed() -> void:
+	Vida.hp = Vida.max_hp
+	Vida.vida_atual = Vida.max_hp
+	Vida.falhou_na_missao = false
+
+	# Reseta as variáveis globais
+	Global.vidas = 3
+	Global.vidas_atuais = 3
 	get_tree().change_scene_to_file("res://title_screen/title_screen.tscn")

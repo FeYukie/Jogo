@@ -6,6 +6,7 @@ extends Node2D
 @onready var jogador = $jogador
 @onready var camera = $Camera2D         
 # Nós da UI
+@onready var rich_text_label: RichTextLabel = %RichTextLabel    
 @onready var panel = $Panel
 @onready var ui_consequencia = $CanvasLayer/Mensagem
 @onready var label_mensagem = $CanvasLayer/Mensagem/Panel/MarginContainer/Label
@@ -90,11 +91,26 @@ func cutscene_bully_aproximar(duracao: float) -> void:
 
 	
 func exibir_mensagem_consequencia() -> void:
+	var bom := Global.total_bom
+	var omissao := Global.total_omissao
+	var bullying := Global.total_bullying
+
+	var cor_destaque = "#FBBF24"
+	var mensagem_final = "Ficar quieto parece mais seguro, mas muitas vezes deixa quem sofre sozinho."
+	
+	var texto := "[color=#F1F5F9]Suas atitudes diante de gordofobia (preconceito contra pessoas gordas por conta de seu corpo ou peso):[/color]\n\n"
+	texto += "[color=#4ADE80]• Ajudou a vítima:[/color] %s\n" % Global.formatar_vezes(bom)
+	texto += "[color=#FBBF24]• Preferiu não se envolver:[/color] %s\n" % Global.formatar_vezes(omissao)
+	texto += "[color=#F87171]• Praticou bullying:[/color] %s\n\n" % Global.formatar_vezes(bullying)
+	texto += "[color=%s]%s[/color]" % [cor_destaque, mensagem_final]
+
+	#$RichTextLabel.bbcode_enabled = true
+	rich_text_label.text = texto
 	ui_consequencia.visible = true
 	
-	# Espera 6 segundos exibindo a mensagem na tela antes de fechar
-	await get_tree().create_timer(8.0).timeout
-	
+	# Espera 10 segundos exibindo a mensagem na tela antes de fechar
+	await get_tree().create_timer(10.0).timeout
+	ui_consequencia.visible = true
 
 
 func exibir_menu_progresso() -> void:
@@ -138,4 +154,11 @@ func _on_sair_pressed() -> void:
 
 func _on_quitmenu_pressed() -> void:
 	$AudioStreamPlayer.play()
+	Vida.hp = Vida.max_hp
+	Vida.vida_atual = Vida.max_hp
+	Vida.falhou_na_missao = false
+
+	# Reseta as variáveis globais
+	Global.vidas = 3
+	Global.vidas_atuais = 3
 	get_tree().change_scene_to_file("res://title_screen/title_screen.tscn")

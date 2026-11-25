@@ -4,7 +4,8 @@ extends Node2D
 @onready var bully3 = $bully3
 @onready var vitima = $vitima
 @onready var jogador = $jogador
-@onready var camera = $Camera2D         
+@onready var camera = $Camera2D    
+@onready var rich_text_label: RichTextLabel = %RichTextLabel     
 # Nós da UI
 @onready var panel = $Panel
 @onready var ui_consequencia = $CanvasLayer/Mensagem
@@ -50,7 +51,7 @@ func _ready() -> void:
 	# 3. CHAMA A CUTSCENE DO ZOOM E USA O 'await' PARA ESPERAR ELA TERMINAR COMPLETAMENTE (7 segundos)
 	await cutscene_bully_aproximar(3)
 	
-	# 4. SÓ AGORA (quando o zoom de 7s acabar), a transição global é chamada!
+	# 4. Quando o zoom de 3s acabar a transição global é chamada
 	if Transicao.has_method("fade_out"):
 		await Transicao.fade_out()
 	panel.visible = true
@@ -82,10 +83,25 @@ func cutscene_bully_aproximar(duracao: float) -> void:
 
 	
 func exibir_mensagem_consequencia() -> void:
+	var bom := Global.total_bom
+	var omissao := Global.total_omissao
+	var bullying := Global.total_bullying
+
+	var cor_destaque = "#4ADE80"
+	var mensagem_final = "Você foi firme contra o bullying e fez a diferença para quem estava passando por um momento difícil no primeiro dia de aula."
+
+	var texto := "[color=#F1F5F9]Suas atitudes diante de gordofobia (preconceito contra pessoas gordas por conta de seu corpo ou peso):[/color]\n\n"
+	texto += "[color=#4ADE80]• Ajudou a menina nova:[/color] %s\n" % Global.formatar_vezes(bom)
+	texto += "[color=#FBBF24]• Preferiu não se envolver:[/color] %s\n" % Global.formatar_vezes(omissao)
+	texto += "[color=#F87171]• Praticou bullying:[/color] %s\n\n" % Global.formatar_vezes(bullying)
+	texto += "[color=%s]%s[/color]" % [cor_destaque, mensagem_final]
+
+	#$RichTextLabel.bbcode_enabled = true
+	rich_text_label.text = texto
 	ui_consequencia.visible = true
 	
-	# Espera 9 segundos exibindo a mensagem na tela antes de fechar
-	await get_tree().create_timer(9.0).timeout
+	# Espera 10 segundos exibindo a mensagem na tela antes de fechar
+	await get_tree().create_timer(10.0).timeout
 	
 
 
@@ -144,6 +160,13 @@ func _on_reiniciar_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	$AudioStreamPlayer.play()
+	Vida.hp = Vida.max_hp
+	Vida.vida_atual = Vida.max_hp
+	Vida.falhou_na_missao = false
+
+	# Reseta as variáveis globais
+	Global.vidas = 3
+	Global.vidas_atuais = 3
 	get_tree().change_scene_to_file("res://title_screen/title_screen.tscn")
 
 

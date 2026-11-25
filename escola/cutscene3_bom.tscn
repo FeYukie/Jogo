@@ -318,10 +318,14 @@ radius = 2.0
 height = 9.333374
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaowg"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.07058824, 0.08235294, 0.10980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c71f"]
 bg_color = Color(0.06051457, 0.2806551, 0.42433894, 0.79607844)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw40k"]
 bg_color = Color(0, 0, 0, 1)
@@ -540,6 +544,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=88910229]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 46
@@ -547,6 +552,19 @@ text = "Com a união da turma e escolhas corajosas, a aluna nova agora
 sorri, integrada e fazendo novos amigos. Os comportamentos de 
 bullying e xenofobia foram repudiados por todos, provando que a 
 empatia e o respeito transformam qualquer ambiente."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Mensagem/Panel/MarginContainer" unique_id=2086194907]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(980, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Ao se posicionar com firmeza contra 
+o bullying, contrariando seu próprio grupo, você provou que o respeito vem antes da pressão dos outros."
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -589,9 +607,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -152.74954
-offset_top = -61.5
-offset_right = 152.75052
-offset_bottom = 101.5
+offset_top = -33.5
+offset_right = 152.75046
+offset_bottom = 143.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 13
@@ -600,6 +618,7 @@ theme_override_constants/separation = 13
 visible = false
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 17
 theme_override_styles/normal = ExtResource("8_i3vmp")
 theme_override_styles/pressed = ExtResource("9_m34jc")
 theme_override_styles/hover = ExtResource("10_dbhdy")
@@ -607,7 +626,7 @@ text = "Voltar "
 
 [node name="Reiniciar" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=603743393]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("8_i3vmp")
 theme_override_styles/pressed = ExtResource("9_m34jc")
 theme_override_styles/hover = ExtResource("10_dbhdy")
@@ -615,7 +634,7 @@ text = "Reiniciar Fase"
 
 [node name="Quitmenu" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=1558811891]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("8_i3vmp")
 theme_override_styles/pressed = ExtResource("9_m34jc")
 theme_override_styles/hover = ExtResource("10_dbhdy")
@@ -623,7 +642,7 @@ text = "Ir para Menu"
 
 [node name="sair" type="Button" parent="CanvasLayer/Menu/Panel/VBoxContainer" unique_id=382940738]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = ExtResource("8_i3vmp")
 theme_override_styles/pressed = ExtResource("9_m34jc")
 theme_override_styles/hover = ExtResource("10_dbhdy")
@@ -640,7 +659,7 @@ offset_right = 247.5004
 offset_bottom = 107.20834
 grow_horizontal = 2
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 40
 text = "Parabéns, você terminou o jogo! 
 Suas escolhas fizeram a diferença."
 horizontal_alignment = 1
