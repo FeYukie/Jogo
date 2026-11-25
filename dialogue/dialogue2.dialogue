@@ -32,15 +32,15 @@ do vergonha()
 Carolina: [#vergonha]...
 
 - Ignorar
-	do Vida.perder_vida()
-	do adicionar_omissao()
 	do volta_mesa()
 	{{Global.nome_jogador}}: (...) [#desvia]
+	do Vida.perder_vida()
+	do adicionar_omissao()
 	Nicole: Continua aí! Vamos fazer leitura labial. [#rindo]
 - Entrar na onda e debochar junto
+	{{Global.nome_jogador}}: Daqui a pouco ela vai ter um piripaque aí na frente! 
 	do Vida.perder_vida()
 	do adicionar_bullying()
-	{{Global.nome_jogador}}: Daqui a pouco ela vai ter um piripaque aí na frente! 
 	Carolina: ... [#triste]
 - Pedir para pararem
 	do voltar_mesa()
@@ -74,13 +74,17 @@ Carolina: E-eu só queria ter certeza...[#triste]
 	do Vida.perder_vida()
 	do adicionar_omissao()
 - Rir junto com seus amigos
+	{{Global.nome_jogador}}: Ha ha ha, boa sorte pra passar de ano se essa for sua maior dúvida! 
 	do Vida.perder_vida()
 	do adicionar_bullying()
-	{{Global.nome_jogador}}: Ha ha ha, boa sorte pra passar de ano se essa for sua maior dúvida! 
+	[#centro][center]Ninguém sabe de tudo, a dúvida é natural.[/center]
 	Carolina: Desculpa...[#triste]
 - Defender a dúvida da Carolina
 	{{Global.nome_jogador}}: Para com isso. Esse conteúdo pode ser confuso no começo. 
-	Nicole: Tá bom, "professor", foi mal.[#bravo]
+	if Global.genero_jogador == "menino"
+		Nicole: Tá bom, "professor", foi mal.[#bravo]
+	else
+		Nicole: Tá bom, "professora", foi mal.[#bravo]
 	do adicionar_bom()
 
 Professor: Silêncio aí no fundo! A pergunta da Carolina é muito válida e muita gente confunde isso em código real. 
@@ -108,6 +112,7 @@ Nicole: É claro que não. Aqui só tem um elefante, um novato.
 	{{Global.nome_jogador}}: Posso pedir para ela trocar de lugar com você.
 	do Vida.perder_vida()
 	do adicionar_omissao()
+	[#centro][center]Você deixou quieto o fato da Nicole desrespeitar a Carolina.[/center]
 	# Você continua a fingir que presta atenção no quadro, olhando para a frente.
 	Nicole: Não precisa. Desisti de anotar.
 	
@@ -117,6 +122,7 @@ Nicole: É claro que não. Aqui só tem um elefante, um novato.
 	{{Global.nome_jogador}}: Bem, só tem ela acima do peso aqui.
 	do Vida.perder_vida()
 	do adicionar_bullying()
+	[#centro][center]Quando o alvo do bullying não é você, não tem problema?[/center]
 => cena3
 
 #do Carolina_sai()

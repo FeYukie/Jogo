@@ -17,6 +17,7 @@ Enoque: Era o nome do meu querido avô.
 	{{Global.nome_jogador}}: Nossa, você acabou com a graça.
 	do Vida.perder_vida()
 	do adicionar_omissao()
+	[#centro][center]Ele só estava tentando se explicar... será que não tinha o direito de ficar chateado?[/center]
 	
 - "É dos tempos de Noé"
 	{{Global.nome_jogador}}: Seu avô viveu antes de Cristo, foi?
@@ -26,6 +27,7 @@ Enoque: Era o nome do meu querido avô.
 	Nicole: Relaxa... é só uma brincadeira.[#bravo]
 	do Vida.perder_vida()
 	do adicionar_bullying()
+	[#centro][center]Quando a piada atinge alguém, ainda é engraçada?[/center]
 	
 - "Bonita homenagem"
 	{{Global.nome_jogador}}: Ah, que especial! Enoque é um nome de personalidade.
@@ -45,9 +47,10 @@ Nicole: Não entendemos esse "português". Traduza, faz favor?[#bravo]
 - "Estamos no Brasil"
 	do normal()
 	{{Global.nome_jogador}}: Como você disse, "em Angola". Estamos no Brasil, menino.
-	Cauã: Se não se acostumou, volte para seu país.
 	do Vida.perder_vida()
 	do adicionar_bullying()
+	Cauã: Se não se acostumou, volte para seu país.
+	[#centro][center]Imagine sair de onde vivia e ser recebido dessa forma...[/center]
 	
 - Ficar calado para não arrumar confusão
 	do normal()
@@ -56,7 +59,7 @@ Nicole: Não entendemos esse "português". Traduza, faz favor?[#bravo]
 	do adicionar_omissao()
 	Cauã: Viu? Até os outros acham ridículo. Ninguém entende o que você fala.
 	Enoque: ...
-
+	[#centro][center]Ao ficar quieto, pareceu que você concorda com a situação.[/center]
 - "O português é diverso"
 	do normal()
 	{{Global.nome_jogador}}: O português não pertence só a um país ou estado.
@@ -75,13 +78,14 @@ Cauã: E olha só para essa roupa... veio adiantado para o Carnaval?!
 do ri()
 Nicole: Ha ha ha, que brega![#rindo]
 
-Enoque: Não é fantasia nenhuma, madié! Isto tem bué (muito) de significado para mim!
+Enoque: Não é fantasia nenhuma, madié (cara)! Isto tem bué (muito) de significado para mim!
 - "São bem chamativas mesmo"
 	do normal()
 	{{Global.nome_jogador}}: Achei... exótico. É normal estranhar.
 	do Vida.perder_vida()
-	Nicole: Então. Guarda isso no armário.
 	do adicionar_omissao()
+	[#centro][center]Ser diferente justifica o desrespeito?[/center]
+	Nicole: Então. Guarda isso no armário.
 	=> final_omissao
 	
 - "Gostei do estilo"
@@ -102,6 +106,7 @@ Enoque: Não é fantasia nenhuma, madié! Isto tem bué (muito) de significado p
 	do normal()
 	{{Global.nome_jogador}}: Se perdeu do caminho do circo, foi?
 	do rir()
+	[#centro][center]Você gostaria que tirassem sarro de suas roupas?[/center]
 	do Vida.perder_vida()
 	do adicionar_bullying()
 	do para()
@@ -122,7 +127,7 @@ do verificar_final_da_fase()
 do Transicao.fade_in(1.0)
 
 ~ final_positivo
-Enoque: Epa, foste um verdadeiro kamba agora, {{Global.nome_jogador}}! Tiveste bué de coragem para falar com eles daquela forma.
+Enoque: Epa, foste kamba (amigo) de verdade agora, {{Global.nome_jogador}}! Tiveste bué (muita) de coragem para falar com eles daquela forma.
 {{Global.nome_jogador}}: Não me aguentei. Ninguém merece ser tratado assim.
 {{Global.nome_jogador}}: Agora tenho que voltar para a escola, senão vou me atrasar.
 {{Global.nome_jogador}}: Nos vemos qualquer dia.

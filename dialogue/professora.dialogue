@@ -21,6 +21,6 @@ Professora: Bonito, {{Global.nome_jogador}}... Matando aula, {{Global.nome_jogad
 		{{Global.nome_jogador}}: Obrigada, professora.
 - "Só vim dar um oi"
 	{{Global.nome_jogador}}: Só vim dar um oizinho depois das férias!
-	 Professora: Então oizinho.
+	 Professora: Então, oizinho.
 do liberar_passagem() 
 => END

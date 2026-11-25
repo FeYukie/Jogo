@@ -7,7 +7,7 @@ do bloquear_passagem()
 
 #do play_animation()
 Cauã: E aí, {{Global.nome_jogador}}! Cara, quanto tempo!
-Nicole: Como foram as férias? Aposto que só ficou jogando.
+Nicole: Como foram as férias? [br]Aposto que só ficou jogando.
 
 - "Como descobriu?"
 	{{Global.nome_jogador}}: [#desvia]Como descobriu?!
@@ -27,18 +27,21 @@ do olhar()
 Nicole: Acabamos de chegar... Inclusive, você viu aquela menina estranha ali no canto?[#lado]
 Cauã: Difícil não ver, né? Ocupa o espaço de três pessoas.
 do rir()
+#do opcoes()
 Nicole: Ha ha ha, acho que a escola vai ter que aumentar a porta da cantina esse ano.[#rindo]
 
 - "Pois é, ela é bem... grande."
 	{{Global.nome_jogador}}: Pois é, ela é bem... grande. Chegou chegando mesmo.
 	do Vida.perder_vida()
 	do adicionar_bullying()
+	[#centro][center]E se a menina tiver ouvido essa conversa? Como você se sentiria se falassem isso de você?[/center]
 	Cauã: Até você concorda. Ela parece um mamute andando e o chão tremendo...
 	do rir()
 	Nicole: Ha ha ha ha! Essa foi boa![#rindo]
 	Cauã: Vamos lá ver o mamute mais de perto.
 - Ficar quieto
 	{{Global.nome_jogador}}: Ah, sim...
+	{{Global.nome_jogador}}: [#desvia][i](Espero que ela não tenha ouvido essa conversa...)[/i]
 	do Vida.perder_vida()
 	do adicionar_omissao()
 	do para()
@@ -60,7 +63,7 @@ do sequencia_bullying()
 
 ~ cena_2_trote
 
-# vocês se aproximam da Aluna nova
+# vocês se aproximam da aluna nova
 Cauã: E aí, grande! 
 do ri()
 Nicole: Nunca te vimos antes.[#rindo]
@@ -78,7 +81,7 @@ Cauã: Relaxa, pelo seu tamanho a gente sabe que você tem estoque guardado aí.
 	do adicionar_omissao()
 	Cauã: Ah, que bom. Pode deixar que eu como o seu, então! Vamos te lembrar disso mais tarde.
 	
-- "É verdade, se quiser ficar aqui vai ter que pagar o pedágio."
+- "Se quiser ficar aqui vai ter que pagar o pedágio."
 	{{Global.nome_jogador}}: É verdade, se quiser ficar aqui vai ter que pagar o pedágio. Começou mal.
 	do Vida.perder_vida()
 	do adicionar_bullying()
@@ -89,7 +92,10 @@ Cauã: Relaxa, pelo seu tamanho a gente sabe que você tem estoque guardado aí.
 	do adicionar_bom() 
 	{{Global.nome_jogador}}: Parem com isso, vocês estão passando do ponto. Deixem ela em paz, tá?
 	do ladoAf()
-	Nicole: [#bravo]Nossa, você tinha que pesar mais o clima, né? Deixa esses dois aí, então.
+	if Global.genero_jogador == "menino"
+		Nicole: [#bravo]Nossa, você tinha que pesar mais o clima, né? Deixa esses dois aí, então.
+	else
+		Nicole: [#bravo]Nossa, você tinha que pesar mais o clima, né? Deixa essas duas aí, então.
 do liberar_passagem() 
 #do get_tree().get_first_node_in_group("player").verificar_final_de_jogo()
 do virar()
@@ -109,8 +115,8 @@ Aluna nova: Nossa, [wait=0.6]começamos bem...[#triste]
 	# O jogador sai da área de conversa
 	do parar()
 	{{Global.nome_jogador}}: Me esperem! Estou indo.
-	do seguir()
 	do Vida.perder_vida()
+	do seguir()
 	
 	#do vitima.voltar_ao_roaming()
 - Se desculpar por eles
